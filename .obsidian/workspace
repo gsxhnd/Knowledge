@@ -1,0 +1,169 @@
+{
+  "main": {
+    "id": "11a12f28920e5386",
+    "type": "split",
+    "children": [
+      {
+        "id": "fcbe8a720029c92f",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Docker/docker-sudo.md",
+            "mode": "source",
+            "backlinks": false,
+            "source": false
+          }
+        },
+        "group": "aef6c8827e4c067b"
+      },
+      {
+        "id": "6c38b05c44bb115c",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Docker/docker-sudo.md",
+            "mode": "preview",
+            "backlinks": false,
+            "source": false
+          }
+        },
+        "group": "aef6c8827e4c067b"
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "883cc21f47c97ff4",
+    "type": "split",
+    "children": [
+      {
+        "id": "d580eea379ca2336",
+        "type": "tabs",
+        "dimension": 53.77258235919234,
+        "children": [
+          {
+            "id": "d6622b4a243d49f3",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Docker/docker-sudo.md"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "e9d37d050aec0e4e",
+        "type": "tabs",
+        "dimension": 46.22741764080765,
+        "children": [
+          {
+            "id": "d942cd7175632e0f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "555d101da04e022a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#Git",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "4b3d8192856181c5",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "4ee431d29ea81c75",
+    "type": "split",
+    "children": [
+      {
+        "id": "d86ed64ba4d7ad80",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "eaeead0b3d4af6a3",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Docker/docker-sudo.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              }
+            }
+          },
+          {
+            "id": "39bdae8681a188b1",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Docker/docker-sudo.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "4f866b1b120b5a2e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "fcbe8a720029c92f",
+  "lastOpenFiles": [
+    "md_test.md",
+    "Commit 和 Change log 编写指南.md",
+    "k8s/minikube.md",
+    "Golang/golang-strconv.md",
+    "Docker/doc/未命名.md",
+    "Docker/doc/chapter_01.md",
+    "Docker/SUMMARY.md",
+    "NVim/README.md",
+    "Docker/src/chapter_1.md",
+    "Docker/src/SUMMARY.md"
+  ]
+}

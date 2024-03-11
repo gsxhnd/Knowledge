@@ -1,0 +1,19 @@
+{
+  "showFrontmatter": true,
+  "showLineNumber": true,
+  "strictLineBreaks": true,
+  "readableLineLength": false,
+  "autoConvertHtml": true,
+  "useMarkdownLinks": true,
+  "alwaysUpdateLinks": true,
+  "userIgnoreFilters": [
+    ".gitignore"
+  ],
+  "livePreview": false,
+  "defaultViewMode": "preview",
+  "showUnsupportedFiles": true,
+  "newLinkFormat": "relative",
+  "attachmentFolderPath": "/",
+  "spellcheckLanguages": null,
+  "spellcheck": false
+}
