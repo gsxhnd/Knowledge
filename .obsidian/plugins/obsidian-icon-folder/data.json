@@ -63,5 +63,9 @@
   "pdf": "FasFilePdf",
   "Math": "FasSquareRootVariable",
   "Devops/Openwrt": "SiOpenwrt",
-  "Templates": "FasFolder"
+  "Templates": "FasFolder",
+  "Devops/Grafana/Loki": "FasFolder",
+  "Devops/Grafana/Agent": "FasFolder",
+  "Devops/Grafana/Tempo": "FasFolder",
+  "Devops/Grafana/Promtail": "FasFolder"
 }

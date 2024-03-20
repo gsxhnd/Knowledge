@@ -1,3 +1,7 @@
+---
+title: Loki 介绍
+---
+<!-- markdownlint-disable MD025 -->
 # Loki 介绍
 
 Loki 是用来接受、存储、处理、查询日志的集合体。
