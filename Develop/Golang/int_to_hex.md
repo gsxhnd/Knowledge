@@ -5,7 +5,7 @@ tags:
 date: 2022/09/21 09:36
 ---
 
-在Golang中，将整数转换为十六进制很容易。因为十六进制实际上只是一个Integer字头，你可以使用fmt.Sprintf()和%x或%X格式，向fmt包索取该整数的字符串表示。
+在 Golang 中，将整数转换为十六进制很容易。因为十六进制实际上只是一个 Integer 字头，你可以使用 fmt.Sprintf()和%x 或%X 格式，向 fmt 包索取该整数的字符串表示。
 
 ```golang
 package main
@@ -22,7 +22,8 @@ func main() {
 }
 ```
 
-转换回Int
+转换回 Int
+
 ```golang
 package main
 
@@ -30,7 +31,7 @@ import (
 	"fmt"
 	"strconv"
 )
-	
+
 var hex = []string{"1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "10", "11", "12", "13"}
 
 func main() {

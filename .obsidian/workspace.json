@@ -4,15 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "54e7170e21df2667",
+        "id": "a593e02c3c66879d",
         "type": "tabs",
         "children": [
           {
-            "id": "4d092ae96f106594",
+            "id": "d10984e972a59a4f",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Develop/Golang/go-os-scheduler.md",
+                "mode": "preview",
+                "backlinks": false,
+                "source": true
+              }
             }
           }
         ]
@@ -88,7 +93,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Develop/Golang/go-os-scheduler.md"
+              }
             }
           },
           {
@@ -97,6 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Develop/Golang/go-os-scheduler.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,6 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Develop/Golang/go-os-scheduler.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -177,11 +186,11 @@
       "notion-like-tables:Create loom": false
     }
   },
-  "active": "d942cd7175632e0f",
+  "active": "d10984e972a59a4f",
   "lastOpenFiles": [
+    "Develop/Golang/go-os-scheduler.md",
     "Develop/Golang/int_to_hex.md",
     "Develop/Golang/golang-strconv.md",
-    "Develop/Golang/go-os-scheduler.md",
     "Develop/Golang/go-embed.md",
     "Devops/Grafana/Loki/Untitled.md",
     "Math/线性代数/00.md",
