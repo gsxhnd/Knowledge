@@ -1,6 +1,5 @@
 ---
 title: Awesome CLI
-creation date: 2024-03-11 15:49
 created: 2024-03-11 15:49
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: ReLU激活函数
+created: 2023-10-10 09:38
 tags:
   - AI
-creation date: 2023-10-10 09:38
 ---
 
 <!-- markdownlint-disable MD025 -->

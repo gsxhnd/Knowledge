@@ -2,7 +2,7 @@
 title: Docker sudo
 tags:
   - Docker
-date: 2022/12/08 02:29
+created: 2022/12/08 02:29
 ---
 
 # Docker sudo

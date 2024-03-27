@@ -79,7 +79,7 @@ https://github.com/ardanlabs/gotraining/blob/master/topics/go/profiling/stack_tr
 
 **Listing 3**
 
-```text
+```shell
 $ go tool objdump -S -s "main.example" ./example1
 TEXT main.example(SB) stack_trace/example1/example1.go
 func example(slice []string, str string, i int) {
@@ -307,7 +307,7 @@ GC 时候会有它自己的 Goroutines，这些 Goroutines 也需要 M 上的时
 
 ![](https://image.cubox.pro/article/2021090111343059494/44788.jpg?imageMogr2/quality/90/ignore-error/1)图 5 中，network poller 的异步网络调用完成并且 Goroutine-1 回到了 P 的 LRQ 上面。一旦 Goroutine-1 能够切换回 M 上，Go 的相关代码便能够再次执行。很大好处是，在执行 network system 调用时候，我们不需要其他额外的 M。network poller 有一个 OS 线程能够有效的处理事件循环。
 
-#### 同步系统调用
+### 同步系统调用
 
 当 Goroutine 想进行系统调用无法异进行该怎么办呢？这种情况下，无法使用 network poller 并且 Goroutine 产生的系统调用会阻塞 M。很不幸但是我们无法阻止这种情况发生。一个例子就是基于文件的系统调用。如果你使用 CGO，当你调用 C 函数的时候也会有其他情况发生会阻塞 M。
 
@@ -342,6 +342,7 @@ P1 没有更多 Goroutine 去执行了，但是在 GRQ 和 P2 的 LRQ 中都有�
 
 **Listing 2**
 
+```go
     runtime.schedule() {
         // only 1/61 of the time, check the global runnable queue for a G.
         // if not found, check the local queue.
@@ -350,6 +351,7 @@ P1 没有更多 Goroutine 去执行了，但是在 GRQ 和 P2 的 LRQ 中都有�
         //     if not, check the global runnable queue.
         //     if not found, poll network.
     }
+```
 
 所以基于 Listing2 的规则，P1 需要去看 P2 的 LRQ 上的 Goroutines 并且拿走一半。
 
@@ -410,7 +412,7 @@ Go 调度程序的设计在考虑操作系统和硬件工作复杂性方面确�
 
 ## 第 III 部分 - 并发
 
-## 简介
+### 简介
 
 当我在解决一个问题尤其是新问题的时候，我开始不会去考虑并发(concurrency)是否合适。我首先会去找一系列的解决方式然后确保它有效。然后在可读性和技术方案评估之后，我会开始去考虑并发是否实际合理。有些时候并发的好处是显而易见的，但是有时候并不是很明显。第一篇文章，我解释了 OS 调度器的相关内容，我觉得这部分对于你写多线程代码很重要。第二篇里，我讲解了一些 Go 调度器的一些内容，这部分对于你理解和写 go 的并发代码很有帮助。在这篇文章里，我会在 OS 和 Go 调度器层面让你去深层次的理解并发到底是什么。这部分内容的目标是：
 
@@ -425,7 +427,7 @@ Go 调度程序的设计在考虑操作系统和硬件工作复杂性方面确�
 
 这里有一个问题。有些时候利用并发而不采用并行实际上会降低你的吞吐量，有趣的是，有时候利用并发同时加上并行处理也不会为你带来你理想中的性能增益。
 
-## 工作负载(workloads)
+### 工作负载(workloads)
 
 你是如何知道无序执行(并发)是可行的呢？了解你所处理问题的工作负载(workload)是一个起点。有两种类型的工作负载在并发的时候要考虑到。
 
@@ -441,19 +443,21 @@ cpu-bound 的工作负载，你需要并行去使用并发。一个单独的 OS/
 
 现在，我们需要看一些代码来巩固你去判断什么时候 workload 可以利用并发，以及什么时候需要利用并行什么时候不需要并行。
 
-## 整数累加
+### 整数累加
 
 不需要太复杂的代码，就看一下下面的 add 函数。它计算了一堆整数的和。
 
-**Listing 1**
+**Listing 1** <https://play.golang.org/p/r9LdqUsEzEz>
 
-    36 func add(numbers []int) int {
-    37     var v int
-    38     for _, n := range numbers {
-    39         v += n
-    40     }
-    41     return v
-    42 }
+```go
+36 func add(numbers []int) int {
+37     var v int
+38     for _, n := range numbers {
+39         v += n
+40     }
+41     return v
+42 }
+```
 
 在 Listing1 的 36 行，声明了 add 方法，他接受一个 int 型的 slice，然后返回它们的和。37 定义了一个变量 v 去做数字累加。38 行函数遍历这些整数，39 行把当前数加上去。最后 41 行返回它们的和。
 
@@ -466,38 +470,41 @@ cpu-bound 的工作负载，你需要并行去使用并发。一个单独的 OS/
 注意：你有多种方式去写 add 的并发版本，不必去纠结代码本身。
 
 **Listing2**
+<https://go.dev/play/p/r9LdqUsEzEz>
 
-    44 func addConcurrent(goroutines int, numbers []int) int {
-    45     var v int64
-    46     totalNumbers := len(numbers)
-    47     lastGoroutine := goroutines - 1
-    48     stride := totalNumbers / goroutines
-    49
-    50     var wg sync.WaitGroup
-    51     wg.Add(goroutines)
-    52
-    53     for g := 0; g < goroutines; g++ {
-    54         go func(g int) {
-    55             start := g * stride
-    56             end := start + stride
-    57             if g == lastGoroutine {
-    58                 end = totalNumbers
-    59             }
-    60
-    61             var lv int
-    62             for _, n := range numbers[start:end] {
-    63                 lv += n
-    64             }
-    65
-    66             atomic.AddInt64(&v, int64(lv))
-    67             wg.Done()
-    68         }(g)
-    69     }
-    70
-    71     wg.Wait()
-    72
-    73     return int(v)
-    74 }
+```go
+44 func addConcurrent(goroutines int, numbers []int) int {
+45     var v int64
+46     totalNumbers := len(numbers)
+47     lastGoroutine := goroutines - 1
+48     stride := totalNumbers / goroutines
+49
+50     var wg sync.WaitGroup
+51     wg.Add(goroutines)
+52
+53     for g := 0; g < goroutines; g++ {
+54         go func(g int) {
+55             start := g * stride
+56             end := start + stride
+57             if g == lastGoroutine {
+58                 end = totalNumbers
+59             }
+60
+61             var lv int
+62             for _, n := range numbers[start:end] {
+63                 lv += n
+64             }
+65
+66             atomic.AddInt64(&v, int64(lv))
+67             wg.Done()
+68         }(g)
+69     }
+70
+71     wg.Wait()
+72
+73     return int(v)
+74 }
+```
 
 在 Listing2 里面，`addConcurrent`方法是`add`方法的并发版本。这里有很多代码因此我只讲解重要的代码行
 
@@ -513,22 +520,25 @@ cpu-bound 的工作负载，你需要并行去使用并发。一个单独的 OS/
 
 **Listing3**
 
-    func BenchmarkSequential(b *testing.B) {
-        for i := 0; i < b.N; i++ {
-            add(numbers)
-        }
+```go
+func BenchmarkSequential(b *testing.B) {
+    for i := 0; i < b.N; i++ {
+        add(numbers)
     }
+}
 
-    func BenchmarkConcurrent(b *testing.B) {
-        for i := 0; i \< b.N; i++ {
-            addConcurrent(runtime.NumCPU(), numbers)
-        }
+func BenchmarkConcurrent(b *testing.B) {
+    for i := 0; i \< b.N; i++ {
+        addConcurrent(runtime.NumCPU(), numbers)
     }
+}
+```
 
 Listing3 展示了 benchmark 函数。下面是当 Goroutines 只有一个单独的 OS/硬件线程能用的情况。有序版本使用 1 个 Goroutine 然后并发版本使用 runtime.NumCPU 数，我的机器上是 8。这个例子下面，并发版本没有使用并行去做并发。
 
 **Listing4**
 
+```shell
     10 Million Numbers using 8 goroutines with 1 core
     2.9 GHz Intel 4 Core i7
     Concurrency WITHOUT Parallelism
@@ -541,6 +551,7 @@ Listing3 展示了 benchmark 函数。下面是当 Goroutines 只有一个单独
     BenchmarkConcurrent      	    1000	   6387344 ns/op
     BenchmarkSequentialAgain 	    1000	   5614666 ns/op : ~13% Faster
     BenchmarkConcurrentAgain 	    1000	   6482612 ns/op
+```
 
 注意：在你的本机上跑 BenchMark 很复杂。有很多因素会导致你的 benchmarks 不够精确。你的机器尽可能的处于空闲状态这样可以去跑一段时间 benchmark，以确保自己看到的结果和上面的大体一致。使用测试工具跑两遍 benchmark 能够得到更一致的结果。
 
@@ -550,67 +561,65 @@ L4 给出的 benchmark 表明，在仅有一个单独 OS/硬件线程时候有�
 
 **Listing5**
 
-    10 Million Numbers using 8 goroutines with 8 cores
-    2.9 GHz Intel 4 Core i7
-    Concurrency WITH Parallelism
-    -----------------------------------------------------------------------------
-    $ GOGC=off go test -cpu 8 -run none -bench . -benchtime 3s
-    goos: darwin
-    goarch: amd64
-    pkg: github.com/ardanlabs/gotraining/topics/go/testing/benchmarks/cpu-bound
-    BenchmarkSequential-8        	    1000	   5910799 ns/op
-    BenchmarkConcurrent-8        	    2000	   3362643 ns/op : ~43% Faster
-    BenchmarkSequentialAgain-8   	    1000	   5933444 ns/op
-    BenchmarkConcurrentAgain-8   	    2000	   3477253 ns/op : ~41% Faster
+```shell
+10 Million Numbers using 8 goroutines with 8 cores
+2.9 GHz Intel 4 Core i7
+Concurrency WITH Parallelism
+-----------------------------------------------------------------------------
+$ GOGC=off go test -cpu 8 -run none -bench . -benchtime 3s
+goos: darwin
+goarch: amd64
+pkg: github.com/ardanlabs/gotraining/topics/go/testing/benchmarks/cpu-bound
+BenchmarkSequential-8        	    1000	   5910799 ns/op
+BenchmarkConcurrent-8        	    2000	   3362643 ns/op : ~43% Faster
+BenchmarkSequentialAgain-8   	    1000	   5933444 ns/op
+BenchmarkConcurrentAgain-8   	    2000	   3477253 ns/op : ~41% Faster
+```
 
 Listing5 中的 benchmark 表明了,每个 Goroutines 使用一个 OS/硬件线程的时候并发版本比有序版本要快大约 41%--43%。这是我们期望中的事情，因为所有的 Goroutines 现在都在并行执行，8 个 Goroutines 现在都在同一时间并发执行。
 
-## 排序
+### 排序
 
 需要明白，不是所有的 CPU-bound 的 workloads 都适合并发处理。当把工作拆解或者是把结果合并需要花费很大代价的时候这种说法是正确的。这种情况我们可以看一个算法的例子：冒泡排序。看一下下 Go 实现的冒泡排序。
 
-**Listing6**
+**Listing6**<https://play.golang.org/p/S0Us1wYBqG6>
 
-    01 package main
-    02
-    03 import "fmt"
-    04
-    05 func bubbleSort(numbers []int) {
-    06     n := len(numbers)
-    07     for i := 0; i < n; i++ {
-    08         if !sweep(numbers, i) {
-    09             return
-    10         }
-    11     }
-    12 }
-    13
-    14 func sweep(numbers []int, currentPass int) bool {
-    15     var idx int
-    16     idxNext := idx + 1
-    17     n := len(numbers)
-    18     var swap bool
-    19
-    20     for idxNext < (n - currentPass) {
-    21         a := numbers[idx]
-    22         b := numbers[idxNext]
-    23         if a > b {
-    24             numbers[idx] = b
-    25             numbers[idxNext] = a
-    26             swap = true
-    27         }
-    28         idx++
-    29         idxNext = idx + 1
-    30     }
-    31     return swap
-    32 }
-    33
-    34 func main() {
-    35     org := []int{1, 3, 2, 4, 8, 6, 7, 2, 3, 0}
-    36     fmt.Println(org)
-    37
-    38     bubbleSort(org)
-    39     fmt.Println(org)
-    40 }
+```go
+package main
+import "fmt"
+func bubbleSort(numbers []int) {
+    n := len(numbers)
+    for i := 0; i < n; i++ {
+        if !sweep(numbers, i) {
+            return
+        }
+    }
+}
+func sweep(numbers []int, currentPass int) bool {
+    var idx int
+    idxNext := idx + 1
+    n := len(numbers)
+    var swap bool
+    for idxNext < (n - currentPass) {
+        a := numbers[idx]
+        b := numbers[idxNext]
+        if a > b {
+            numbers[idx] = b
+            numbers[idxNext] = a
+            swap = true
+        }
+        idx++
+        idxNext = idx + 1
+    }
+    return swap
+}
+func main() {
+    org := []int{1, 3, 2, 4, 8, 6, 7, 2, 3, 0}
+    fmt.Println(org)
+    bubbleSort(org)
+    fmt.Println(org)
+}
+```
 
 在 Listing6 里，给出了 Go 版本的冒泡排序。排序算法遍历每个值并在整数集上进行数据交替。根据初始顺序不同，排序可能需要多次的遍历。
 
@@ -618,37 +627,40 @@ Listing5 中的 benchmark 表明了,每个 Goroutines 使用一个 OS/硬件线�
 
 **Listing8**
 
-    01 func bubbleSortConcurrent(goroutines int, numbers []int) {
-    02     totalNumbers := len(numbers)
-    03     lastGoroutine := goroutines - 1
-    04     stride := totalNumbers / goroutines
-    05
-    06     var wg sync.WaitGroup
-    07     wg.Add(goroutines)
-    08
-    09     for g := 0; g < goroutines; g++ {
-    10         go func(g int) {
-    11             start := g * stride
-    12             end := start + stride
-    13             if g == lastGoroutine {
-    14                 end = totalNumbers
-    15             }
-    16
-    17             bubbleSort(numbers[start:end])
-    18             wg.Done()
-    19         }(g)
-    20     }
-    21
-    22     wg.Wait()
-    23
-    24     // Ugh, we have to sort the entire list again.
-    25     bubbleSort(numbers)
-    26 }
+```go
+func bubbleSortConcurrent(goroutines int, numbers []int) {
+    totalNumbers := len(numbers)
+    lastGoroutine := goroutines - 1
+    stride := totalNumbers / goroutines
+
+    var wg sync.WaitGroup
+    wg.Add(goroutines)
+
+    for g := 0; g < goroutines; g++ {
+        go func(g int) {
+            start := g * stride
+            end := start + stride
+            if g == lastGoroutine {
+                end = totalNumbers
+            }
+
+            bubbleSort(numbers[start:end])
+            wg.Done()
+        }(g)
+    }
+
+    wg.Wait()
+
+    // Ugh, we have to sort the entire list again.
+    bubbleSort(numbers)
+}
+```
 
 Listing8 中，bubbleSortConcurrent 方法是 bubbleSort 的并发版本。它使用多个 Goroutines 去并发地排序整个整数集的一部分。结果你得到的是各自的排序的 list。结果你最终在 25 行还是要整个 list 做一次排序。
 
 **Listing8**
 
+```shell
     Before:
       25 51 15 57 87 10 10 85 90 32 98 53
       91 82 84 97 67 37 71 94 26  2 81 79
@@ -658,32 +670,35 @@ Listing8 中，bubbleSortConcurrent 方法是 bubbleSort 的并发版本。它�
       10 10 15 25 32 51 53 57 85 87 90 98
        2 26 37 67 71 79 81 82 84 91 94 97
       10 19 49 52 66 70 75 81 85 86 87 93
+```
 
 因为冒泡排序的本质就是遍历整个 list。25 行调用 bubbleSort 直接否定了任何并发的潜在收益。冒泡排序里，使用并发并没有性能上的增益。
 
-## 读取文件
+### 读取文件
 
 我们给出了 2 个 CPU-Bound 类型的 workloads，那么 IO-Bound 类型的 workload 情况是什么样的？当 Goroutines 自动进入或者是离开 waiting 状态，情况会有什么不同么？看一个 IO-bound 类型的 workload，它的工作内容是读取文件并查找文本。
 
 第一个版本是一个有序版本的 find 方法
 
-**Listing10**
+**Listing10** <https://play.golang.org/p/8gFe5F8zweN>
 
-    42 func find(topic string, docs []string) int {
-    43     var found int
-    44     for _, doc := range docs {
-    45         items, err := read(doc)
-    46         if err != nil {
-    47             continue
-    48         }
-    49         for _, item := range items {
-    50             if strings.Contains(item.Description, topic) {
-    51                 found++
-    52             }
-    53         }
-    54     }
-    55     return found
-    56 }
+```go
+func find(topic string, docs []string) int {
+    var found int
+    for _, doc := range docs {
+        items, err := read(doc)
+        if err != nil {
+            continue
+        }
+        for _, item := range items {
+            if strings.Contains(item.Description, topic) {
+                found++
+            }
+        }
+    }
+    return found
+}
+```
 
 在 Listing10 里面，你看到一个有序版本的 find 函数。line 43 定义了一个 found 变量去存 topic 在文档里的出现次数。line 44，对所有文档进行遍历，并且在 45 行上使用 read 方法对每个 doc 进行读取。最后从 49--53 行，使用 strings 包的 Contains 方法去检查 topic 是否在读取到的 items 里面。如果发现，found 变量就对应加一。
 
@@ -691,14 +706,16 @@ Listing8 中，bubbleSortConcurrent 方法是 bubbleSort 的并发版本。它�
 
 **Listing11**
 
-    33 func read(doc string) ([]item, error) {
-    34     time.Sleep(time.Millisecond) // Simulate blocking disk read.
-    35     var d document
-    36     if err := xml.Unmarshal([]byte(file), &d); err != nil {
-    37         return nil, err
-    38     }
-    39     return d.Channel.Items, nil
-    40 }
+```go
+33 func read(doc string) ([]item, error) {
+34     time.Sleep(time.Millisecond) // Simulate blocking disk read.
+35     var d document
+36     if err := xml.Unmarshal([]byte(file), &d); err != nil {
+37         return nil, err
+38     }
+39     return d.Channel.Items, nil
+40 }
+```
 
 read 方法以一个 time.Sleep 方法开始。这个里模拟了真实从硬盘读取文档的系统调用所产生的延迟。设置这个延迟对我们精确地测试有序版本和并发版本 find 方法的性能差异十分重要。然后在 35-39 行，测试的 xml 文档存储在 fine 的全局变量里，它被反序列化成一个要去处理的 struct。最后返回了一个 items 的集合。
 
@@ -708,41 +725,43 @@ read 方法以一个 time.Sleep 方法开始。这个里模拟了真实从硬盘
 
 **Listing12**
 
-    58 func findConcurrent(goroutines int, topic string, docs []string) int {
-    59     var found int64
-    60
-    61     ch := make(chan string, len(docs))
-    62     for _, doc := range docs {
-    63         ch <- doc
-    64     }
-    65     close(ch)
-    66
-    67     var wg sync.WaitGroup
-    68     wg.Add(goroutines)
-    69
-    70     for g := 0; g < goroutines; g++ {
-    71         go func() {
-    72             var lFound int64
-    73             for doc := range ch {
-    74                 items, err := read(doc)
-    75                 if err != nil {
-    76                     continue
-    77                 }
-    78                 for _, item := range items {
-    79                     if strings.Contains(item.Description, topic) {
-    80                         lFound++
-    81                     }
-    82                 }
-    83             }
-    84             atomic.AddInt64(&found, lFound)
-    85             wg.Done()
-    86         }()
-    87     }
-    88
-    89     wg.Wait()
-    90
-    91     return int(found)
-    92 }
+```go
+58 func findConcurrent(goroutines int, topic string, docs []string) int {
+59     var found int64
+60
+61     ch := make(chan string, len(docs))
+62     for _, doc := range docs {
+63         ch <- doc
+64     }
+65     close(ch)
+66
+67     var wg sync.WaitGroup
+68     wg.Add(goroutines)
+69
+70     for g := 0; g < goroutines; g++ {
+71         go func() {
+72             var lFound int64
+73             for doc := range ch {
+74                 items, err := read(doc)
+75                 if err != nil {
+76                     continue
+77                 }
+78                 for _, item := range items {
+79                     if strings.Contains(item.Description, topic) {
+80                         lFound++
+81                     }
+82                 }
+83             }
+84             atomic.AddInt64(&found, lFound)
+85             wg.Done()
+86         }()
+87     }
+88
+89     wg.Wait()
+90
+91     return int(found)
+92 }
+```
 
 Listing12 是 find 方法的并发版本。并发版本有 30 行代码，而非并发版本代码只有 13 行。我的目标是处理未知数量的 documents 时候控制 Goroutines 的数量。这里我选择在池化模式里使用一个 channel 去给池子里的 goroutines 喂数据。这部分代码比较多，我只讲解重要部分
 
@@ -758,34 +777,38 @@ Line 70:创建一个 goroutines 线程池**Line 73-83**: 每一个池子里的 g
 
 **Listing13**
 
-    func BenchmarkSequential(b *testing.B) {
-        for i := 0; i < b.N; i++ {
-            find("test", docs)
-        }
+```go
+func BenchmarkSequential(b *testing.B) {
+    for i := 0; i < b.N; i++ {
+        find("test", docs)
     }
+}
 
-    func BenchmarkConcurrent(b *testing.B) {
-        for i := 0; i \< b.N; i++ {
-            findConcurrent(runtime.NumCPU(), "test", docs)
-        }
+func BenchmarkConcurrent(b *testing.B) {
+    for i := 0; i \< b.N; i++ {
+        findConcurrent(runtime.NumCPU(), "test", docs)
     }
+}
+```
 
 Listing13 给出了 benchmark。下面是当所有 goroutines 只有一个 OS/硬件线程的时候。顺序代码使用 1 个 goroutines，而并发版本是 runtime.NumCPU 的数，在我本机上是 8。这种情况下，我们没用并行去做并发。
 
 **Listing14**
 
-    10 Thousand Documents using 8 goroutines with 1 core
-    2.9 GHz Intel 4 Core i7
-    Concurrency WITHOUT Parallelism
-    -----------------------------------------------------------------------------
-    $ GOGC=off go test -cpu 1 -run none -bench . -benchtime 3s
-    goos: darwin
-    goarch: amd64
-    pkg: github.com/ardanlabs/gotraining/topics/go/testing/benchmarks/io-bound
-    BenchmarkSequential      	       3	1483458120 ns/op
-    BenchmarkConcurrent      	      20	 188941855 ns/op : ~87% Faster
-    BenchmarkSequentialAgain 	       2	1502682536 ns/op
-    BenchmarkConcurrentAgain 	      20	 184037843 ns/op : ~88% Faster
+```shell
+10 Thousand Documents using 8 goroutines with 1 core
+2.9 GHz Intel 4 Core i7
+Concurrency WITHOUT Parallelism
+-----------------------------------------------------------------------------
+$ GOGC=off go test -cpu 1 -run none -bench . -benchtime 3s
+goos: darwin
+goarch: amd64
+pkg: github.com/ardanlabs/gotraining/topics/go/testing/benchmarks/io-bound
+BenchmarkSequential      	       3	1483458120 ns/op
+BenchmarkConcurrent      	      20	 188941855 ns/op : ~87% Faster
+BenchmarkSequentialAgain 	       2	1502682536 ns/op
+BenchmarkConcurrentAgain 	      20	 184037843 ns/op : ~88% Faster
+```
 
 Listing14 里面表明了，在只有一个单独 OS/硬件线程的时候，并发版本大概要比顺序版本代码快 87%--%88。这是我们预料到的因为每个 Goroutines 都能有效的共享这一个 OS/硬件线程。在 read 调用的时候每个 goroutines 能够自动进行上下文切换，这样 OS/硬件线程会一直有事情做。
 
@@ -793,22 +816,24 @@ Listing14 里面表明了，在只有一个单独 OS/硬件线程的时候，并
 
 **Listing15**
 
-    10 Thousand Documents using 8 goroutines with 1 core
-    2.9 GHz Intel 4 Core i7
-    Concurrency WITH Parallelism
-    -----------------------------------------------------------------------------
-    $ GOGC=off go test -run none -bench . -benchtime 3s
-    goos: darwin
-    goarch: amd64
-    pkg: github.com/ardanlabs/gotraining/topics/go/testing/benchmarks/io-bound
-    BenchmarkSequential-8        	       3	1490947198 ns/op
-    BenchmarkConcurrent-8        	      20	 187382200 ns/op : ~88% Faster
-    BenchmarkSequentialAgain-8   	       3	1416126029 ns/op
-    BenchmarkConcurrentAgain-8   	      20	 185965460 ns/op : ~87% Faster
+```shell
+10 Thousand Documents using 8 goroutines with 1 core
+2.9 GHz Intel 4 Core i7
+Concurrency WITH Parallelism
+-----------------------------------------------------------------------------
+$ GOGC=off go test -run none -bench . -benchtime 3s
+goos: darwin
+goarch: amd64
+pkg: github.com/ardanlabs/gotraining/topics/go/testing/benchmarks/io-bound
+BenchmarkSequential-8        	       3	1490947198 ns/op
+BenchmarkConcurrent-8        	      20	 187382200 ns/op : ~88% Faster
+BenchmarkSequentialAgain-8   	       3	1416126029 ns/op
+BenchmarkConcurrentAgain-8   	      20	 185965460 ns/op : ~87% Faster
+```
 
 Listing15 的 benchmark 结果说明，额外的 OS/硬件线程并没有提供更好的性能。
 
-## 结论
+### 结论
 
 这篇文章的目的就是让你知道什么时候你的 workload 适合使用并发。考虑到不同的场景，我给出了不同的例子。
 

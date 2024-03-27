@@ -1,6 +1,6 @@
 ---
 title: Suphx：掌握麻将与深度强化学习
-creation date: 2023-09-27 09:38
+created: 2023-09-27 09:38
 ---
 
 <!-- markdownlint-disable MD025 -->

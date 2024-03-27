@@ -1,6 +1,6 @@
 ---
 title: OpenWRT 安装
-creation date: 2023-03-23 20:48
+created: 2023-03-23 20:48
 ---
 
 

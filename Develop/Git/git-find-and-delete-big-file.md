@@ -1,9 +1,8 @@
 ---
 title: Git查找大文件、删除大文件
+created: 2020/05/26 13:29
 tags:
   - Git
-date: 2020/05/26 13:29
-aliases: []
 ---
 
 <!-- markdownlint-disable MD025 -->

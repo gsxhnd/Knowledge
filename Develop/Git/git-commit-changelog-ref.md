@@ -2,7 +2,7 @@
 title: Commit和Changelog编写指南
 tags:
   - Git
-date: 2019/12/08 02:29
+created: 2019/12/08 02:29
 ---
 
 ## Commit message
@@ -124,7 +124,6 @@ Closes #123, #245, #992
 core: allow css custom variables/properties in the style sanitizer (#33841) (61cc7a3), closes #23485 #23485
 ```
 
-
 ## 参考文献
 
-[^1]:  [AngularJS Git Commit Message Conventions](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#heading=h.greljkmo14y0)
+[^1]: [AngularJS Git Commit Message Conventions](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#heading=h.greljkmo14y0)

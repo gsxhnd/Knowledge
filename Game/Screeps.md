@@ -1,6 +1,6 @@
 ---
 title: Screeps
-creation date: 2023-08-06 22:15
+created: 2023-08-06 22:15
 mindmap-plugin: basic
 ---
 
