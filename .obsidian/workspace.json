@@ -4,19 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "1344ee50ee826c45",
+        "id": "d4d629cf46231a7b",
         "type": "tabs",
         "children": [
           {
-            "id": "57fb07f7ef0cde8b",
+            "id": "cde93069e2fcb2d1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Develop/Rust/Rust精选库清单未命名.md",
+                "file": "Develop/Golang/gin.md",
                 "mode": "source",
                 "backlinks": false,
-                "source": true
+                "source": false
               }
             }
           }
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 307.5
+    "width": 307.5,
+    "collapsed": true
   },
   "right": {
     "id": "4ee431d29ea81c75",
@@ -94,7 +95,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Develop/Rust/Rust精选库清单未命名.md"
+                "file": "Develop/Golang/gin.md"
               }
             }
           },
@@ -104,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Develop/Rust/Rust精选库清单未命名.md",
+                "file": "Develop/Golang/gin.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Develop/Rust/Rust精选库清单未命名.md",
+                "file": "Develop/Golang/gin.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -185,16 +186,21 @@
       "notion-like-tables:Create loom": false
     }
   },
-  "active": "57fb07f7ef0cde8b",
+  "active": "cde93069e2fcb2d1",
   "lastOpenFiles": [
+    "Develop/Golang/int_to_hex.md",
+    "Develop/Golang/golang-strconv.md",
+    "Develop/Golang/go-std-lib-net-http.md",
+    "Develop/Golang/go-os-scheduler.md",
+    "Develop/Golang/go-embed.md",
+    "Develop/Golang/gin.md",
+    "md_test.md",
+    "Math/线性代数/00.md",
+    "Develop/Rust/Rust精选库清单未命名.md",
     "Collect/必看！2024 Rust精选库清单，值得收藏 - 知乎.md",
     "Collect/Obsidian Web Clipper Test Note.md",
     "Collect/Untitled.loom",
-    "Develop/Golang/go-os-scheduler.md",
     "Collect",
-    "Develop/Golang/golang-strconv.md",
-    "Develop/Golang/go-embed.md",
-    "Develop/Golang/int_to_hex.md",
     "Game/Screeps.md",
     "Develop/Git/git-find-and-delete-big-file.md",
     "Develop/Python/Numpy/Untitled.md",
@@ -210,11 +216,6 @@
     "Math/线性代数/05.md",
     "Math/线性代数/04.md",
     "Math/线性代数/03.md",
-    "Math/线性代数/02.md",
-    "Math/线性代数/01.md",
-    "Math/线性代数/00.md",
-    "Templates/default_template.md",
-    "Develop/Python/README.md",
     "Templates/Untitled.loom",
     "Awesome.loom",
     "Software Awesome.loom",
