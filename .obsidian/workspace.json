@@ -26,7 +26,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "local/1.md",
+                "file": "AI/StableDiffusion/ComfyUI指南.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -84,7 +84,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 307.5
+    "width": 281.5
   },
   "right": {
     "id": "4ee431d29ea81c75",
@@ -100,7 +100,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "local/1.md"
+                "file": "AI/StableDiffusion/ComfyUI指南.md"
               }
             }
           },
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "local/1.md",
+                "file": "AI/StableDiffusion/ComfyUI指南.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "local/1.md",
+                "file": "AI/StableDiffusion/ComfyUI指南.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -191,10 +191,12 @@
       "notion-like-tables:Create loom": false
     }
   },
-  "active": "d942cd7175632e0f",
+  "active": "c3be092f201016d7",
   "lastOpenFiles": [
-    "local",
     "Develop/Golang/gin.md",
+    "AI/StableDiffusion/ComfyUI指南.md",
+    "AI/StableDiffusion",
+    "local",
     "local/1.md",
     "Develop/Golang/int_to_hex.md",
     "Develop/Golang/golang-strconv.md",
@@ -227,8 +229,6 @@
     "pdf/The-Art-of-Linear-Algebra-zh-CN.pdf",
     "Math/线性代数/image.png",
     "Math/机器学习线性代数的基础知识",
-    "Math/线性代数",
-    "img",
     "Math/线性代数",
     "AI.canvas",
     "assets/Untitled.canvas",
