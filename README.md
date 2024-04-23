@@ -8,8 +8,7 @@ title:  Knowledge 目录
 
 ## 笔记列表
 
-- [Awesome 常用软件](awesome.loom)
-- [CLI Awesome](./tool/cli.md)
+- [CLI Awesome](./tool/awesome-cli.md)
 - [Docker 目录](Develop/Docker/Learn/README.md#Table%20of%20contents)
 
 ## Math

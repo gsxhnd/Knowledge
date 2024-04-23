@@ -4,37 +4,23 @@
     "type": "split",
     "children": [
       {
-        "id": "d4d629cf46231a7b",
+        "id": "944a73491a3e125d",
         "type": "tabs",
         "children": [
           {
-            "id": "cde93069e2fcb2d1",
+            "id": "1ad21ef3aa00bd34",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Develop/Golang/gin.md",
-                "mode": "source",
+                "file": "README.md",
+                "mode": "preview",
                 "backlinks": false,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "c3be092f201016d7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "AI/StableDiffusion/ComfyUI指南.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
+                "source": true
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -100,7 +86,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "AI/StableDiffusion/ComfyUI指南.md"
+                "file": "README.md"
               }
             }
           },
@@ -110,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "AI/StableDiffusion/ComfyUI指南.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "AI/StableDiffusion/ComfyUI指南.md",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -165,14 +151,15 @@
             }
           },
           {
-            "id": "703a3d01c133d4d8",
+            "id": "2218a58cd039d945",
             "type": "leaf",
             "state": {
               "type": "quiet-outline",
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
@@ -187,12 +174,22 @@
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "workspaces:管理工作区布局": false,
-      "templater-obsidian:Templater": false,
-      "notion-like-tables:Create loom": false
+      "templater-obsidian:Templater": false
     }
   },
-  "active": "c3be092f201016d7",
+  "active": "d942cd7175632e0f",
   "lastOpenFiles": [
+    "README.md",
+    "md_test.md",
+    "Awesome.loom",
+    "Tool/awesome-software.md",
+    "Tool/NeoVim.md",
+    "Tool/awesome-cli.md",
+    "Templates/default_template.md",
+    "Tool/cli.md",
+    "Tool/alacritty_and_zellij.md",
+    "Devops/Grafana/grafana监控体系.md",
+    "Math/线性代数/00.md",
     "Develop/Golang/gin.md",
     "AI/StableDiffusion/ComfyUI指南.md",
     "AI/StableDiffusion",
@@ -203,8 +200,6 @@
     "Develop/Golang/go-std-lib-net-http.md",
     "Develop/Golang/go-os-scheduler.md",
     "Develop/Golang/go-embed.md",
-    "md_test.md",
-    "Math/线性代数/00.md",
     "Develop/Rust/Rust精选库清单未命名.md",
     "Collect/必看！2024 Rust精选库清单，值得收藏 - 知乎.md",
     "Collect/Obsidian Web Clipper Test Note.md",
@@ -214,17 +209,7 @@
     "Develop/Git/git-find-and-delete-big-file.md",
     "Develop/Python/Numpy/Untitled.md",
     "Devops/Openwrt/Untitled.md",
-    "AI/suphx.md",
-    "AI/relu.md",
-    "Develop/Git/lazygit-manual.md",
-    "Tool/cli.md",
-    "Develop/Docker/Learn/ch04.md",
-    "Math/线性代数/08.md",
-    "Math/线性代数/07.md",
-    "Math/线性代数/06.md",
-    "Math/线性代数/05.md",
     "Templates/Untitled.loom",
-    "Awesome.loom",
     "Software Awesome.loom",
     "pdf/The-Art-of-Linear-Algebra-zh-CN.pdf",
     "Math/线性代数/image.png",

@@ -25,7 +25,11 @@
     "iconInFrontmatterEnabled": false,
     "iconsBackgroundCheckEnabled": false,
     "iconsInNotesEnabled": true,
-    "iconIdentifier": ":"
+    "iconIdentifier": ":",
+    "iconInFrontmatterFieldName": "icon",
+    "iconColorInFrontmatterFieldName": "iconColor",
+    "iconsInLinksEnabled": true,
+    "debugMode": false
   },
   "README.md": "FabReadme",
   "AI": "SiPytorch",
@@ -59,7 +63,6 @@
   "Develop/Test/k6.md": "SiMarkdown",
   "Develop/Python/Pandas": "SiPandas",
   "Develop/Python/matplotlib": "SiMatrix",
-  "Awesome.loom": "SiAwesomelists",
   "pdf": "FasFilePdf",
   "Math": "FasSquareRootVariable",
   "Devops/Openwrt": "SiOpenwrt",

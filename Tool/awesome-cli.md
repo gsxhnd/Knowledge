@@ -1,0 +1,58 @@
+---
+title: Awesome CLI
+created: 2024-03-11 15:49
+---
+
+<!-- markdownlint-disable MD025 -->
+
+# Awesome CLI
+
+## Network
+
+- frp 网络穿透 <https://github.com/fatedier/frp>
+
+## System
+
+- neofetch 查看系统信息的命令行工具 <https://github.com/dylanaraps/neofetch>
+- tree
+- procs
+- htop
+- bat
+- exa
+- bottom
+- sed
+- jq
+- ripgrep
+- httpie
+- duf
+- erdtree
+- ranger
+- joshuto
+- fzf
+- awk
+- grep
+- go-task
+- go-releaser
+- grpc
+- protobuf
+- k6
+- mdbook
+- pandoc
+
+## Docker & K8s
+
+- lazydocker
+- k9s
+- docker
+- kind
+- kubectl
+- helm
+
+## Git
+
+- lazygit
+- onefetch 查看 Git 信息的命令行工具 <https://github.com/o2sh/onefetch>
+
+## Dev
+
+- tree-sitter

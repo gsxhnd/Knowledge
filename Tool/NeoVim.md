@@ -20,17 +20,15 @@ A Great Vim Cheat Sheet: <https://vimsheet.com/>
 
 ## 安装
 
+### 安装 NeoVim & NeoVide
+
 在开始之前我们需要配置相应的环境环境
 
 Neovim 官方的安装教程：<https://github.com/neovim/neovim/wiki/Installing-Neovim>
-
-### 安装字体
-
-部分插件 icon 依赖特定的字体，不安装字体会导致图标缺失。
-
+NeoVide 官网： <https://github.com/neovide/neovide>
 支持的字体下载地址： <https://www.nerdfonts.com/>
 
-### Windows
+> Windows 安装
 
 如果是`Windows`环境,推荐安装`WSL2`，在`WSL2`的 Linux 环境中使用。
 
@@ -42,15 +40,18 @@ Neovim 官方的安装教程：<https://github.com/neovim/neovim/wiki/Installing
 
 Homebrew 安装 Neovim `brew install neovim`
 
-### Linux & macOS
+> Linux & macOS
 
-安装 neovim `brew install neovim`
+安装 neovim `brew install neovim neovide`
 
 Linux 可以使用发行版对应的包管理工具安装
 
-### 清除缓存
+### 安装 Astronvim
+
+网站 <https://astronvim.com/>
 
 ```shell
+# 清除缓存
 rm ~/.config/nvim
 
 rm ~/.local/share/nvim
@@ -59,12 +60,13 @@ rm ~/.cache/nvim
 ```
 
 ```shell
-git clone --depth 1 https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+# install
+git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
 ```
 
-## 光标移动
+## Neovim 使用
 
-### 基本操作
+### 光标移动基本操作
 
 #### 光标位移（正常/可视模式）
 
