@@ -60,7 +60,6 @@
   "Devops/Kubernetes/minikube.md": "SiMarkdown",
   "Devops/Grafana": "SiGrafana",
   "Game": "IbGames",
-  "Develop/Test/k6.md": "SiMarkdown",
   "Develop/Python/Pandas": "SiPandas",
   "Develop/Python/matplotlib": "SiMatrix",
   "pdf": "FasFilePdf",
