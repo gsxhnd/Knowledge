@@ -47,8 +47,6 @@
   "Develop/Javascript/Vue": "FabVuejs",
   "Develop/Javascript/Nodejs/Nodemon.md": "SiNodemon",
   "Develop/Python/Numpy": "SiNumpy",
-  "Develop/Docker": "FabDocker",
-  "Develop/Docker/Learn": "FasBook",
   "Develop/Git": "FabGitAlt",
   "Develop/Test": "SiVitest",
   "Tool": "FasToolbox",
@@ -71,5 +69,6 @@
   "Devops/Grafana/Tempo": "FasFolder",
   "Devops/Grafana/Promtail": "FasFolder",
   "Game/Godot": "SiGodotengine",
-  "Develop/Graphics": "SiNvidia"
+  "Develop/Graphics": "SiNvidia",
+  "Devops/Docker": "FabDocker"
 }
