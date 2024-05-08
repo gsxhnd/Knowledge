@@ -6,11 +6,11 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "SiNvidia",
+      "SiGodotengine",
       "FasClipboard",
       "FasFolder",
-      "FasSquareRootVariable",
-      "SiWolframmathematica",
-      "IbGames"
+      "FasSquareRootVariable"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -69,5 +69,7 @@
   "Devops/Grafana/Loki": "FasFolder",
   "Devops/Grafana/Agent": "FasFolder",
   "Devops/Grafana/Tempo": "FasFolder",
-  "Devops/Grafana/Promtail": "FasFolder"
+  "Devops/Grafana/Promtail": "FasFolder",
+  "Game/Godot": "SiGodotengine",
+  "Develop/Graphics": "SiNvidia"
 }
