@@ -4,15 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "beebe8108aa9b3b9",
+        "id": "d595596281b04bd2",
         "type": "tabs",
         "children": [
           {
-            "id": "f05961bd761fd523",
+            "id": "3ed5d8ff84210328",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "preview",
+                "backlinks": false,
+                "source": true
+              }
             }
           }
         ]
@@ -80,7 +85,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "README.md"
+              }
             }
           },
           {
@@ -89,6 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,6 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -168,13 +177,16 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "f05961bd761fd523",
+  "active": "d942cd7175632e0f",
   "lastOpenFiles": [
+    "Devops/Docker/learn-docker-01.md",
+    "md_test.md",
+    "README.md",
+    "Game/Godot/README.md",
     "Devops/Docker/Learn/ch01.md",
     "Devops/Docker/Learn/ch02.md",
-    "Game/Godot/README.md",
-    "Develop/Graphics/README.md",
-    "Develop/Graphics",
+    "Develop/wgpu/README.md",
+    "Develop/wgpu",
     "Game/Godot",
     "Develop/Test/k6.md",
     "Develop/Javascript/Vue/00.md",
@@ -186,8 +198,6 @@
     "Develop/Golang/go-os-scheduler.md",
     "Develop/Golang/go-embed.md",
     "Develop/Golang/gin.md",
-    "README.md",
-    "md_test.md",
     "Awesome.loom",
     "Tool/awesome-software.md",
     "Tool/NeoVim.md",
@@ -200,7 +210,6 @@
     "AI/StableDiffusion/ComfyUI指南.md",
     "AI/StableDiffusion",
     "local",
-    "local/1.md",
     "Collect/Untitled.loom",
     "Collect",
     "Templates/Untitled.loom",

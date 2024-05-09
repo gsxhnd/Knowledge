@@ -69,6 +69,6 @@
   "Devops/Grafana/Tempo": "FasFolder",
   "Devops/Grafana/Promtail": "FasFolder",
   "Game/Godot": "SiGodotengine",
-  "Develop/Graphics": "SiNvidia",
-  "Devops/Docker": "FabDocker"
+  "Devops/Docker": "FabDocker",
+  "Develop/wgpu": "SiNvidia"
 }
