@@ -1,4 +1,11 @@
-# 13. Docker daemon.json 文件
+---
+title: Docker daemon.json 文件
+created: 2024-05-09 09:58
+---
+
+<!-- markdownlint-disable MD025 -->
+
+# Docker daemon.json 文件
 
 docker 安装后默认没有 daemon.json 这个配置文件，需要进行手动创建。配置文件的默认路径：/etc/docker/daemon.json
 

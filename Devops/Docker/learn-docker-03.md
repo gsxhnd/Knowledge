@@ -1,4 +1,11 @@
-# 9. 创建 Dockerfile 文件
+---
+title: Dockerfile 文件
+created: 2024-05-09 09:58
+---
+
+<!-- markdownlint-disable MD025 -->
+
+# Dockerfile 文件
 
 制作 Docker image 有两种方式：
 

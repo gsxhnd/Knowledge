@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "d595596281b04bd2",
+        "id": "582607229ab83944",
         "type": "tabs",
         "children": [
           {
-            "id": "3ed5d8ff84210328",
+            "id": "3691bab2c56aaaf6",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -177,12 +177,20 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "d942cd7175632e0f",
+  "active": "3691bab2c56aaaf6",
   "lastOpenFiles": [
-    "Devops/Docker/learn-docker-01.md",
-    "md_test.md",
+    "Devops/Docker/learn-docker-05.md",
     "README.md",
+    "Devops/Docker/learn-docker-02.md",
+    "Devops/Docker/learn-docker-04.md",
+    "Devops/Docker/learn-docker-01.md",
+    "Devops/Docker/ch13.md",
+    "Devops/Docker/learn-docker-03.md",
+    "Devops/Docker/Learn/learn-docker-04.md",
+    "Devops/Docker/learn-docker-02 copy.md",
+    "Devops/Docker/docker-sudo.md",
     "Game/Godot/README.md",
+    "md_test.md",
     "Devops/Docker/Learn/ch01.md",
     "Devops/Docker/Learn/ch02.md",
     "Develop/wgpu/README.md",
@@ -200,14 +208,6 @@
     "Develop/Golang/gin.md",
     "Awesome.loom",
     "Tool/awesome-software.md",
-    "Tool/NeoVim.md",
-    "Tool/awesome-cli.md",
-    "Templates/default_template.md",
-    "Tool/cli.md",
-    "Tool/alacritty_and_zellij.md",
-    "Devops/Grafana/grafana监控体系.md",
-    "Math/线性代数/00.md",
-    "AI/StableDiffusion/ComfyUI指南.md",
     "AI/StableDiffusion",
     "local",
     "Collect/Untitled.loom",
