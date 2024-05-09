@@ -1,6 +1,8 @@
 ---
 title: Docker daemon.json 文件
 created: 2024-05-09 09:58
+tags:
+  - Docker
 ---
 
 <!-- markdownlint-disable MD025 -->

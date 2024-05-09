@@ -1,8 +1,8 @@
 ---
 title: Docker sudo
+created: 2022/12/08 02:29
 tags:
   - Docker
-created: 2022/12/08 02:29
 ---
 
 <!-- markdownlint-disable MD025 -->
