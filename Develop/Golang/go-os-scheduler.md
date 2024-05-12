@@ -45,7 +45,9 @@ golang 调度器的设计行为能够使你的多线程 go 程序更有效率、
 
 **图 1**
 
-![2974c0c81aae510492c3baf966f0cf26](https://pic-1257414393.cos.ap-hongkong.myqcloud.com/2974c0c81aae510492c3baf966f0cf26.jpg)如果你曾经注意到 go 程序的追踪栈，你会注意到这些每一行末尾的 16 进制数字。例如 Listing 1 里的+0x39 和+0x72
+![2974c0c81aae510492c3baf966f0cf26](https://pic-1257414393.cos.ap-hongkong.myqcloud.com/Knowledge/2974c0c81aae510492c3baf966f0cf26.jpg)
+
+如果你曾经注意到 go 程序的追踪栈，你会注意到这些每一行末尾的 16 进制数字。例如 Listing 1 里的+0x39 和+0x72
 
 **Listing 1**
 
@@ -176,7 +178,7 @@ func example(slice []string, str string, i int) {
 
 **图 2**
 
-![d2a39c1bdb5f369c7b0af8aa3d3fee21](https://pic-1257414393.cos.ap-hongkong.myqcloud.com/d2a39c1bdb5f369c7b0af8aa3d3fee21.png)
+![d2a39c1bdb5f369c7b0af8aa3d3fee21](https://pic-1257414393.cos.ap-hongkong.myqcloud.com/Knowledge/d2a39c1bdb5f369c7b0af8aa3d3fee21.png)
 
 image
 
@@ -186,7 +188,7 @@ image
 
 **图 3**
 
-![6c1147b201f9c685fe602cc4b3db27b9](https://pic-1257414393.cos.ap-hongkong.myqcloud.com/6c1147b201f9c685fe602cc4b3db27b9.png)
+![6c1147b201f9c685fe602cc4b3db27b9](https://pic-1257414393.cos.ap-hongkong.myqcloud.com/Knowledge/6c1147b201f9c685fe602cc4b3db27b9.png)
 image
 
 如果给一个内核，他上面的线程修改它的 cache 行副本，然后会通过硬件的神奇操作，同一 cache 行的所有其他副本都会被标记为无效。当一个线程尝试读写无效 cache 行，主存需要去访问去获取新的 cache 行副本(大约要 100~300 个时钟周期)
