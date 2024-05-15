@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "582607229ab83944",
+        "id": "5e3d891e117d1f52",
         "type": "tabs",
         "children": [
           {
-            "id": "3691bab2c56aaaf6",
+            "id": "29ad76ac1cd468a0",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Develop/Golang/go-os-scheduler.md",
+                "file": "AI/vscode-ollama.md",
                 "mode": "preview",
                 "backlinks": false,
                 "source": true
@@ -86,7 +86,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Develop/Golang/go-os-scheduler.md"
+                "file": "AI/vscode-ollama.md"
               }
             }
           },
@@ -96,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Develop/Golang/go-os-scheduler.md",
+                "file": "AI/vscode-ollama.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Develop/Golang/go-os-scheduler.md",
+                "file": "AI/vscode-ollama.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -177,10 +177,11 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "3691bab2c56aaaf6",
+  "active": "29ad76ac1cd468a0",
   "lastOpenFiles": [
-    "Develop/Golang/go-std-lib-net-http.md",
+    "AI/vscode-ollama.md",
     "Develop/Golang/go-os-scheduler.md",
+    "Develop/Golang/go-std-lib-net-http.md",
     "Devops/Docker/learn-docker-01.md",
     "Devops/Docker/docker-sudo.md",
     "README.md",
@@ -207,7 +208,6 @@
     "Develop/Golang/go-embed.md",
     "Develop/Golang/gin.md",
     "Awesome.loom",
-    "Tool/awesome-software.md",
     "AI/StableDiffusion",
     "local",
     "Collect/Untitled.loom",
