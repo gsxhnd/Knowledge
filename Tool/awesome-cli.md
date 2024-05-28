@@ -26,9 +26,6 @@ created: 2024-03-11 15:49
 - httpie
 - duf
 - erdtree
-- ranger
-- joshuto
-- fzf
 - awk
 - grep
 - go-task
@@ -38,6 +35,13 @@ created: 2024-03-11 15:49
 - k6
 - mdbook
 - pandoc
+
+### File show tool
+
+- ranger
+- fzf
+- joshuto
+- superfile <https://github.com/yorukot/superfile>
 
 ## Docker & K8s
 
