@@ -19,11 +19,11 @@ _提供了一系列代码设计模式，帮助 Rust 开发者高效解决常见�
 - itertools: 提供了一系列额外的迭代器适配器、方法和宏，扩展了 Rust 标准库中的迭代器功能。
 - once_cell: 提供了全局和本地懒加载变量的支持，允许单次初始化后的不可变访问。
 - eyre: 提供了一种高度灵活的错误处理和报告方式，允许开发者定义错误报告的样式和上下文。
-- ordered\-float: 提供了浮点数封装器，使得不稳定的浮点数可以被完全排序，从而在集合类型等场合中使用。
+- ordered-float: 提供了浮点数封装器，使得不稳定的浮点数可以被完全排序，从而在集合类型等场合中使用。
 - bytes: 专注于字节序列操作的库，用于简化字节切片（如网络缓冲）的处理。
 - indoc: 一个宏，用于在源代码中嵌入经过适当缩进处理的多行字符串字面量，增强可读性。
 - volatile: 提供了对原始指针的封装，允许更安全的对内存进行易失（volatile）读写操作。
-- dyn\-hash: 提供了可以操作动态（dyn）类型对象的 Hash 特征，用于构建能够接受任何实现了该特征的对象的通用哈希集合。
+- dyn-hash: 提供了可以操作动态（dyn）类型对象的 Hash 特征，用于构建能够接受任何实现了该特征的对象的通用哈希集合。
 - glib: Rust 语言中 GLib 库的绑定，使得开发者可以在 Rust 中使用 GLib 及相关库提供的底层操作和结构。
 - const-type-layout: 通过派生宏相对于原生 Rust 类型描述（TypeLayout），实现了类型布局信息的常量表示，有利于在编译时检查结构体布局。
 - rustler: 一个允许 Rust 代码以外部函数接口的形式集成到 Erlang 虚拟机的框架。
@@ -318,7 +318,7 @@ _将数据从一种格式编码和/或解码为另一种格式。_
 - prost：一个 Protocol Buffers（被广泛使用的跨语言的结构数据序列化格式）的 Rust 实现。
 - encoding_rs：Mozilla 开发的编码库，主要用于 Firefox，实现了在 Web 中广泛使用的字符编码。
 - protobuf：Rust 版本的 Google Protocol Buffers，一个灵活的数据序列化工具，广泛用于远程过程调用和数据交换。
-- erased\-serde：提供类型擦除的序列化特征的库，允许在不知道具体类型的情况下对数据进行序列化和反序列化。
+- erased-serde：提供类型擦除的序列化特征的库，允许在不知道具体类型的情况下对数据进行序列化和反序列化。
 - serde-wasm-bindgen：整合了 serde 和 wasm-bindgen，用以在 WebAssembly 绑定中使用 Serde 序列化和反序列化。
 - bs58：实现 Base58 编码和解码的库，常用于比特币和其他加密货币中。
 - rkyv：专注性能，为 Rust 提供无需序列化和反序列化即可读取的二进制格式。
@@ -438,7 +438,7 @@ _底层工具和解析器生成器。_
 - pom：基于 PEG（解析表达式文法）的解析器组合子库，使用 Rust 操作符重载方便地定义解析规则，无需宏。
 - pest_meta：处理 pest 定义的语法，并提供解析器和验证器。
 - yap：一个轻量级，并且没有依赖的解析库，但当前知识库中没有预存信息，保留原描述。
-- yggdrasil\-rt：是一个库，但当前知识库中没有预存信息，保留原描述。
+- yggdrasil-rt：是一个库，但当前知识库中没有预存信息，保留原描述。
 - derive-finite-automaton：一个过程宏，帮助生成有限状态自动机。
 - parol_runtime：是’parol’解析器生成器所生成的解析器的运行时支持库。
 - ruly2：一个可以基于上下文无关的文法规则生成解析器的库。
@@ -882,7 +882,7 @@ _不依赖 Rust 标准库的类库。_
 - hash32 ：32 位哈希算法
 - mc-sgx-util ：被 SGX 类库共享使用的工具集
 - constgebra ：常量线性代数
-- rawbytes ：将任意大小的值视为&\[u8\]来查看/访问
+- rawbytes ：将任意大小的值视为&[u8]来查看/访问
 - riot-wrappers ：为 RIOT 操作系统提供的 Rust API 包装器
 - cranelift-module ：支持使用 Cranelift 链接函数和数据
 - cranelift-entity ：使用实体引用作为映射键的数据结构
@@ -1004,7 +1004,7 @@ _用于创建游戏的 Crates。_
 _分类描述: 绑定到特定 Unix API 的库。_
 
 - rustix：对 POSIX/Unix/Linux/Winsock 类似系统调用的安全 Rust 绑定。
-- nix：对 \*nix API 的 Rust 友好绑定。
+- nix：对 nix API 的 Rust 友好绑定。
 - zbus：用于 D-Bus 通信的 API。
 - dbus：绑定到 D-Bus，这是常见的总线系统。
 - arboard：处理操作系统剪贴板的图像和文本。

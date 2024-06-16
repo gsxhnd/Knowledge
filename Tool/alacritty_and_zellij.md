@@ -1,3 +1,12 @@
+---
+title: Alacritty && Tmux 复用终端
+created: 2024-03-11 15:49
+tags:
+  - Tool
+---
+
+<!-- markdownlint-disable MD025 -->
+
 # alacritty_and_zellij
 
 ## zellij 终端复用工具
