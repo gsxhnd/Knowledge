@@ -8,6 +8,14 @@ title:  Knowledge 目录
 
 - [Awesome CLI](./tool/awesome-cli.md)
 - [Awesome Software](./tool/awesome-software.md)
+- [NeoVim](./Tool/NeoVim.md)
+- [终端工具 Alacritty](./Tool/alacritty_and_zellij.md)
+
+## AI 目录
+
+- [零基础入门深度学习系列](AI/零基础入门深度学习系列/01.零基础入门深度学习.md)
+- [LSTM 时间序列任务](AI/LSTM%20时间序列任务/README.md)
+- [深度学习时间序列预测](AI/深度学习时间序列预测/README.md)
 
 ## 算法
 
@@ -25,14 +33,6 @@ title:  Knowledge 目录
 
 - [线性代数](Math/线性代数/00.md)
 - [机器学习线性代数的基础知识](Math/LinearAlgebra/basic_for_ml/README.md)
-
-## AI 目录
-
-- [零基础入门深度学习系列](AI/零基础入门深度学习系列/01.零基础入门深度学习.md)
-- [LSTM 时间序列任务](AI/LSTM%20时间序列任务/README.md)
-- [深度学习时间序列预测](AI/深度学习时间序列预测/README.md)
-
-- Python 目录
 
 ## Game 目录
 
