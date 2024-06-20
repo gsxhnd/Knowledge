@@ -53,20 +53,12 @@
   "Develop/Python/Pandas": "SiPandas",
   "pdf": "FasFilePdf",
   "Math": "FasSquareRootVariable",
-  "Devops/Openwrt": "SiOpenwrt",
   "Templates": "FasFolder",
-  "Devops/Grafana/Loki": "FasFolder",
-  "Devops/Grafana/Agent": "FasFolder",
-  "Devops/Grafana/Tempo": "FasFolder",
-  "Devops/Grafana/Promtail": "FasFolder",
   "Game/Godot": "SiGodotengine",
   "Devops/Docker": "FabDocker",
   "Develop/wgpu": "SiNvidia",
   "Algorithmica": "SiLeetcode",
-  "Develop/Typescript": "SiTypescript",
-  "Develop/Web": "SiHtml5",
   "Develop/Web/Vue": "FabVuejs",
   "Develop/Web/Vite": "SiVite",
-  "Develop/Nodejs": "FabNodeJs",
-  "Develop/Nodejs/Nodemon.md": "SiNodemon"
+  "Develop/Nodejs": "SiHtml5"
 }

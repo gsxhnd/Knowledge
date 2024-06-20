@@ -10,15 +10,9 @@ title:  Knowledge 目录
 - [Awesome Software](./tool/awesome-software.md)
 - [NeoVim](./Tool/NeoVim.md)
 - [终端工具 Alacritty](./Tool/alacritty_and_zellij.md)
-
-## AI 目录
-
-- [零基础入门深度学习系列](AI/零基础入门深度学习系列/01.零基础入门深度学习.md)
-- [LSTM 时间序列任务](AI/LSTM%20时间序列任务/README.md)
-- [深度学习时间序列预测](AI/深度学习时间序列预测/README.md)
-- [ReLU](AI/relu.md)
-- [ResNew](AI/resnet.md)
-- [Suphx](AI/suphx.md)
+- [AI](./AI/0.md)
+- [算法](./Algorithmica/0.md)
+- [OpenWRT](./Tool/Openwrt/0.md)
 
 ## 算法
 
@@ -26,7 +20,11 @@ title:  Knowledge 目录
 
 - [Golang](Develop/Golang/0.md)
 - [Python](Develop/Python/README.md)
-- [Web](Develop/Web/README.md)
+- [Web](Develop/Nodejs/README.md)
+- [Clang](./Develop/Clang/00.md)
+- [Rust](./Develop/Rust/0.md)
+- [wgpu](./Develop/wgpu/0.md)
+- [Git](./Develop/Git/0.md)
 - [压力测试工具 K6](Develop/Test/k6.md)
 
 ## Devops
@@ -34,6 +32,8 @@ title:  Knowledge 目录
 - [Kubernetes](Devops/Kubernetes/README.md)
 - [Docker](Devops/Docker/0.md)
 - [Grafan  监控](Devops/Grafana/grafana监控体系.md)
+  - [Promtail](Devops/Grafana/promtail.md)
+  - [Loki](Devops/Grafana/loki.md)
 
 ## Math
 
@@ -43,6 +43,7 @@ title:  Knowledge 目录
 ## Game 目录
 
 [godot 游戏引擎](Game/Godot/README.md)
+[Screeps](Game/Screeps.md)
 
 ## 博客列表
 

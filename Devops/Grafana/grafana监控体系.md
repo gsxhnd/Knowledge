@@ -16,6 +16,7 @@ created: 2024-04-22 09:54
 Grafana: 监控面板 Dashboard
 Grafane Loki: 日志收集程序
 Grafana Tempo: Trace 收集
+Promtail
 Prometheus: 指标收集程序
 Vector: 收集数据的 pipeline <https://github.com/vectordotdev/vector>
 OpenTelemetry <https://opentelemetry.io/>

@@ -4,32 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "9f296fc5218c3510",
+        "id": "8983ea46a0c0ecfc",
         "type": "tabs",
         "children": [
           {
-            "id": "ff3f5ce29d1ae6c1",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
-                "mode": "preview",
-                "backlinks": false,
-                "source": true
-              }
-            }
-          },
-          {
-            "id": "8959d20c95a27db5",
+            "id": "6ad08cac5d6914f5",
             "type": "leaf",
             "state": {
               "type": "graph",
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -174,44 +160,44 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "8959d20c95a27db5",
+  "active": "6ad08cac5d6914f5",
   "lastOpenFiles": [
-    "Develop/Golang/int_to_hex.md",
-    "Develop/Golang/golang-strconv.md",
-    "Develop/Golang/go-std-lib-net-http.md",
-    "Develop/Golang/go-os-scheduler.md",
-    "Develop/Golang/go-embed.md",
-    "Develop/Golang/gin.md",
-    "Devops/Grafana/Tempo/00.md",
-    "Devops/Grafana/Tempo/tempo.md",
-    "Develop/Web/README.md",
-    "README.md",
-    "Develop/Web/vite/vite.md",
-    "Develop/Web/0.md",
-    "Develop/Web/vue/README.md",
-    "Develop/Python/decorator.md",
-    "Develop/Python/README.md",
-    "Develop/Python/Pandas/data-struct-intro.md",
-    "Algorithmica/README.md",
-    "Devops/Docker/learn-docker-04.md",
-    "AI/vscode-ollama.md",
-    "AI/resnet.md",
-    "Develop/Golang/0.md",
-    "basics.html.md",
-    "Develop/Git/git-commit-changelog-ref.md",
-    "Develop/Clang/00.md",
-    "Devops/Grafana/Loki/Untitled.md",
+    "Tool/Openwrt/0.md",
+    "Tool/Openwrt",
+    "Devops/Openwrt/Untitled.md",
+    "Devops/Openwrt/0.md",
+    "Develop/wgpu/0.md",
+    "Develop/wgpu/README.md",
+    "Devops/Grafana/loki.md",
+    "Devops/Grafana/Loki/loki.md",
+    "Devops/Grafana/promtail.md",
+    "Devops/Grafana/Untitled.md",
     "Devops/Grafana/Promtail/Untitled.md",
+    "Develop/Nodejs/README.md",
+    "README.md",
+    "Develop/Web/README.md",
     "Develop/Web",
+    "Develop/Golang/go-embed.md",
+    "Develop/Nodejs/Nodemon.md",
+    "Develop/Nodejs/Nodemon.md",
+    "Develop/Nodejs/Typescript",
+    "Develop/Nodejs/Typescript",
+    "Devops/Grafana/Agent/Untitled.md",
+    "Math/LinearAlgebra/basic_for_ml/README.md",
+    "Math/LinearAlgebra/basic_for_ml/ch-01.md",
+    "Develop/Typescript/未命名.md",
+    "Algorithmica/0.md",
+    "Develop/Python/Numpy/Untitled.md",
+    "AI/0.md",
+    "AI/StableDiffusion/ComfyUI指南.md",
+    "Develop/Git/0.md",
+    "Develop/Rust/0.md",
+    "Develop/Nodejs",
     "Develop/wgpu",
     "Game/Godot",
     "Awesome.loom",
     "AI/StableDiffusion",
     "local",
-    "Collect/Untitled.loom",
-    "Collect",
-    "Templates/Untitled.loom",
-    "Software Awesome.loom",
     "Math/线性代数/image.png",
     "AI.canvas",
     "assets/Untitled.canvas",

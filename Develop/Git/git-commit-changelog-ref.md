@@ -1,8 +1,8 @@
 ---
 title: Commit和Changelog编写指南
+created: 2019/12/08 02:29
 tags:
   - Git
-created: 2019/12/08 02:29
 ---
 
 ## Commit message
