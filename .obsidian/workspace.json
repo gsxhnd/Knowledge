@@ -4,18 +4,32 @@
     "type": "split",
     "children": [
       {
-        "id": "0d96654c335a3f50",
+        "id": "9f296fc5218c3510",
         "type": "tabs",
         "children": [
           {
-            "id": "abdab723d459fda5",
+            "id": "ff3f5ce29d1ae6c1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "preview",
+                "backlinks": false,
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "8959d20c95a27db5",
             "type": "leaf",
             "state": {
               "type": "graph",
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -44,7 +58,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "[\"tags\"]",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -142,7 +156,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -160,35 +174,35 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "abdab723d459fda5",
+  "active": "8959d20c95a27db5",
   "lastOpenFiles": [
+    "Develop/Golang/int_to_hex.md",
+    "Develop/Golang/golang-strconv.md",
+    "Develop/Golang/go-std-lib-net-http.md",
+    "Develop/Golang/go-os-scheduler.md",
+    "Develop/Golang/go-embed.md",
+    "Develop/Golang/gin.md",
+    "Devops/Grafana/Tempo/00.md",
+    "Devops/Grafana/Tempo/tempo.md",
+    "Develop/Web/README.md",
     "README.md",
+    "Develop/Web/vite/vite.md",
+    "Develop/Web/0.md",
+    "Develop/Web/vue/README.md",
+    "Develop/Python/decorator.md",
+    "Develop/Python/README.md",
+    "Develop/Python/Pandas/data-struct-intro.md",
+    "Algorithmica/README.md",
+    "Devops/Docker/learn-docker-04.md",
+    "AI/vscode-ollama.md",
+    "AI/resnet.md",
     "Develop/Golang/0.md",
     "basics.html.md",
     "Develop/Git/git-commit-changelog-ref.md",
     "Develop/Clang/00.md",
     "Devops/Grafana/Loki/Untitled.md",
     "Devops/Grafana/Promtail/Untitled.md",
-    "Devops/Grafana/Tempo/00.md",
-    "Develop/Golang/int_to_hex.md",
-    "Develop/Golang/golang-strconv.md",
-    "Develop/Golang/go-os-scheduler.md",
-    "Develop/Golang/go-embed.md",
-    "Develop/Golang/gin.md",
-    "Develop/Nodejs/Nodemon.md",
-    "Develop/Typescript/未命名.md",
-    "Develop/Web/Vue/00.md",
-    "Develop/Python/decorator.md",
-    "Develop/Python/README.md",
     "Develop/Web",
-    "md_test.md",
-    "Devops/Docker/learn-docker-01.md",
-    "Devops/Docker/0.md",
-    "Devops/Docker/docker-sudo.md",
-    "Devops/Kubernetes/README.md",
-    "Devops/README.md",
-    "Devops/Kubernetes/minikube.md",
-    "Devops/Kubernetes/kind.md",
     "Develop/wgpu",
     "Game/Godot",
     "Awesome.loom",

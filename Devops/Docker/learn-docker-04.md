@@ -41,9 +41,9 @@ Docker host 的另一个用途是让容器可以直接配置 host 网路。比�
 
 Docker 安装时会创建一个 命名为 `docker0` 的 linux bridge。如果不指定`--network`，创建的容器默认都会挂到 `docker0` 上
 
-brctl show #查看 bridge 网络 yum install bridge-utils
+brctl show 查看 bridge 网络 yum install bridge-utils
 
-docker network inspect bridge #查看 bridge 网络的详细信息
+docker network inspect bridge 查看 bridge 网络的详细信息
 
 ```shell
 [

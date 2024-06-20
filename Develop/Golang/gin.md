@@ -2,7 +2,7 @@
 title: Go Gin 框架原理分析
 created: 2024-04-08 17:21
 tags:
-  - go
+  - Golang
 ---
 
 <!-- markdownlint-disable MD025 -->

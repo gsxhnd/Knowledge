@@ -16,12 +16,18 @@ title:  Knowledge 目录
 - [零基础入门深度学习系列](AI/零基础入门深度学习系列/01.零基础入门深度学习.md)
 - [LSTM 时间序列任务](AI/LSTM%20时间序列任务/README.md)
 - [深度学习时间序列预测](AI/深度学习时间序列预测/README.md)
+- [ReLU](AI/relu.md)
+- [ResNew](AI/resnet.md)
+- [Suphx](AI/suphx.md)
 
 ## 算法
 
 ## Develop
 
 - [Golang](Develop/Golang/0.md)
+- [Python](Develop/Python/README.md)
+- [Web](Develop/Web/README.md)
+- [压力测试工具 K6](Develop/Test/k6.md)
 
 ## Devops
 

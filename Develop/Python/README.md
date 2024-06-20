@@ -13,6 +13,5 @@ created: 2023-09-18 20:34:06
   - [什么是 NumPy?](doc/numpy/01-whatisnumpy.md)
   - [快速入门教程](doc/numpy/02-quickstart.md)
   - [理解 NumPy](doc/numpy/understanding_numpy.md)
-- [Pandas](doc/pandas/README.md)
-  - [十分钟入门 Pandas](doc/pandas/10min.md)
-  - [数据结构简介](doc/pandas/dsintro.md)
+- [Pandas]
+  - [数据结构简介](Pandas/data-struct-intro.md)

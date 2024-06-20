@@ -1,6 +1,8 @@
 ---
 title: Go中的调度 OS Scheduler
 created: 2023-01-20 08:22:19
+tags:
+  - Golang
 ---
 
 <!-- markdownlint-disable MD025 MD010-->
