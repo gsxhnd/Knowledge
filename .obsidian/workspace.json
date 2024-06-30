@@ -4,15 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "8983ea46a0c0ecfc",
+        "id": "650fa99d34cb12aa",
         "type": "tabs",
         "children": [
           {
-            "id": "6ad08cac5d6914f5",
+            "id": "373cda367a6bceb3",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "AI/vscode-ollama.md",
+                "mode": "preview",
+                "backlinks": false,
+                "source": true
+              }
             }
           }
         ]
@@ -80,7 +85,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "AI/vscode-ollama.md"
+              }
             }
           },
           {
@@ -89,6 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "AI/vscode-ollama.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,6 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "AI/vscode-ollama.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -160,8 +169,11 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "6ad08cac5d6914f5",
+  "active": "d942cd7175632e0f",
   "lastOpenFiles": [
+    "未命名.md",
+    "md_test.md",
+    "README.md",
     "Tool/Openwrt/0.md",
     "Tool/Openwrt",
     "Devops/Openwrt/Untitled.md",
@@ -174,7 +186,6 @@
     "Devops/Grafana/Untitled.md",
     "Devops/Grafana/Promtail/Untitled.md",
     "Develop/Nodejs/README.md",
-    "README.md",
     "Develop/Web/README.md",
     "Develop/Web",
     "Develop/Golang/go-embed.md",
@@ -190,8 +201,6 @@
     "Develop/Python/Numpy/Untitled.md",
     "AI/0.md",
     "AI/StableDiffusion/ComfyUI指南.md",
-    "Develop/Git/0.md",
-    "Develop/Rust/0.md",
     "Develop/Nodejs",
     "Develop/wgpu",
     "Game/Godot",
