@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AI/vscode-ollama.md",
+                "file": "Math/base/integer.md",
                 "mode": "preview",
                 "backlinks": false,
                 "source": true
@@ -70,7 +70,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 281.5
+    "width": 281.5,
+    "collapsed": true
   },
   "right": {
     "id": "4ee431d29ea81c75",
@@ -86,7 +87,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "AI/vscode-ollama.md"
+                "file": "Math/base/integer.md"
               }
             }
           },
@@ -96,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "AI/vscode-ollama.md",
+                "file": "Math/base/integer.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "AI/vscode-ollama.md",
+                "file": "Math/base/integer.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -155,7 +156,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 273.5
+    "width": 273.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -171,6 +173,10 @@
   },
   "active": "d942cd7175632e0f",
   "lastOpenFiles": [
+    "AI/vscode-ollama.md",
+    "Math/base/integer.md",
+    "Math/base/int.md",
+    "Math/base/Integer.md",
     "未命名.md",
     "md_test.md",
     "README.md",
@@ -197,10 +203,6 @@
     "Math/LinearAlgebra/basic_for_ml/README.md",
     "Math/LinearAlgebra/basic_for_ml/ch-01.md",
     "Develop/Typescript/未命名.md",
-    "Algorithmica/0.md",
-    "Develop/Python/Numpy/Untitled.md",
-    "AI/0.md",
-    "AI/StableDiffusion/ComfyUI指南.md",
     "Develop/Nodejs",
     "Develop/wgpu",
     "Game/Godot",
