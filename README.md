@@ -13,6 +13,7 @@ title:  Knowledge 目录
 - [AI](./AI/0.md)
 - [算法](./Algorithmica/0.md)
 - [OpenWRT](./Tool/Openwrt/0.md)
+- [Math](./Math/math.md)
 
 ## 算法
 
@@ -34,11 +35,6 @@ title:  Knowledge 目录
 - [Grafan  监控](Devops/Grafana/grafana监控体系.md)
   - [Promtail](Devops/Grafana/promtail.md)
   - [Loki](Devops/Grafana/loki.md)
-
-## Math
-
-- [线性代数](Math/线性代数/00.md)
-- [机器学习线性代数的基础知识](Math/LinearAlgebra/basic_for_ml/README.md)
 
 ## Game 目录
 

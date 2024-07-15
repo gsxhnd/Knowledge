@@ -4,15 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "fe1e3d492427c984",
+        "id": "3f121153b67876b3",
         "type": "tabs",
         "children": [
           {
-            "id": "8fe244301c204e97",
+            "id": "a060d50f91ad59fa",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Math/base/euclidean.md",
+                "mode": "preview",
+                "backlinks": false,
+                "source": true
+              }
             }
           }
         ]
@@ -80,7 +85,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Math/base/euclidean.md"
+              }
             }
           },
           {
@@ -89,6 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Math/base/euclidean.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,6 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Math/base/euclidean.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -161,8 +170,14 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "8fe244301c204e97",
+  "active": "a060d50f91ad59fa",
   "lastOpenFiles": [
+    "Math/base/euclidean.md",
+    "Math/base/prime.md",
+    "Math/base/euclidean",
+    "Math/math.md",
+    "README.md",
+    "md_test.md",
     "Develop/Test/k6.md",
     "Develop/Nodejs/README.md",
     "Develop/Nodejs/Nodemon.md",
@@ -177,8 +192,6 @@
     "Math/base/int.md",
     "Math/base/Integer.md",
     "未命名.md",
-    "md_test.md",
-    "README.md",
     "Tool/Openwrt/0.md",
     "Tool/Openwrt",
     "Devops/Openwrt/Untitled.md",
@@ -187,9 +200,6 @@
     "Develop/wgpu/README.md",
     "Devops/Grafana/loki.md",
     "Devops/Grafana/Loki/loki.md",
-    "Devops/Grafana/promtail.md",
-    "Devops/Grafana/Untitled.md",
-    "Devops/Grafana/Promtail/Untitled.md",
     "Develop/Web",
     "Develop/Nodejs/Typescript",
     "Develop/Nodejs/Typescript",
@@ -198,7 +208,6 @@
     "Game/Godot",
     "Awesome.loom",
     "AI/StableDiffusion",
-    "local",
     "Math/线性代数/image.png",
     "AI.canvas",
     "assets/Untitled.canvas",

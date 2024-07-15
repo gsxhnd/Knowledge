@@ -2,9 +2,8 @@
 title: 整数运算基础
 created: 2024-07-04 16:55
 tags:
-  - zk
   - basic
-  - integer
+  - math
 ---
 
 <!-- markdownlint-disable MD025 -->
