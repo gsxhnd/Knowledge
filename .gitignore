@@ -2,3 +2,4 @@ Docker/book
 .DS_Store
 local/
 .obsidian/graph.json
+.obsidian/workspace-mobile.json
