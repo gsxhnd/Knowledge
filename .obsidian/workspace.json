@@ -4,20 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "650fa99d34cb12aa",
+        "id": "d941b8cadbab452d",
         "type": "tabs",
         "children": [
           {
-            "id": "373cda367a6bceb3",
+            "id": "c8848cd8811fc21a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Math/base/integer.md",
-                "mode": "preview",
-                "backlinks": false,
-                "source": true
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -70,8 +65,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 281.5,
-    "collapsed": true
+    "width": 281.5
   },
   "right": {
     "id": "4ee431d29ea81c75",
@@ -86,9 +80,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Math/base/integer.md"
-              }
+              "state": {}
             }
           },
           {
@@ -97,7 +89,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Math/base/integer.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +105,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Math/base/integer.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -171,10 +161,19 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "d942cd7175632e0f",
+  "active": "c8848cd8811fc21a",
   "lastOpenFiles": [
-    "AI/vscode-ollama.md",
+    "Develop/Test/k6.md",
+    "Develop/Nodejs/README.md",
+    "Develop/Nodejs/Nodemon.md",
+    "Develop/Golang/go-std-lib-net-http.md",
+    "Develop/Golang/golang-strconv.md",
+    "Develop/Golang/int_to_hex.md",
+    "Develop/Golang/go-os-scheduler.md",
+    "Develop/Golang/go-embed.md",
+    "Develop/Golang/gin.md",
     "Math/base/integer.md",
+    "AI/vscode-ollama.md",
     "Math/base/int.md",
     "Math/base/Integer.md",
     "未命名.md",
@@ -191,18 +190,9 @@
     "Devops/Grafana/promtail.md",
     "Devops/Grafana/Untitled.md",
     "Devops/Grafana/Promtail/Untitled.md",
-    "Develop/Nodejs/README.md",
-    "Develop/Web/README.md",
     "Develop/Web",
-    "Develop/Golang/go-embed.md",
-    "Develop/Nodejs/Nodemon.md",
-    "Develop/Nodejs/Nodemon.md",
     "Develop/Nodejs/Typescript",
     "Develop/Nodejs/Typescript",
-    "Devops/Grafana/Agent/Untitled.md",
-    "Math/LinearAlgebra/basic_for_ml/README.md",
-    "Math/LinearAlgebra/basic_for_ml/ch-01.md",
-    "Develop/Typescript/未命名.md",
     "Develop/Nodejs",
     "Develop/wgpu",
     "Game/Godot",
