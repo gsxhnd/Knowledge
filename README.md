@@ -10,7 +10,7 @@ title:  Knowledge 目录
 - [Awesome Software](./tool/awesome-software.md)
 - [NeoVim](./Tool/NeoVim.md)
 - [终端工具 Alacritty](./Tool/alacritty_and_zellij.md)
-- [AI](./AI/0.md)
+- [AI](./AI/README.md)
 - [算法](./Algorithmica/0.md)
 - [OpenWRT](./Tool/Openwrt/0.md)
 - [Math](./Math/math.md)
