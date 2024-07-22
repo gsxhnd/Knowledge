@@ -38,8 +38,8 @@ title:  Knowledge 目录
 
 ## Game 目录
 
-[godot 游戏引擎](Game/Godot/README.md)
-[Screeps](Game/Screeps.md)
+- [godot 游戏引擎](Game/Godot/README.md)
+- [Screeps](Game/Screeps.md)
 
 ## 博客列表
 
