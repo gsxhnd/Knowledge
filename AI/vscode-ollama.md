@@ -7,9 +7,7 @@ created: 2024-05-15 13:32
 
 # 本地实现 github copilot: ollama + vscode
 
-## 安装 ollama
-
-<https://ollama.com/>
+## 安装 ollama ^[https://ollama.com/]
 
 ```shell
 brew install ollama
@@ -24,6 +22,8 @@ ollama run <Model>
 搜索安装 Continue
 
 ### 配置
+
+使用 [deepseek](https://platform.deepseek.com/)
 
 ````json
 {

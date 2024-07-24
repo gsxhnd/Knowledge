@@ -1,5 +1,5 @@
 ---
-title: 07.长短时记忆网络(LSTM)
+title: 长短时记忆网络(LSTM)
 tags:
   - 深度学习
   - AI
