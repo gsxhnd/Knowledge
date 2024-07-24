@@ -4,6 +4,8 @@ created: 2023-09-27 09:38
 ---
 
 <!-- markdownlint-disable MD025 -->
+<!-- markdownlint-disable MD033 -->
+<!-- markdownlint-disable MD049 -->
 
 # Suphx：掌握麻将与深度强化学习
 
@@ -70,7 +72,7 @@ created: 2023-09-27 09:38
 Suphx 学习过程分三个阶段
 
 - 通过监督学习训练 5 个模型。训练用的 (state, action) 对来自天凤平台。
-- 用训练过的模型作为策略进行 _self-play_， 并通过*熵正则化分布式强化学习（Distributed Reinforcement Learning with Entropy Regularization）*来更新策略。在训练过程中使用了*全局奖励预测（global reward predictction）*和*先知教练（oracle guiding）*来处理麻将中特有的困难之处。
+- 用训练过的模型作为策略进行 _self-play_， 并通过*熵正则化分布式强化学习（Distributed Reinforcement Learning with Entropy Regularization）*来更新策略。在训练过程中使用了*全局奖励预测（global reward predictction）* 和*先知教练（oracle guiding）*来处理麻将中特有的困难之处。
 - 在 online playing 过程中使用了*运行时策略适应（run-time policy adaption）*来针对本局游戏的初始状态进行调整以获得更好的表现
 
 #### 强化学习
