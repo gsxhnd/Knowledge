@@ -31,7 +31,7 @@ created: 2023-09-27 09:38
 
 日本麻将中总共有 34 张不同的牌，所以 Suphx 中使用多个 `34 × 1` 的通道来表示场上的状态，比如手牌可以用四个通道来编码，如下图所示：
 
-![fig3]
+![fig3](https://pic-1257414393.cos.ap-hongkong.myqcloud.com/Knowledge/e1534208369f287b353310fb730a5c79.png)
 
 类似的，副露、宝牌以及舍牌顺序也通过这种方式进行编码。分类特征（categorical feature）用全为`0`或`1`的多个通道来编码。整数特征（integer feature）则会被区间化，然后每个区间用全为`0`或`1`的通道来编码。
 
@@ -123,8 +123,6 @@ self-play
 ## 尾
 
 论文地址： <https://arxiv.org/pdf/2003.13590.pdf>
-
-[fig3]: https://pic-1257414393.cos.ap-hongkong.myqcloud.com/tenpai_project/suphx_figure_3.png
 
 - <https://blog.csdn.net/u013169673/article/details/105486469/>
 - <https://blog.csdn.net/qq_42914528/article/details/105383642>
