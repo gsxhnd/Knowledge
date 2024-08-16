@@ -3,5 +3,6 @@
   "templater-obsidian",
   "obsidian-icon-folder",
   "obsidian-minimal-settings",
-  "obsidian-front-matter-title-plugin"
+  "obsidian-front-matter-title-plugin",
+  "file-order"
 ]

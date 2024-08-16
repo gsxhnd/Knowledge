@@ -31,7 +31,6 @@
     "iconsInLinksEnabled": true,
     "debugMode": false
   },
-  "README.md": "FabReadme",
   "AI": "SiPytorch",
   "AI/lstm_network": "SiOpenai",
   "AI/learn-dl": "SiOpenai",

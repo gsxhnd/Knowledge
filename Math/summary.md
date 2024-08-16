@@ -1,11 +1,11 @@
 ---
-title: Math
+title: Math Summary
 created: 2024-07-15 15:38
 ---
 
 <!-- markdownlint-disable MD025 -->
 
-# Math
+# Math Summary
 
 ## 数学基础
 
