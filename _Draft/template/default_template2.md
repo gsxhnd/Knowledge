@@ -1,6 +1,8 @@
 ---
 title: {{title}}
-created_at: {{date}} {{time}}
+created: {{date}} {{time}}
 ---
+
+<!-- markdownlint-disable MD025 -->
 
 # {{title}}
