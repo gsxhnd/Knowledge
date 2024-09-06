@@ -8,7 +8,7 @@ tags:
 
 <!-- markdownlint-disable MD025 -->
 
-# 整数运算基础
+# 整数运算基础 [^1]
 
 ## 1. 基本定义
 
@@ -105,3 +105,5 @@ quotient, remainder = euclidean_division(a, b)
 print(f'除法示例: 商为 {quotient}, 余数为 {remainder}')
 # 除法示例: 商为 1, 余数为 2
 ```
+
+[^1]: 原文 : <https://github.com/WTFAcademy/WTF-zk/blob/main/01_Integer/readme.md>
