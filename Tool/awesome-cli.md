@@ -55,7 +55,7 @@ created: 2024-03-11 15:49
 ## Git
 
 - lazygit
-- onefetch 查看 Git 信息的命令行工具 <https://github.com/o2sh/onefetch>
+- onefetch 查看 Git 信息的命令行工具 [Github](https://github.com/o2sh/onefetch) [Homepage](https://onefetch.dev/)
 
 ## Dev
 
