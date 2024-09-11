@@ -6,11 +6,11 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "SiJavascript",
       "SiOpenaigym",
       "SiKubernetes",
       "SiGrafana",
-      "LiPenBox",
-      "SiDocker"
+      "LiPenBox"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -54,9 +54,9 @@
   "Algorithmica": "SiLeetcode",
   "Develop/Web/Vue": "FabVuejs",
   "Develop/Web/Vite": "SiVite",
-  "Develop/Nodejs": "SiHtml5",
   "Develop/Docker": "SiDocker",
   "Develop/Grafana": "SiGrafana",
   "Develop/Kubernetes": "SiKubernetes",
-  "_Draft": "LiPenBox"
+  "_Draft": "LiPenBox",
+  "Develop/JavaScript": "SiJavascript"
 }
