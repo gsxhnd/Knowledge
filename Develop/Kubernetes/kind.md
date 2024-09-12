@@ -1,6 +1,8 @@
 ---
 title: Kind 使用指南
 created: 2024-08-10 11:34
+tags:
+  - Kubernetes
 ---
 
 <!-- markdownlint-disable MD025 -->
