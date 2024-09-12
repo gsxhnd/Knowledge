@@ -13,13 +13,13 @@ created: 2024-04-22 09:54
 2. Trace
 3. Metrics
 
-Grafana: 监控面板 Dashboard
-Grafane Loki: 日志收集程序
-Grafana Tempo: Trace 收集
-Promtail
-Prometheus: 指标收集程序
-Vector: 收集数据的 pipeline <https://github.com/vectordotdev/vector>
-OpenTelemetry <https://opentelemetry.io/>
+- [Grafana](./grafana.md): 监控面板 Dashboard
+- Grafane [Loki](./loki.md): 日志
+- Grafana Tempo^[https://grafana.com/oss/tempo/]: 链路追踪
+- [Prometheus](./prometheus.md)^[https://prometheus.io/]: 指标、告警
+- [Minio](../Database/minio.md): 数据持久化存储
+- Vector ^[https://github.com/vectordotdev/vector]^[https://vector.dev/]: 收集数据的 pipeline <>
+- OpenTelemetry^[https://opentelemetry.io]
 
 ![otel](https://opentelemetry.io/img/otel-diagram.svg)
 

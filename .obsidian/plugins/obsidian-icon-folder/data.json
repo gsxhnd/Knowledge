@@ -6,11 +6,11 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiDatabaseZap",
       "SiJavascript",
       "SiOpenaigym",
       "SiKubernetes",
-      "SiGrafana",
-      "LiPenBox"
+      "SiGrafana"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -58,5 +58,6 @@
   "Develop/Grafana": "SiGrafana",
   "Develop/Kubernetes": "SiKubernetes",
   "_Draft": "LiPenBox",
-  "Develop/JavaScript": "SiJavascript"
+  "Develop/JavaScript": "SiJavascript",
+  "Develop/Database": "LiDatabaseZap"
 }

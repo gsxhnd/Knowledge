@@ -7,7 +7,7 @@ created: 2024-09-06 10:42
 
 # Loki 介绍
 
-Loki 是用来接受、存储、处理、查询日志的集合体。
+Loki^[https://grafana.com/oss/loki/] 是用来接受、存储、处理、查询日志的集合体。
 
 Loki 采用读写分离架构，关键组件有：
 
