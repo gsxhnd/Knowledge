@@ -1,6 +1,8 @@
 ---
 title: ComfyUI 文生图
 created: 2024-09-10 15:59
+tags:
+  - StableDiffusion
 ---
 
 <!-- markdownlint-disable MD025 -->

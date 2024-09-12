@@ -1,6 +1,8 @@
 ---
 title: Stable Diffusion 基础
 created: 2024-09-10 15:22
+tags:
+  - StableDiffusion
 ---
 
 <!-- markdownlint-disable MD025 -->

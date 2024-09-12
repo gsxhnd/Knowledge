@@ -1,6 +1,8 @@
 ---
 title: Loki 介绍
 created: 2024-09-06 10:42
+tags:
+  - Grafana
 ---
 
 <!-- markdownlint-disable MD025 -->

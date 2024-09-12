@@ -1,6 +1,8 @@
 ---
 title: Grafana 监控体系
 created: 2024-04-22 09:54
+tags:
+  - Grafana
 ---
 
 <!-- markdownlint-disable MD025 -->
