@@ -11,7 +11,7 @@ tags:
 
 ## Stable Diffusion 概述
 
-Stable Diffusion（稳定扩散）严格说来它是一个由几个组件（模型）构成的系统，而非单独的一个模型。
+Stable Diffusion（稳定扩散）^[https://stability.ai/stable-image] 严格说来它是一个由几个组件（模型）构成的系统，而非单独的一个模型。
 
 我以最常见的文生图为例，解释下 Stable Diffusion 的整体架构，和工作原理。
 

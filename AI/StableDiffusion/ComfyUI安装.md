@@ -15,6 +15,7 @@ tags:
 - python3.10
 - [pipenv](../../Develop/Python/Pipenv.md)
 - [安装对应的 cuda 版本](../Nvida%20Cuda.md)
+- Apple 硬件加速 <https://developer.apple.com/metal/pytorch/>
 
 ## 安装依赖和运行
 
@@ -38,3 +39,12 @@ python main.py
 
 # 访问网页 http://localhost:8188
 ```
+
+## 模型下载
+
+- civitai <https://civitai.com/>
+- HuggingFace <https://huggingface.co/>
+
+## 插件安装
+
+UI 插件管理 <https://github.com/ltdrdata/ComfyUI-Manager>
