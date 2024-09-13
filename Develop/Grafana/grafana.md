@@ -3,6 +3,7 @@ title: grafana
 created: 2024-09-12 14:52
 tags:
   - Grafana
+  - Monitor
 ---
 
 <!-- markdownlint-disable MD025 -->

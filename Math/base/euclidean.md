@@ -1,6 +1,8 @@
 ---
 title: 欧几里得算法
 created: 2024-07-15 16:28
+tags:
+  - Math
 ---
 
 <!-- markdownlint-disable MD025 -->

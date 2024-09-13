@@ -1,5 +1,7 @@
 ---
 title: 00.机器学习线性代数的基础知识
+tags:
+  - Math
 ---
 
 <!-- markdownlint-disable MD025 -->

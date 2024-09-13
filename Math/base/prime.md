@@ -3,7 +3,7 @@ title: 质数基础
 created: 2024-07-15 15:36
 tags:
   - basic
-  - math
+  - Math
 ---
 
 <!-- markdownlint-disable MD025 -->

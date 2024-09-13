@@ -1,6 +1,8 @@
 ---
 title: 集合 Set
 created: 2024-09-11 15:48
+tags:
+  - Math
 ---
 
 <!-- markdownlint-disable MD025 -->

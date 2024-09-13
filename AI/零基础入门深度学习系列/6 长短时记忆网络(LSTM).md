@@ -3,6 +3,7 @@ title: 长短时记忆网络(LSTM)
 tags:
   - 深度学习
   - AI
+  - LSTM
 ---
 
 <!-- markdownlint-disable MD025 -->

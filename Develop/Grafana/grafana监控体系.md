@@ -20,7 +20,7 @@ tags:
 - Grafana Tempo^[https://grafana.com/oss/tempo/]: 链路追踪
 - [Prometheus](./prometheus.md)^[https://prometheus.io/]: 指标、告警
 - [Minio](../Database/minio.md): 数据持久化存储
-- Vector ^[https://github.com/vectordotdev/vector]^[https://vector.dev/]: 收集数据的 pipeline <>
+- [Vector](./vector.md): 收集数据的 pipeline
 - OpenTelemetry^[https://opentelemetry.io]
 
 ![otel](https://opentelemetry.io/img/otel-diagram.svg)

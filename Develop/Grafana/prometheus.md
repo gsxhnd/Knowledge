@@ -1,6 +1,9 @@
 ---
 title: Prometheus 架构原理
 created: 2024-07-24 13:08
+tags:
+  - Grafana
+  - Monitor
 ---
 
 <!-- markdownlint-disable MD025 -->
