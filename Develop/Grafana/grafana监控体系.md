@@ -16,12 +16,15 @@ tags:
 3. Metrics
 
 - [Grafana](./grafana.md): 监控面板 Dashboard
-- Grafane [Loki](./loki.md): 日志
+- Grafana [Loki](./loki.md): 日志
 - Grafana Tempo^[https://grafana.com/oss/tempo/]: 链路追踪
-- [Prometheus](./prometheus.md)^[https://prometheus.io/]: 指标、告警
+- [Prometheus](./prometheus.md): 指标、告警
 - [Minio](../Database/minio.md): 数据持久化存储
 - [Vector](./vector.md): 收集数据的 pipeline
-- OpenTelemetry^[https://opentelemetry.io]
+- [OpenTelemetry](https://opentelemetry.io)
+- [Fluent Bit](https://docs.fluentbit.io/manual)
+- [Jaeger Tracing](https://www.jaegertracing.io/docs/1.46/)
+- [OpenObserve](https://openobserve.ai/docs/)
 
 ![otel](https://opentelemetry.io/img/otel-diagram.svg)
 

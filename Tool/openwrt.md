@@ -7,6 +7,12 @@ created: 2023-03-23 20:48
 
 # OpenWRT
 
+- [OpenWrt软路由固件下载与在线定制编译](https://openwrt.ai/?target=x86%2F64&id=generic)
+- [OpenWrt 下载](https://supes.top/)
+- [OpenWrt 下载](https://op.supes.top/)
+
+## 手动安装
+
 `sed -ibak 's/https://downloads.openwrt.org/https://downloads.openwrt.org//g' /etc/opkg/distfeeds.conf`
 
 `opkg install luci luci-base luci-compat dnsmasq-full`

@@ -6,11 +6,11 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "SiLinux",
+      "SiEclipsemosquitto",
       "SiWebassembly",
       "LiDatabaseZap",
-      "SiJavascript",
-      "SiOpenaigym",
-      "SiKubernetes"
+      "SiJavascript"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -60,5 +60,7 @@
   "_Draft": "LiPenBox",
   "Develop/JavaScript": "SiJavascript",
   "Develop/Database": "LiDatabaseZap",
-  "Develop/Webassembly": "SiWebassembly"
+  "Develop/Webassembly": "SiWebassembly",
+  "Develop/MQTT": "SiEclipsemosquitto",
+  "Linux": "SiLinux"
 }
