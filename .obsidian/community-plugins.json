@@ -6,5 +6,6 @@
   "obsidian-front-matter-title-plugin",
   "file-order",
   "dashboard-navigator",
-  "dataview"
+  "dataview",
+  "obsidian-table-generator"
 ]

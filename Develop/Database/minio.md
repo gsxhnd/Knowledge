@@ -1,6 +1,8 @@
 ---
 title: minio
 created: 2024-09-12 09:47
+tags:
+  - ObjectStorage
 ---
 
 <!-- markdownlint-disable MD025 -->

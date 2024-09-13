@@ -124,3 +124,7 @@ OpenAI 使用了 4 亿组图片文本对，对此模型进行了训练，最后�
 
 > [!faq]
 > 为何使用 Stable Diffusion 或者 Midjourney 时，输入的 Prompt 不需要在意语法？以及大小写不敏感呢？因为这些 Prompt 都会被 Text Encoder 转成特征向量，语法、大小写被转成特征向量后，都会是一串数字了，在没有对模型进行调整的情况下，这些都不太敏感了。
+
+## Refer
+
+<https://www.comflowy.com/zh-CN/basics/stable-diffusion-foundation>
