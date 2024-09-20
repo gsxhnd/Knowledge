@@ -6,4 +6,4 @@ title:  残差神经网络 ResNet
 
 # 残差神经网络 ResNet
 
-- <https://zhuanlan.zhihu.com/p/101332297>
+- [ ] <https://zhuanlan.zhihu.com/p/101332297>

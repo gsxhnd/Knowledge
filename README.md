@@ -86,4 +86,7 @@ from "Tool" sort file.folder
 FLATTEN link(file.link, title) as Title
 ```
 
+## Blog
+
+- [Home - colah's blog](https://colah.github.io) [关联lstm](./AI/lstm.md)
 云原生开发 博客 <https://ewhisper.cn/>

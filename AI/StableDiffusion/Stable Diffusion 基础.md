@@ -128,3 +128,5 @@ OpenAI 使用了 4 亿组图片文本对，对此模型进行了训练，最后�
 ## Refer
 
 <https://www.comflowy.com/zh-CN/basics/stable-diffusion-foundation>
+
+- [Stable Diffusion Art - Tutorials, prompts and resources](https://stable-diffusion-art.com/)
