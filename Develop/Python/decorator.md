@@ -2,7 +2,7 @@
 title: Python 装饰器详解
 created: 2023-01-30 01:17:25
 tags:
-  - python
+  - Python
 ---
 
 # 装饰器详解
