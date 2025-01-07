@@ -42,7 +42,6 @@
   "Game": "SiSteam",
   "pdf": "FasFilePdf",
   "Math": "FasSquareRootVariable",
-  "Game/Godot": "SiGodotengine",
   "Algorithmica": "SiLeetcode",
   "Develop/Web/Vue": "FabVuejs",
   "Develop/Web/Vite": "SiVite",

@@ -1,7 +1,8 @@
 {
-  "cssTheme": "Minimal",
+  "cssTheme": "Catppuccin",
   "baseFontSize": 18,
   "translucency": false,
   "accentColor": "",
-  "theme": "obsidian"
+  "theme": "obsidian",
+  "nativeMenus": true
 }

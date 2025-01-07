@@ -1,6 +1,9 @@
 ---
 title: 数据结构和算法 Data Structures and Algorithms
 created: 2024-09-20 14:44
+tags:
+  - 算法
+  - 数据结构
 ---
 
 <!-- markdownlint-disable MD025 -->
@@ -16,6 +19,8 @@ DSA (数据结构和算法 Data Structures and Algorithms) 是一门研究如何
 ## 复杂度
 
 为了分析算法，我们主要以输入大小来衡量所用时间或空间的增长顺序。在大多数情况下，我们都是在最坏的情况下这样做的。请参考以下链接，以清楚了解这些概念。
+
+- [复杂度分析](./复杂度分析.md)
 
 <https://www.geeksforgeeks.org/analysis-of-algorithms/>
 
