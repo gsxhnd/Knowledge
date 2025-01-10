@@ -2,8 +2,8 @@
 title: minio
 created: 2024-09-12 09:47
 tags:
-  - ObjectStorage
   - Minio
+  - 对象存储
 ---
 
 <!-- markdownlint-disable MD025 -->

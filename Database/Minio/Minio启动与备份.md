@@ -1,9 +1,9 @@
 ---
-title: Minio启动与备份
+title: Minio 启动与备份
 created: 2024-09-30 09:53
 tags:
-  - ObjectStorage
   - Minio
+  - 对象存储
 ---
 
 <!-- markdownlint-disable MD025 -->

@@ -6,11 +6,11 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "SiInfluxdb",
+      "LiDatabase",
       "SiLinux",
       "SiEclipsemosquitto",
-      "SiWebassembly",
-      "LiDatabaseZap",
-      "SiJavascript"
+      "SiWebassembly"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -47,7 +47,6 @@
   "Develop/Web/Vite": "SiVite",
   "_Draft": "LiPenBox",
   "Devops": "LiAtom",
-  "Devops/Database": "LiDatabaseZap",
   "Devops/Docker": "SiDocker",
   "Devops/Git": "FabGitAlt",
   "Devops/Golang": "FabGolang",
@@ -60,5 +59,6 @@
   "Devops/Test": "SiVitest",
   "Devops/Webassembly": "SiWebassembly",
   "Devops/wgpu": "SiNvidia",
-  "Devops/Linux": "SiLinux"
+  "Devops/Linux": "SiLinux",
+  "Database": "LiDatabaseZap"
 }

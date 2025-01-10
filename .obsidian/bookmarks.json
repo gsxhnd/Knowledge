@@ -34,6 +34,67 @@
         }
       ],
       "title": "数据结构和算法"
+    },
+    {
+      "type": "group",
+      "ctime": 1736471230370,
+      "items": [
+        {
+          "type": "file",
+          "ctime": 1736471292291,
+          "path": "AI/零基础入门深度学习系列/感知器.md"
+        },
+        {
+          "type": "file",
+          "ctime": 1736471334870,
+          "path": "AI/零基础入门深度学习系列/线性单元和梯度下降.md"
+        },
+        {
+          "type": "file",
+          "ctime": 1736471368576,
+          "path": "AI/零基础入门深度学习系列/神经网络和反向传播算法.md"
+        },
+        {
+          "type": "file",
+          "ctime": 1736471396025,
+          "path": "AI/零基础入门深度学习系列/卷积神经网络.md"
+        },
+        {
+          "type": "file",
+          "ctime": 1736471419269,
+          "path": "AI/零基础入门深度学习系列/循环神经网络.md"
+        },
+        {
+          "type": "file",
+          "ctime": 1736471428675,
+          "path": "AI/零基础入门深度学习系列/长短时记忆网络(LSTM).md"
+        },
+        {
+          "type": "file",
+          "ctime": 1736471439212,
+          "path": "AI/零基础入门深度学习系列/递归神经网络.md"
+        }
+      ],
+      "title": "零基础入门深度学习系列"
+    },
+    {
+      "type": "group",
+      "ctime": 1736473027432,
+      "items": [
+        {
+          "type": "group",
+          "ctime": 1736473042928,
+          "items": [
+            {
+              "type": "file",
+              "ctime": 1736473053556,
+              "path": "Devops/Docker/Docker 基础介绍.md"
+            }
+          ],
+          "title": "Docker"
+        }
+      ],
+      "title": "开发"
     }
   ]
 }
