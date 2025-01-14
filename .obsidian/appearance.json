@@ -4,5 +4,6 @@
   "translucency": false,
   "accentColor": "",
   "theme": "obsidian",
-  "nativeMenus": true
+  "nativeMenus": true,
+  "textFontFamily": "Inter"
 }
