@@ -13,7 +13,7 @@ tags:
 ## 提前准备
 
 - python3.10
-- [pipenv](../../Devops/Python/Pipenv.md)
+- [pipenv](../../DevLang/Python/Pipenv.md)
 - [安装对应的 cuda 版本](../Nvida%20Cuda.md)
 - Apple 硬件加速 <https://developer.apple.com/metal/pytorch/>
 

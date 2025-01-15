@@ -6,11 +6,11 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiCode",
       "SiInfluxdb",
       "LiDatabase",
       "SiLinux",
-      "SiEclipsemosquitto",
-      "SiWebassembly"
+      "SiEclipsemosquitto"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -49,16 +49,17 @@
   "Devops": "LiAtom",
   "Devops/Docker": "SiDocker",
   "Devops/Git": "FabGitAlt",
-  "Devops/Golang": "FabGolang",
   "Devops/Grafana": "SiGrafana",
-  "Devops/JavaScript": "SiJavascript",
   "Devops/Kubernetes": "SiKubernetes",
   "Devops/MQTT": "SiEclipsemosquitto",
-  "Devops/Python": "FabPython",
-  "Devops/Rust": "SiRust",
   "Devops/Test": "SiVitest",
   "Devops/Webassembly": "SiWebassembly",
   "Devops/wgpu": "SiNvidia",
   "Devops/Linux": "SiLinux",
-  "Database": "LiDatabaseZap"
+  "Database": "LiDatabaseZap",
+  "DevLang": "LiCode",
+  "DevLang/Rust": "SiRust",
+  "DevLang/Golang": "FabGolang",
+  "DevLang/JavaScript": "SiJavascript",
+  "DevLang/Python": "FabPython"
 }
