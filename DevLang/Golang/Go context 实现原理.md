@@ -1,5 +1,5 @@
 ---
-title: Context
+title: Go context 实现原理
 created: 2024-10-14 09:11
 tags:
   - Golang
@@ -9,7 +9,11 @@ tags:
 
 # Context
 
-在 Go 语言中，Context 是一个非常重要的概念，它用于在不同的 goroutine 之间传递请求域的相关数据，并且可以用来控制 goroutine 的生命周期和取消操作。
+在 Go 语言中，Context 是一个非常重要的概念，它用于在不同的 goroutine 之间传递请求域的相关数据，并且可以用来控制 `goroutine` 的生命周期和取消操作。
+
+## 核心结构数据
+
+![context.Context](https://pic-1257414393.cos.ap-hongkong.myqcloud.com/Knowledge/7e0c24ff343c53e5dcfe8d9c06974359.jpeg)
 
 ## 基本用法
 
@@ -255,3 +259,7 @@ func findUserByName(ctx context.Context, req *Request) (*Result, error) {
 - Context 的传递时，需要保证传递的 Context 对象是原始 Context 对象的子 Context，以便在需要取消操作时能够同时取消所有相关的 goroutine。
 - 在使用 WithCancel 和 WithTimeout 方法创建 Context 对象时，需要及时调用 cancel 函数，以便能够及时释放资源。
 - 在一些场景下，可以使用 WithValue 方法将数据存储到 Context 中，以便在不同的 goroutine 之间共享数据。
+
+## Refer
+
+- [Golang context 实现原理 - 知乎](https://zhuanlan.zhihu.com/p/597234214)
