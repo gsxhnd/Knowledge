@@ -43,5 +43,5 @@ fn main() {
 
 ## Refer
 
-- <https://course.rs/advance/smart-pointer/box.html>
+* <https://course.rs/advance/smart-pointer/box.html>
 * <https://kaisery.github.io/trpl-zh-cn/ch15-01-box.html>

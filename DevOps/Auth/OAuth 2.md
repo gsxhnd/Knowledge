@@ -1,5 +1,5 @@
 ---
-title: oauth
+title: OAuth 2.0
 created: 2025-01-17 15:48
 tags:
   - 系统设计
@@ -9,4 +9,8 @@ tags:
 
 <!-- markdownlint-disable MD025 -->
 
-# OAuth
+# OAuth 2.0
+
+## Refer
+
+- [OAuth 2.0](https://oauth.net/2/)
