@@ -6,11 +6,11 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
-      "SiAuth0",
-      "LiCode",
-      "SiInfluxdb",
-      "LiDatabase",
-      "SiLinux"
+      "SiFing",
+      "FasPiggyBank",
+      "SiPaypal",
+      "SiWebmoney",
+      "SiAuth0"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -62,5 +62,6 @@
   "DevOps/Test": "SiVitest",
   "DevOps/Webassembly": "SiWebassembly",
   "DevOps/wgpu": "SiNvidia",
-  "DevOps/Auth": "SiAuth0"
+  "DevOps/Auth": "SiAuth0",
+  "Finance": "SiFing"
 }
