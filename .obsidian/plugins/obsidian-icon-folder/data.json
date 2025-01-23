@@ -6,11 +6,11 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "SiAmazons3",
+      "SiInfluxdb",
       "SiFing",
       "FasPiggyBank",
-      "SiPaypal",
-      "SiWebmoney",
-      "SiAuth0"
+      "SiPaypal"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -63,5 +63,7 @@
   "DevOps/Webassembly": "SiWebassembly",
   "DevOps/wgpu": "SiNvidia",
   "DevOps/Auth": "SiAuth0",
-  "Finance": "SiFing"
+  "Finance": "SiFing",
+  "Database/Influx": "SiInfluxdb",
+  "Database/Minio": "SiAmazons3"
 }

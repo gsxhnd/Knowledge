@@ -9,4 +9,10 @@ tags:
 
 # Influxdb
 
+## 启动本地环境
+
+- [docker compose run](https://docs.influxdata.com/influxdb/v2/install/use-docker-compose/)
+
+## Refer
+
 <https://docs.influxdata.com/influxdb/v2/>
