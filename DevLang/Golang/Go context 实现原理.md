@@ -9,13 +9,11 @@ tags:
 
 # Context
 
-在 Go 语言中，Context 是一个非常重要的概念，它用于在不同的 goroutine 之间传递请求域的相关数据，并且可以用来控制 `goroutine` 的生命周期和取消操作。
+在 Go 语言中，Context 是一个非常重要的概念，它用于在不同的 goroutine 之间传递请求域的相关数据，并且可以用来控制 `goroutine` 的生命周期和取消操作。除此之外，context 还兼有一定的数据存储能力。
 
 ## 核心结构数据
 
 ![context.Context](https://pic-1257414393.cos.ap-hongkong.myqcloud.com/Knowledge/7e0c24ff343c53e5dcfe8d9c06974359.jpeg)
-
-## 基本用法
 
 在 Go 语言中，Context 被定义为一个接口类型，它包含了三个方法：
 
@@ -34,10 +32,29 @@ type Context interface {
 - **Err()** 方法用于获取 Context 取消的原因，
 - **Value()** 方法用于获取 Context 中保存的键值对数据。
 
+### 标准 error
+
+```go
+var Canceled = errors.New("context canceled")
+
+var DeadlineExceeded error = deadlineExceededError{}
+
+type deadlineExceededError struct{}
+
+func (deadlineExceededError) Error() string   { return "context deadline exceeded" }
+func (deadlineExceededError) Timeout() bool   { return true }
+func (deadlineExceededError) Temporary() bool { return true }
+```
+
+1. Canceled：context 被 cancel 时会报此错误.
+2. DeadlineExceeded：context 超时时会报此错误.
+
 我们日常编写代码时，Context 对象会被被约定作为函数的第一个参数传递，eg：
 
 ```go
-func users(ctx context.Context, request *Request) { // ... code }
+func users(ctx context.Context, request *Request) {
+    // ... code
+}
 ```
 
 在函数中，可以通过 **ctx** 参数来获取相关的 Context 数据，举个超时的 eg：
