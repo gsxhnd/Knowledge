@@ -9,6 +9,8 @@ tags:
 
 # Rust
 
+- [The Rust Reference](https://doc.rust-lang.org/reference/introduction.html)
+- [Rust 参考手册 中文版](https://rustwiki.org/zh-CN/reference/introduction.html)
 - Rust 原文文档 <https://doc.rust-lang.org/stable/book/>
 - Rust Edition 文档
 - Rust Cargo 原文文档 <https://doc.rust-lang.org/cargo/index.html>
@@ -19,10 +21,11 @@ tags:
 - Rust Cookbook <https://rustwiki.org/zh-CN/rust-cookbook/>
 - Rust 语言圣经 <https://course.rs/about-book.html>
 - Rust 入门秘籍 <https://rust-book.junmajinlong.com/about.html>
-- Rust Language Cheat Sheet <https://cheats.rs/>
+- [Rust Language Cheat Sheet](https://cheats.rs/)
+- [Rust By Example](https://doc.rust-lang.org/beta/rust-by-example/)
 - [通过例子学 Rust 中文版](https://rustwiki.org/zh-CN/rust-by-example/index.html)
 - [Rust design patterns](https://github.com/rust-unofficial/patterns)
-- [Rust for Rustaceans](https://www.google.com.hk/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjvoIaR5IqLAxWPp1YBHbH0MegQFnoECBsQAQ&url=https%3A%2F%2Fwww.files.nochill.in%2Fbooks%2FRust%2FJon%2520Gjengset%2520-%2520Rust%2520for%2520Rustaceans_%2520Idiomatic%2520Programming%2520for%2520Experienced%2520Developers%2520(2021%2C%2520No%2520Starch%2520Press)%2520(1).pdf&usg=AOvVaw1lNcO4wK2VTVl5tPHGDkGs&opi=89978449)
+- [Rust for Rustaceans](https://rust-for-rustaceans.com/)
 - [Comprehensive Rust 🦀](https://google.github.io/comprehensive-rust/index.html)
 
 ## 库

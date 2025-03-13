@@ -137,3 +137,4 @@ fn main() {
 ## Refer
 
 - [Rust：详解 Copy 和 Clone 在 Rust 中，Copy 和 Clone trait 用于控制类型的复制行为 - 掘金](https://juejin.cn/post/7232665460713373755)
+- [Clone in std::clone - Rust](https://doc.rust-lang.org/std/clone/trait.Clone.html)
