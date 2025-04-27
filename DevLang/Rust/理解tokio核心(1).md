@@ -88,6 +88,64 @@ $ ps -eLf | grep 'targe[t]'
 
 总共9个OS线程，其中8个worker thread(我的电脑是4核8线程的)，外加一个main thread。
 
+## async main
+
+对于main函数，tokio提供了简化的异步运行时创建方式：
+
+```rust
+use tokio;
+
+#[tokio::main]
+async fn main() {}
+```
+
+通过 `#[tokio::main]` 注解(annotation)，使得 `async main` 自身成为一个async runtime。
+
+`#[tokio::main]` 创建的是多线程runtime，还有以下几种方式创建多线程runtime：
+
+```rust
+#![allow(unused)]
+fn main() {
+#[tokio::main(flavor = "multi_thread"] // 等价于#[tokio::main]
+#[tokio::main(flavor = "multi_thread", worker_threads = 10))]
+#[tokio::main(worker_threads = 10))]
+}
+```
+
+它们等价于如下没有使用 `#[tokio::main]` 的代码：
+
+```rust
+fn main(){
+  tokio::runtime::Builder::new_multi_thread()
+        .worker_threads(N)
+        .enable_all()
+        .build()
+        .unwrap()
+        .block_on(async { ... });
+}
+```
+
+`#[tokio::main]` 也可以创建单一线程的main runtime：
+
+```rust
+#![allow(unused)]
+fn main() {
+#[tokio::main(flavor = "current_thread")]
+}
+```
+
+等价于：
+
+```rust
+fn main() {
+    tokio::runtime::Builder::new_current_thread()
+        .enable_all()
+        .build()
+        .unwrap()
+        .block_on(async { ... })
+}
+```
+
 ## Refer
 
 - [理解tokio的核心(1): runtime - Rust入门秘籍](https://rust-book.junmajinlong.com/ch100/01_understand_tokio_runtime.html)
