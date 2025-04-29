@@ -6,11 +6,11 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "RiEnglishInput",
+      "LiLanguages",
       "SiAmazons3",
       "SiInfluxdb",
-      "SiFing",
-      "FasPiggyBank",
-      "SiPaypal"
+      "SiFing"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -65,5 +65,7 @@
   "DevOps/Auth": "SiAuth0",
   "Finance": "SiFing",
   "Database/Influx": "SiInfluxdb",
-  "Database/Minio": "SiAmazons3"
+  "Database/Minio": "SiAmazons3",
+  "Language": "LiLanguages",
+  "Language/English": "RiEnglishInput"
 }
