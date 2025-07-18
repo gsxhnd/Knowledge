@@ -28,7 +28,7 @@ __export(main_exports, {
   default: () => DNPlugin
 });
 module.exports = __toCommonJS(main_exports);
-var import_obsidian4 = require("obsidian");
+var import_obsidian8 = require("obsidian");
 
 // src/settings.ts
 var import_obsidian = require("obsidian");
@@ -177,6 +177,9 @@ var DNSettingTab = class extends import_obsidian.PluginSettingTab {
         this.plugin.saveSettings();
       });
     });
+    const headingColumns1 = containerEl.createEl("div", { cls: "setting-item setting-item-heading" });
+    const headingColumns2 = headingColumns1.createEl("div", { cls: "setting-item setting-item-info" });
+    headingColumns2.createEl("div", { text: "Columns", cls: "setting-item-name" });
     new import_obsidian.Setting(containerEl).setName("Hide column: Ext").setDesc("Navigator: Hide file extension column").addToggle((toggle) => {
       this.toggleHideExtColumn = toggle;
       toggle.setValue(this.plugin.settings.hide_ext).onChange(async (val) => {
@@ -279,6 +282,9 @@ var DNSettingTab = class extends import_obsidian.PluginSettingTab {
         this.plugin.saveSettings();
       });
     });
+    const headingExcludedFilesFolders1 = containerEl.createEl("div", { cls: "setting-item setting-item-heading" });
+    const headingExcludedFilesFolders2 = headingExcludedFilesFolders1.createEl("div", { cls: "setting-item setting-item-info" });
+    headingExcludedFilesFolders2.createEl("div", { text: "Excluded files and folders", cls: "setting-item-name" });
     new import_obsidian.Setting(containerEl).setName("Excluded file extensions").setDesc("File extensions to exclude, separated by commas").addText((text) => {
       this.textExcludedExtensions = text;
       text.setPlaceholder("File extensions to exclude").setValue(this.plugin.settings.excluded_ext).onChange(async (val) => {
@@ -313,6 +319,9 @@ var DNSettingTab = class extends import_obsidian.PluginSettingTab {
         this.plugin.saveSettings();
       });
     });
+    const headingFileColors1 = containerEl.createEl("div", { cls: "setting-item setting-item-heading" });
+    const headingFileColors2 = headingFileColors1.createEl("div", { cls: "setting-item setting-item-info" });
+    headingFileColors2.createEl("div", { text: "File colors", cls: "setting-item-name" });
     new import_obsidian.Setting(containerEl).setName("Toggle colored files").setDesc("Turn on/off colored files").addToggle((toggle) => {
       this.toggleColoredFiles = toggle;
       toggle.setValue(this.plugin.settings.colored_files).onChange(async (val) => {
@@ -626,7 +635,7 @@ var DNTableManager = class {
 // src/dn.ts
 var import_obsidian3 = require("obsidian");
 var DNModal = class extends import_obsidian2.Modal {
-  constructor(app) {
+  constructor(app, plugin) {
     super(app);
     this._sort_order = "desc";
     this._sort_column = "modified";
@@ -661,6 +670,7 @@ var DNModal = class extends import_obsidian2.Modal {
         }
       });
     };
+    this.plugin = plugin;
     this.intersectionObserver = new IntersectionObserver(this.dnHandleIntersection);
   }
   async onOpen() {
@@ -731,7 +741,7 @@ var DNModal = class extends import_obsidian2.Modal {
     });
     this._BTN_NAVIGATOR = leftTopNav.createEl("button", { text: "Navigator" });
     this._BTN_NAVIGATOR.onClickEvent((evt) => {
-      this.dnModalSearchVault(this._INPUT_SEARCH.value);
+      this.dnModalSearchVault(this.INPUT_SEARCH.value);
       this.dnSetView(2);
     });
     this.labelLayout = rightTopNav.createEl("span", {
@@ -824,7 +834,7 @@ var DNModal = class extends import_obsidian2.Modal {
     await this.dnCreateBtn(
       divVaultStats,
       "dn-btn-audios",
-      "Audios",
+      "Audio files",
       this._audios,
       this._divSearchResults,
       this._leaf
@@ -848,7 +858,7 @@ var DNModal = class extends import_obsidian2.Modal {
     await this.dnCreateBtn(
       divVaultStats,
       "dn-btn-other",
-      "Other",
+      "Other files",
       this._other,
       this._divSearchResults,
       this._leaf
@@ -860,11 +870,11 @@ var DNModal = class extends import_obsidian2.Modal {
     const pieChart1 = new DNPieChart(canvasPieChart1, 10, 12, 50, labelColor);
     pieChart1.addData(this._notes.length, this.color_notes, "Notes");
     pieChart1.addData(this._images.length, this.color_images, "Images");
-    pieChart1.addData(this._canvas.length, this.color_canvas, "Canvas");
+    pieChart1.addData(this._canvas.length, this.color_canvas, "Canvases");
     pieChart1.addData(this._videos.length, this.color_videos, "Videos");
-    pieChart1.addData(this._audios.length, this.color_audios, "Audios");
-    pieChart1.addData(this._pdf.length, this.color_pdf, "PDF");
-    pieChart1.addData(this._other.length, this.color_other, "Other");
+    pieChart1.addData(this._audios.length, this.color_audios, "Audio files");
+    pieChart1.addData(this._pdf.length, this.color_pdf, "PDFs");
+    pieChart1.addData(this._other.length, this.color_other, "Other files");
     pieChart1.draw();
     const divStatsFrame = divVaultGraph.createEl("div", { cls: "dn-stats-files-folders" });
     divStatsFrame.createEl("div", { cls: "dn-stats-files", text: "Files: " + this._files_excluded_filters.length });
@@ -874,7 +884,7 @@ var DNModal = class extends import_obsidian2.Modal {
     await this.dnCreateRecentFiles("Recent notes", divRecentNotes, this._notes, this.num_recent_files);
     await this.dnCreateRecentFiles("Recent canvases", divCanvas, this._canvas, this.num_recent_files);
     await this.dnCreateRecentFiles("Recent images", divImages, this._images, this.num_recent_files);
-    await this.dnCreateRecentFiles("Recent audios", divAudios, this._audios, this.num_recent_files);
+    await this.dnCreateRecentFiles("Recent audio files", divAudios, this._audios, this.num_recent_files);
     await this.dnCreateRecentFiles("Recent videos", divVideos, this._videos, this.num_recent_files);
     await this.dnCreateRecentFiles("Recent PDFs", divPDFs, this._pdf, this.num_recent_files);
     await this.dnCreateRecentFiles("Recent other files", divOther, this._other, this.num_recent_files);
@@ -887,24 +897,44 @@ var DNModal = class extends import_obsidian2.Modal {
     btn.createEl("span", { cls: "dn-btn-stats-number", text: btnCategoryFiles.length.toString() });
     btn.onClickEvent((evt) => {
       this._files_results = btnCategoryFiles;
-      this._INPUT_SEARCH.value = "@" + btnTitle.toLocaleLowerCase() + " ";
-      this.dnModalSearchVault(this._INPUT_SEARCH.value);
-      this._INPUT_SEARCH.focus();
+      this.INPUT_SEARCH.value = "@" + btnTitle.replace(" files", "").toLocaleLowerCase() + " ";
+      this.dnModalSearchVault(this.INPUT_SEARCH.value);
+      this.INPUT_SEARCH.focus();
     });
     return btn;
   }
   dnCreateInputSearch(el) {
     const searchContainer = el.createEl("div", { cls: "dn-search-input-container" });
-    this._INPUT_SEARCH = searchContainer.createEl("input", { type: "search", placeholder: "Search..." });
-    this._INPUT_SEARCH.setAttribute("id", "dn-input-filter");
-    this._INPUT_SEARCH.spellcheck = false;
-    this._INPUT_SEARCH.focus();
-    searchContainer.createEl("div", { cls: "search-input-clear-button" }).onClickEvent((evt) => {
-      this._INPUT_SEARCH.value = "";
-      this._INPUT_SEARCH.focus();
-      this.dnModalSearchVault(this._INPUT_SEARCH.value);
+    const searchLeftDiv = searchContainer.createEl("div", { cls: "dn-search-input-container-left-div" });
+    this.INPUT_SEARCH = searchLeftDiv.createEl("input", { type: "search", placeholder: "Search..." });
+    this.INPUT_SEARCH.setAttribute("id", "dn-input-filter");
+    this.INPUT_SEARCH.spellcheck = false;
+    this.INPUT_SEARCH.focus();
+    searchLeftDiv.createEl("div", { cls: "search-input-clear-button" }).onClickEvent((evt) => {
+      this.clearSearchField();
     });
-    this._INPUT_SEARCH.addEventListener("input", (0, import_obsidian2.debounce)(() => this.dnModalSearchVault(this._INPUT_SEARCH.value), 300, true));
+    const searchRightDiv = searchContainer.createEl("div", { cls: "dn-search-input-container-right-div" });
+    const topBtnAddSearch = searchRightDiv.createEl("button", { cls: "dn-top-btns-search" });
+    topBtnAddSearch.setAttribute("id", "dn-top-btn-add");
+    topBtnAddSearch.onClickEvent((evt) => {
+      this.plugin.DN_SAVE_SEARCH_MODAL.open();
+    });
+    const topBtnSaved = searchRightDiv.createEl("button", { cls: "dn-top-btns-search" });
+    topBtnSaved.setAttribute("id", "dn-top-btn-saved");
+    topBtnSaved.onClickEvent((evt) => {
+      this.plugin.DN_SAVED_SEARCHES_MODAL.open();
+    });
+    const topBtnInfo = searchRightDiv.createEl("button", { cls: "dn-top-btns-search" });
+    topBtnInfo.setAttribute("id", "dn-top-btn-info");
+    topBtnInfo.onClickEvent((evt) => {
+      this.plugin.DN_INFO_MODAL.open();
+    });
+    this.INPUT_SEARCH.addEventListener("input", (0, import_obsidian2.debounce)(() => this.dnModalSearchVault(this.INPUT_SEARCH.value), 300, true));
+  }
+  clearSearchField() {
+    this.INPUT_SEARCH.value = "";
+    this.INPUT_SEARCH.focus();
+    this.dnModalSearchVault(this.INPUT_SEARCH.value);
   }
   async dnModalSearchVault(val) {
     this.dnSetView(2);
@@ -957,10 +987,10 @@ var DNModal = class extends import_obsidian2.Modal {
       return;
     }
     const isDateSearch = val.startsWith("@");
-    if (this._INPUT_SEARCH.value.includes("@")) {
-      this._INPUT_SEARCH.classList.add("dn-input-datesearch");
+    if (this.INPUT_SEARCH.value.includes("@")) {
+      this.INPUT_SEARCH.classList.add("dn-input-datesearch");
     } else {
-      this._INPUT_SEARCH.classList.remove("dn-input-datesearch");
+      this.INPUT_SEARCH.classList.remove("dn-input-datesearch");
     }
     if (isExcludeSearch) {
       let isMatch;
@@ -1071,8 +1101,8 @@ var DNModal = class extends import_obsidian2.Modal {
           if (evt.button === 2) {
             evt.preventDefault();
           } else {
-            this._INPUT_SEARCH.value = "." + fExt;
-            this.dnModalSearchVault(this._INPUT_SEARCH.value);
+            this.INPUT_SEARCH.value = "." + fExt;
+            this.dnModalSearchVault(this.INPUT_SEARCH.value);
           }
         });
         const td3 = tr2.createEl("td");
@@ -1081,8 +1111,8 @@ var DNModal = class extends import_obsidian2.Modal {
           if (evt.button === 2) {
             evt.preventDefault();
           } else {
-            this._INPUT_SEARCH.value = folder_path;
-            this.dnModalSearchVault(this._INPUT_SEARCH.value + "$");
+            this.INPUT_SEARCH.value = folder_path;
+            this.dnModalSearchVault(this.INPUT_SEARCH.value + "$");
           }
         });
         tr2.createEl("td", { text: fSize, title: fSize + " bytes" });
@@ -1094,12 +1124,7 @@ var DNModal = class extends import_obsidian2.Modal {
           const fTags = tags_per_file.split(" ");
           fTags.forEach((tag) => {
             td6.createEl("a", { cls: "tag", text: tag, href: tag }).onClickEvent((evt) => {
-              if (evt.button === 2) {
-                evt.preventDefault();
-              } else {
-                this._INPUT_SEARCH.value = tag;
-                this.dnModalSearchVault(this._INPUT_SEARCH.value);
-              }
+              this.handleTagActions(evt, tag);
             });
           });
         }
@@ -1111,8 +1136,8 @@ var DNModal = class extends import_obsidian2.Modal {
               if (evt.button === 2) {
                 evt.preventDefault();
               } else {
-                this._INPUT_SEARCH.value = prop;
-                this.dnModalSearchVault(this._INPUT_SEARCH.value);
+                this.INPUT_SEARCH.value = prop;
+                this.dnModalSearchVault(this.INPUT_SEARCH.value);
               }
             });
           });
@@ -1411,7 +1436,7 @@ var DNModal = class extends import_obsidian2.Modal {
       "tif": arrImages,
       "tiff": arrImages,
       "webp": arrImages,
-      // Audios
+      // Audio files
       "aac": arrAudios,
       "aif": arrAudios,
       "aifc": arrAudios,
@@ -1465,7 +1490,7 @@ var DNModal = class extends import_obsidian2.Modal {
       "tif": "image",
       "tiff": "image",
       "webp": "image",
-      // Audios
+      // Audio files
       "aac": "audio",
       "aif": "audio",
       "aifc": "audio",
@@ -1616,20 +1641,58 @@ var DNModal = class extends import_obsidian2.Modal {
     );
     this._DN_CTX_MENU.addSeparator();
     this._DN_CTX_MENU.addItem(
-      (item) => item.setTitle("Frontmatter").setIcon("text").onClick(() => {
-        const fpModal = new import_obsidian2.Modal(this.app);
-        fpModal.contentEl.setAttribute("class", "dn-frontmatter-modal");
-        fpModal.contentEl.createEl("h4", { text: "Frontmatter" });
-        const rowName = fpModal.contentEl.createEl("div", { cls: "dn-property-row" });
+      (item) => item.setTitle("Tags").setIcon("tags").onClick(() => {
+        const tagsModal = new import_obsidian2.Modal(this.app);
+        tagsModal.contentEl.setAttribute("class", "dn-tags-modal");
+        tagsModal.contentEl.createEl("div", { text: "Tags", cls: "setting-item setting-item-heading dn-modal-heading" });
+        const rowName = tagsModal.contentEl.createEl("div", { cls: "dn-property-row" });
         rowName.createEl("div", { text: "Name: ", cls: "dn-property-name-sm" });
         rowName.createEl("div", { text: file.name, cls: "dn-property-value" });
-        const rowPath = fpModal.contentEl.createEl("div", { cls: "dn-property-row" });
+        const rowPath = tagsModal.contentEl.createEl("div", { cls: "dn-property-row" });
         rowPath.createEl("div", { text: "Path: ", cls: "dn-property-name-sm" });
         rowPath.createEl("div", { text: getFolderStructure(file.path), cls: "dn-property-value" });
-        fpModal.contentEl.createEl("br");
-        fpModal.contentEl.createEl("span", { text: "Frontmatter: ", cls: "dn-properties" });
-        fpModal.contentEl.createEl("br");
-        const frontmatterDiv = fpModal.contentEl.createEl("div", { cls: "dn-properties-frontmatter-modal" });
+        const tagsDiv = tagsModal.contentEl.createEl("div", { cls: "dn-tags-list" });
+        tagsDiv.setAttribute("contenteditable", "true");
+        tagsDiv.setAttribute("spellcheck", "false");
+        const mTags = getTagsPerFile(file);
+        if (mTags) {
+          const tags_file = mTags.split(" ");
+          tags_file.forEach((tag) => {
+            const tagLineDiv = tagsDiv.createEl("div", { cls: "dn-tag-line" });
+            tagLineDiv.createEl("a", { cls: "tag", text: tag, href: tag }).onClickEvent((evt2) => {
+              this.handleTagActions(evt2, tag);
+            });
+          });
+        } else {
+          tagsDiv.createEl("span", { text: "No tags" });
+        }
+        tagsModal.contentEl.createEl("br");
+        const divBottom = tagsModal.contentEl.createEl("div", { cls: "dn-div-bottom-properties" });
+        const btnPropsOpen = divBottom.createEl("button", { text: "Open", cls: "dn-btn-properties-open-file" });
+        btnPropsOpen.onClickEvent(() => {
+          tagsModal.close();
+          this.dnOpenFile(file);
+        });
+        const btnCloseProps = divBottom.createEl("button", { text: "Close", cls: "dn-btn-properties-close" });
+        btnCloseProps.onClickEvent(() => {
+          tagsModal.close();
+        });
+        tagsModal.open();
+        tagsDiv.blur();
+      })
+    );
+    this._DN_CTX_MENU.addItem(
+      (item) => item.setTitle("Frontmatter").setIcon("text").onClick(() => {
+        const fmModal = new import_obsidian2.Modal(this.app);
+        fmModal.contentEl.setAttribute("class", "dn-frontmatter-modal");
+        fmModal.contentEl.createEl("div", { text: "Frontmatter", cls: "setting-item setting-item-heading dn-modal-heading" });
+        const rowName = fmModal.contentEl.createEl("div", { cls: "dn-property-row" });
+        rowName.createEl("div", { text: "Name: ", cls: "dn-property-name-sm" });
+        rowName.createEl("div", { text: file.name, cls: "dn-property-value" });
+        const rowPath = fmModal.contentEl.createEl("div", { cls: "dn-property-row" });
+        rowPath.createEl("div", { text: "Path: ", cls: "dn-property-name-sm" });
+        rowPath.createEl("div", { text: getFolderStructure(file.path), cls: "dn-property-value" });
+        const frontmatterDiv = fmModal.contentEl.createEl("div", { cls: "dn-properties-frontmatter-modal" });
         frontmatterDiv.setAttribute("contenteditable", "true");
         frontmatterDiv.setAttribute("spellcheck", "false");
         const curProps = getPropsPerFile(file);
@@ -1640,9 +1703,9 @@ var DNModal = class extends import_obsidian2.Modal {
               if (evt2.button === 2) {
                 evt2.preventDefault();
               } else {
-                fpModal.close();
-                this._INPUT_SEARCH.value = prop[i];
-                this.dnModalSearchVault(this._INPUT_SEARCH.value);
+                fmModal.close();
+                this.INPUT_SEARCH.value = prop[i];
+                this.dnModalSearchVault(this.INPUT_SEARCH.value);
               }
             });
             frontmatterDiv.createEl("br");
@@ -1650,49 +1713,49 @@ var DNModal = class extends import_obsidian2.Modal {
         } else {
           frontmatterDiv.createEl("span", { text: "No frontmatter" });
         }
-        fpModal.contentEl.createEl("br");
-        const divBottom = fpModal.contentEl.createEl("div", { cls: "dn-div-bottom-properties" });
+        fmModal.contentEl.createEl("br");
+        const divBottom = fmModal.contentEl.createEl("div", { cls: "dn-div-bottom-properties" });
         const btnPropsOpen = divBottom.createEl("button", { text: "Open", cls: "dn-btn-properties-open-file" });
         btnPropsOpen.onClickEvent(() => {
-          fpModal.close();
+          fmModal.close();
           this.dnOpenFile(file);
         });
         const btnCloseProps = divBottom.createEl("button", { text: "Close", cls: "dn-btn-properties-close" });
         btnCloseProps.onClickEvent(() => {
-          fpModal.close();
+          fmModal.close();
         });
-        fpModal.open();
+        fmModal.open();
         frontmatterDiv.blur();
       })
     );
     this._DN_CTX_MENU.addItem(
       (item) => item.setTitle("File properties").setIcon("file-cog").onClick(() => {
-        const mdFileProps = new import_obsidian2.Modal(this.app);
-        mdFileProps.contentEl.setAttribute("class", "dn-properties-modal");
-        mdFileProps.contentEl.createEl("h4", { text: "File properties" });
-        const rowName = mdFileProps.contentEl.createEl("div", { cls: "dn-property-row" });
+        const filePropsModal = new import_obsidian2.Modal(this.app);
+        filePropsModal.contentEl.setAttribute("class", "dn-properties-modal");
+        filePropsModal.contentEl.createEl("div", { text: "File properties", cls: "setting-item setting-item-heading dn-modal-heading" });
+        const rowName = filePropsModal.contentEl.createEl("div", { cls: "dn-property-row" });
         rowName.createEl("div", { text: "Name: ", cls: "dn-property-name" });
         rowName.createEl("div", { text: file.name, cls: "dn-property-value" });
-        const rowExt = mdFileProps.contentEl.createEl("div", { cls: "dn-property-row" });
+        const rowExt = filePropsModal.contentEl.createEl("div", { cls: "dn-property-row" });
         rowExt.createEl("div", { text: "Extension: ", cls: "dn-property-name" });
         const rowExtValue = rowExt.createEl("div", { cls: "dn-property-value" });
         rowExtValue.createEl("span", { text: file.extension, cls: "nav-file-tag" });
-        const rowPath = mdFileProps.contentEl.createEl("div", { cls: "dn-property-row" });
+        const rowPath = filePropsModal.contentEl.createEl("div", { cls: "dn-property-row" });
         rowPath.createEl("div", { text: "Path: ", cls: "dn-property-name" });
         rowPath.createEl("div", { text: getFolderStructure(file.path), cls: "dn-property-value" });
-        mdFileProps.contentEl.createEl("br");
-        const rowSize = mdFileProps.contentEl.createEl("div", { cls: "dn-property-row" });
+        filePropsModal.contentEl.createEl("br");
+        const rowSize = filePropsModal.contentEl.createEl("div", { cls: "dn-property-row" });
         rowSize.createEl("div", { text: "Size: ", cls: "dn-property-name" });
         rowSize.createEl("div", { text: formatFileSize(file.stat.size) + " bytes" + formatFileSizeKBMB(file.stat.size) });
-        mdFileProps.contentEl.createEl("br");
-        const rowDateCreated = mdFileProps.contentEl.createEl("div", { cls: "dn-property-row" });
+        filePropsModal.contentEl.createEl("br");
+        const rowDateCreated = filePropsModal.contentEl.createEl("div", { cls: "dn-property-row" });
         rowDateCreated.createEl("div", { text: "Created: ", cls: "dn-property-name" });
         rowDateCreated.createEl("div", { text: (0, import_obsidian3.moment)(file.stat.ctime).format(this.date_format) });
-        const rowDateModified = mdFileProps.contentEl.createEl("div", { cls: "dn-property-row" });
+        const rowDateModified = filePropsModal.contentEl.createEl("div", { cls: "dn-property-row" });
         rowDateModified.createEl("div", { text: "Modified: ", cls: "dn-property-name" });
         rowDateModified.createEl("div", { text: (0, import_obsidian3.moment)(file.stat.mtime).format(this.date_format) });
-        mdFileProps.contentEl.createEl("br");
-        const rowTags = mdFileProps.contentEl.createEl("div", { cls: "dn-property-row" });
+        filePropsModal.contentEl.createEl("br");
+        const rowTags = filePropsModal.contentEl.createEl("div", { cls: "dn-property-row" });
         rowTags.createEl("div", { text: "Tag(s): ", cls: "dn-property-name" });
         const propTags = rowTags.createEl("div");
         const curTags = getTagsPerFile(file);
@@ -1700,22 +1763,16 @@ var DNModal = class extends import_obsidian2.Modal {
           const tags = curTags.split(" ");
           for (let i = 0, len = tags.length; i < len; i++) {
             propTags.createEl("a", { text: tags[i], href: tags[i], cls: "tag" }).onClickEvent((evt2) => {
-              if (evt2.button === 2) {
-                evt2.preventDefault();
-              } else {
-                mdFileProps.close();
-                this._INPUT_SEARCH.value = tags[i];
-                this.dnModalSearchVault(this._INPUT_SEARCH.value);
-              }
+              this.handleTagActions(evt2, tags[i]);
             });
           }
         } else {
           propTags.createEl("span", { text: "No tags" });
         }
-        mdFileProps.contentEl.createEl("br");
-        mdFileProps.contentEl.createEl("span", { text: "Frontmatter: ", cls: "dn-properties" });
-        mdFileProps.contentEl.createEl("br");
-        const frontmatterProps = mdFileProps.contentEl.createEl("div", { cls: "dn-properties-frontmatter" });
+        const rowFrontmatter = filePropsModal.contentEl.createEl("div", { cls: "dn-property-row" });
+        rowFrontmatter.createEl("div", { text: "Frontmatter: ", cls: "dn-property-name" });
+        const rowFrontmatterValue = rowFrontmatter.createEl("div", { cls: "dn-property-value" });
+        const frontmatterProps = rowFrontmatterValue.createEl("div", { cls: "dn-properties-frontmatter" });
         frontmatterProps.setAttribute("contenteditable", "true");
         frontmatterProps.setAttribute("spellcheck", "false");
         const curProps = getPropsPerFile(file);
@@ -1726,9 +1783,9 @@ var DNModal = class extends import_obsidian2.Modal {
               if (evt2.button === 2) {
                 evt2.preventDefault();
               } else {
-                mdFileProps.close();
-                this._INPUT_SEARCH.value = prop[i];
-                this.dnModalSearchVault(this._INPUT_SEARCH.value);
+                filePropsModal.close();
+                this.INPUT_SEARCH.value = prop[i];
+                this.dnModalSearchVault(this.INPUT_SEARCH.value);
               }
             });
             frontmatterProps.createEl("br");
@@ -1736,18 +1793,18 @@ var DNModal = class extends import_obsidian2.Modal {
         } else {
           frontmatterProps.createEl("span", { text: "No frontmatter" });
         }
-        mdFileProps.contentEl.createEl("br");
-        const divBottom = mdFileProps.contentEl.createEl("div", { cls: "dn-div-bottom-properties" });
+        filePropsModal.contentEl.createEl("br");
+        const divBottom = filePropsModal.contentEl.createEl("div", { cls: "dn-div-bottom-properties" });
         const btnPropsOpen = divBottom.createEl("button", { text: "Open", cls: "dn-btn-properties-open-file" });
         btnPropsOpen.onClickEvent(() => {
-          mdFileProps.close();
+          filePropsModal.close();
           this.dnOpenFile(file);
         });
         const btnCloseProps = divBottom.createEl("button", { text: "Close", cls: "dn-btn-properties-close" });
         btnCloseProps.onClickEvent(() => {
-          mdFileProps.close();
+          filePropsModal.close();
         });
-        mdFileProps.open();
+        filePropsModal.open();
         frontmatterProps.blur();
       })
     );
@@ -1928,9 +1985,11 @@ var DNModal = class extends import_obsidian2.Modal {
       case "images":
         return this._images.includes(file);
       case "a":
+      case "audio":
       case "audios":
         return this._audios.includes(file);
       case "v":
+      case "video":
       case "videos":
         return this._videos.includes(file);
       case "p":
@@ -1995,12 +2054,42 @@ var DNModal = class extends import_obsidian2.Modal {
     evt.stopPropagation();
     this._isDraggingPreview = false;
   }
+  handleTagActions(evt, tag) {
+    if (evt.button === 2) {
+      evt.preventDefault();
+    } else if (evt.button === 0 && evt.shiftKey) {
+      this.dnAddTagToSearch(tag, false);
+    } else if (evt.button === 0 && (evt.ctrlKey || evt.metaKey)) {
+      this.dnAddTagToSearch(tag, true);
+    } else if (evt.button === 1 && (evt.shiftKey || evt.ctrlKey || evt.metaKey)) {
+      this.clearSearchField();
+    } else {
+      this.INPUT_SEARCH.value = tag;
+      this.dnModalSearchVault(this.INPUT_SEARCH.value);
+    }
+  }
+  // Tag actions -> add/remove tag and/or !tag
+  dnAddTagToSearch(tag, exclude = false) {
+    let searchTerms = this.INPUT_SEARCH.value.split(" ");
+    const targetTag = exclude ? `!${tag}` : tag;
+    const oppositeTag = exclude ? tag : `!${tag}`;
+    searchTerms = searchTerms.filter((term) => term !== oppositeTag);
+    const index = searchTerms.indexOf(targetTag);
+    if (index !== -1) {
+      searchTerms.splice(index, 1);
+    } else {
+      searchTerms.push(targetTag);
+    }
+    const newSearchValue = searchTerms.join(" ");
+    this.INPUT_SEARCH.value = newSearchValue;
+    this.dnModalSearchVault(this.INPUT_SEARCH.value);
+  }
   onClose() {
     const { contentEl } = this;
     contentEl.empty();
     this._previewComponent.unload();
-    if (this._INPUT_SEARCH && this._INPUT_SEARCH.removeEventListener) {
-      this._INPUT_SEARCH.removeEventListener("input", (0, import_obsidian2.debounce)(() => this.dnModalSearchVault(this._INPUT_SEARCH.value), 300, true));
+    if (this.INPUT_SEARCH && this.INPUT_SEARCH.removeEventListener) {
+      this.INPUT_SEARCH.removeEventListener("input", (0, import_obsidian2.debounce)(() => this.dnModalSearchVault(this.INPUT_SEARCH.value), 300, true));
     }
     this._th1.removeEventListener("dblclick", () => this.dnAlternateSortColumn("name"));
     this._th2.removeEventListener("dblclick", () => this.dnAlternateSortColumn("ext"));
@@ -2015,6 +2104,470 @@ var DNModal = class extends import_obsidian2.Modal {
     if (this.intersectionObserver) {
       this.intersectionObserver.disconnect();
     }
+  }
+};
+
+// src/modals/dnsavesearchmodal.ts
+var import_obsidian4 = require("obsidian");
+
+// src/utils/helper.ts
+function DNSanitizeInput(txt) {
+  return txt.replace(/<[^>]*>/g, "").replace(/&nbsp;/g, " ").replace(/[\u2000-\u200F\u2028-\u202F\u2060-\u206F]/g, "").trim();
+}
+
+// src/modals/dnsavesearchmodal.ts
+var DNSaveSearchModal = class extends import_obsidian4.Modal {
+  constructor(app, plugin) {
+    super(app);
+    this.plugin = plugin;
+  }
+  onOpen() {
+    const { contentEl } = this;
+    contentEl.createEl("div", { text: "Save search", cls: "setting-item setting-item-heading dn-modal-heading" });
+    let current_search = this.plugin.DN_MODAL.INPUT_SEARCH.value;
+    const divSaveSearchQuery = contentEl.createEl("div", { cls: "dn-save-search-row" });
+    const divSaveSearchQueryInput = divSaveSearchQuery.createEl("div", { cls: "dn-save-search-value dn-save-search-query" });
+    const currentSearchInput = divSaveSearchQueryInput.createEl("input", {
+      type: "text",
+      placeholder: "Enter your search..."
+    });
+    currentSearchInput.value = this.plugin.DN_MODAL.INPUT_SEARCH.value;
+    contentEl.createEl("br");
+    const divSaveDescription = contentEl.createEl("div", { cls: "dn-save-search-row" });
+    const divSaveDescriptionInput = divSaveDescription.createEl("div", { cls: "dn-save-search-value dn-save-search-description" });
+    const descriptionInput = divSaveDescriptionInput.createEl("input", {
+      type: "text",
+      placeholder: "Description... (optional)"
+    });
+    const divBottom = contentEl.createEl("div", { cls: "dn-save-button-container" });
+    const btnSaveSearch = divBottom.createEl("button", { text: "Save", cls: "mod-cta" });
+    const btnCancel = divBottom.createEl("button", { text: "Cancel" });
+    currentSearchInput.addEventListener("input", (0, import_obsidian4.debounce)(() => {
+      current_search = currentSearchInput.value;
+      this.plugin.DN_MODAL.INPUT_SEARCH.value = current_search;
+      this.plugin.DN_MODAL.dnModalSearchVault(current_search);
+    }, 300, true));
+    btnSaveSearch.onclick = async () => {
+      const sanitizedDescription = DNSanitizeInput(descriptionInput.value);
+      const query = current_search;
+      if (!query) {
+        new import_obsidian4.Notice("Please enter a search.");
+        return;
+      }
+      if (!this.plugin.settings.saved_searches) {
+        this.plugin.settings.saved_searches = [];
+      }
+      let save_id = Date.now();
+      while (this.plugin.settings.saved_searches.some((item) => item.id === save_id)) {
+        save_id = Date.now();
+      }
+      const newSavedSearch = {
+        id: save_id,
+        query,
+        description: sanitizedDescription
+      };
+      this.plugin.settings.saved_searches.push(newSavedSearch);
+      await this.plugin.saveSettings();
+      new import_obsidian4.Notice("Search saved successfully!");
+      this.close();
+    };
+    btnCancel.onclick = () => {
+      this.close();
+    };
+  }
+  onClose() {
+    const { contentEl } = this;
+    contentEl.empty();
+  }
+};
+
+// src/modals/dnsavedsearchesmodal.ts
+var import_obsidian6 = require("obsidian");
+
+// src/modals/dnconfirmmodal.ts
+var import_obsidian5 = require("obsidian");
+var DNConfirmModal = class extends import_obsidian5.Modal {
+  constructor(app, title, message, btnText, btnCls = "mod-cta") {
+    super(app);
+    this.title = title;
+    this.message = message;
+    this.btnText = btnText;
+    this.btnCls = btnCls;
+    this.promise = new Promise((resolve) => {
+      this.resolve = resolve;
+    });
+  }
+  /**
+   * Returns the promise that will resolve with the user's decision (true for confirm, false for cancel).
+   */
+  get resultPromise() {
+    return this.promise;
+  }
+  onOpen() {
+    const { contentEl } = this;
+    contentEl.empty();
+    contentEl.createEl("div", { text: this.title, cls: "setting-item setting-item-heading dn-modal-heading" });
+    contentEl.createEl("p", { text: this.message, cls: "dn-confirm-message" });
+    const btnContainer = contentEl.createEl("div", { cls: "dn-confirm-button-container" });
+    const btnConfirm = btnContainer.createEl("button", { text: this.btnText, cls: this.btnCls });
+    btnConfirm.onclick = () => {
+      this.resolve(true);
+      this.close();
+    };
+    const btnCancel = btnContainer.createEl("button", { text: "Cancel", cls: "mod-cancel" });
+    btnCancel.onclick = () => {
+      this.resolve(false);
+      this.close();
+    };
+  }
+  onClose() {
+    const { contentEl } = this;
+    contentEl.empty();
+    if (this.resolve) {
+      this.resolve(false);
+    }
+  }
+};
+
+// src/modals/dnsavedsearchesmodal.ts
+var DNSavedSearchesModal = class extends import_obsidian6.Modal {
+  constructor(app, plugin) {
+    super(app);
+    this.textToFilter = "";
+    this.plugin = plugin;
+  }
+  onOpen() {
+    const { contentEl } = this;
+    contentEl.empty();
+    contentEl.createEl("div", { text: "Saved searches", cls: "setting-item setting-item-heading dn-modal-heading" });
+    const filterDiv = contentEl.createEl("div", { cls: "dn-filter-container" });
+    this.INPUT_FILTER = filterDiv.createEl("input", {
+      type: "text",
+      placeholder: "Filter saved searches...",
+      cls: "dn-filter-input"
+    });
+    this.INPUT_FILTER.spellcheck = false;
+    const btnClearFilter = filterDiv.createEl("div", { cls: "search-input-clear-button" });
+    btnClearFilter.addEventListener("click", () => {
+      this.INPUT_FILTER.value = "";
+      this.textToFilter = "";
+      this.renderSavedSearches();
+    });
+    this.INPUT_FILTER.value = this.textToFilter;
+    this.INPUT_FILTER.addEventListener("input", (0, import_obsidian6.debounce)(() => {
+      this.textToFilter = this.INPUT_FILTER.value.toLowerCase();
+      this.renderSavedSearches();
+    }, 300, true));
+    this.savedSearchContainer = contentEl.createEl("div", { cls: "dn-saved-search-list" });
+    this.renderSavedSearches();
+    const divBtnClose = contentEl.createEl("div", { cls: "dn-div-modal-bottom" });
+    const btnClose = divBtnClose.createEl("button", { text: "Close", cls: "dn-btn-properties-close" });
+    btnClose.onclick = () => this.close();
+  }
+  onClose() {
+    const { contentEl } = this;
+    contentEl.empty();
+  }
+  renderSavedSearches() {
+    this.savedSearchContainer.empty();
+    if (!this.plugin.settings.saved_searches) {
+      this.plugin.settings.saved_searches = [];
+    }
+    const filteredSearches = this.plugin.settings.saved_searches.filter((item) => {
+      if (this.textToFilter === "") {
+        return true;
+      }
+      return item.query.toLowerCase().includes(this.textToFilter) || item.description.toLowerCase().includes(this.textToFilter);
+    });
+    if (filteredSearches.length === 0) {
+      const message = this.textToFilter === "" ? "No saved searches." : "No searches match your filter.";
+      this.savedSearchContainer.createEl("p", { text: message, cls: "dn-no-searches-message" });
+      return;
+    }
+    filteredSearches.forEach((item) => {
+      this.renderSearchEntry(item);
+    });
+  }
+  /**
+   * Renders a saved search entry.
+   * @param item The DNSaveSearchItem object to render.
+   */
+  renderSearchEntry(item) {
+    const divSearchItem = this.savedSearchContainer.createEl("div", { cls: "dn-saved-search-item" });
+    divSearchItem.createEl("div", { text: item.query, cls: "dn-saved-search-query" });
+    divSearchItem.createEl("div", { text: item.description, cls: "dn-saved-search-description" });
+    divSearchItem.addEventListener("click", () => {
+      if (this.plugin.DN_MODAL && this.plugin.DN_MODAL.INPUT_SEARCH) {
+        this.plugin.DN_MODAL.INPUT_SEARCH.value = item.query;
+        this.plugin.DN_MODAL.dnModalSearchVault(this.plugin.DN_MODAL.INPUT_SEARCH.value);
+      } else {
+        new import_obsidian6.Notice("Search input not found.");
+      }
+    });
+    divSearchItem.addEventListener("dblclick", () => {
+      if (this.plugin.DN_MODAL && this.plugin.DN_MODAL.INPUT_SEARCH) {
+        this.plugin.DN_MODAL.INPUT_SEARCH.value = item.query;
+        this.plugin.DN_MODAL.dnModalSearchVault(this.plugin.DN_MODAL.INPUT_SEARCH.value);
+        this.close();
+      } else {
+        new import_obsidian6.Notice("Search input not found.");
+      }
+    });
+    const divActions = divSearchItem.createEl("div", { cls: "dn-saved-search-actions" });
+    const btnDeleteSearch = divActions.createEl("button", { cls: "dn-action-button dn-delete-button" });
+    btnDeleteSearch.onclick = async (evt) => {
+      evt.stopPropagation();
+      const confirmModal = new DNConfirmModal(this.app, "Delete search", "Are you sure you want to delete this saved search?", "Delete", "mod-warning");
+      confirmModal.open();
+      const confirmed = await confirmModal.resultPromise;
+      if (confirmed) {
+        const initialLength = this.plugin.settings.saved_searches.length;
+        this.plugin.settings.saved_searches = this.plugin.settings.saved_searches.filter(
+          (savedItem) => savedItem.id !== item.id
+        );
+        if (this.plugin.settings.saved_searches.length < initialLength) {
+          await this.plugin.saveSettings();
+          new import_obsidian6.Notice("Saved search deleted.");
+          this.renderSavedSearches();
+        } else {
+          new import_obsidian6.Notice("Error: Could not find search to delete.");
+        }
+      }
+    };
+  }
+};
+
+// src/modals/dninfomodal.ts
+var import_obsidian7 = require("obsidian");
+var DNInfoModal = class extends import_obsidian7.Modal {
+  constructor(app) {
+    super(app);
+    this._markdownContent = `
+### Dashboard navigator quick reference
+
+The **Dashboard navigator** search allows you to quickly access and filter specific files within your vault. Quickly find notes, images, canvases, audios, videos, PDFs, and more with simple commands.
+
+#### Basic commands
+
+- \`@notes\`: Lists all **notes**.
+- \`@images\`: Lists all **images**.
+- \`@canvas\` or \`@canvases\`: Lists all **canvases**.
+- \`@audio\` or \`@audios\`: Lists all **audio** files.
+- \`@video\` or \`@videos\`: Lists all **video** files.
+- \`@pdf\` or \`@pdfs\`: Lists all **PDF** files.
+- \`@other\`: Lists all **other** file types.
+
+#### Advanced filtering with search terms
+
+You can combine the basic commands with search terms to narrow down your results:
+
+* \`@notes #tag1\`: Lists **notes** with the tag \`#tag1\`.
+* \`@notes desired_word #tag2\`: Lists **notes** with \`desired_word\` and \`#tag2\`.
+
+#### Search filters shorthands
+
+- \`@n\` = \`@notes\`
+- \`@i\` = \`@images\`
+- \`@c\` = \`@canvas\` or \`@canvases\`
+- \`@a\` = \`@audio\` or \`@audios\`
+- \`@v\` = \`@video\` or \`@videos\`
+- \`@p\` = \`@pdf\` or \`@pdfs\`
+- \`@o\` = \`@other\`
+
+#### Date filters and shorthands
+
+For quick filtering by date ranges, use the following date filters or the respective shorthands:
+
+**Current day:**
+- \`@d\`, \`@day\`, or \`@today\`
+
+**Current day and yesterday:**
+- \`@d-1\` or \`@day-1\`
+
+**Current day and past x days:**
+- \`@d-2\` to \`@d-7\` or \`@day-2\` to \`@day-7\` (for 2 to 7 days before)
+
+**Current week:**
+- \`@w\` or \`@week\`
+
+**Current month and past x months:**
+- \`@m\` or \`@month\` (current month)
+- \`@m-1\` or \`@month-1\` (current month and previous month)
+- \`@m-2\` to \`@m-12\` or \`@month-2\` to \`@month-12\` (current month and 2 to 12 months prior)
+
+**Current year:**
+- \`@y\` or \`@year\`
+
+Example:
+
+To filter for data from the current month and the previous month, you would use \`@m-1\`.
+
+#### Combining search terms, file types and date filters
+
+You can combine search terms, file types (one per search) and date filters for more precise results:
+
+- \`@notes #tag1 @month\`: Lists **notes** with the tag \`tag1\` created/modified this month (*Shorthand*: \`@n #tag1 @m\`).
+- \`@images @week\`: Lists **images** added this week (*Shorthand*: \`@i @w\`).
+
+#### Quoted search
+
+- **Specific quoted search**: Search for specific sentences in frontmatter metadata or for specific filename using double or single quotes. For example, \`"this is the description of a note"\`.
+
+#### Additional tips
+
+* **Case sensitivity:** Search terms are **case-insensitive**.
+
+* **Multiple commands:** You can use **multiple commands in a single query**, separated by spaces.
+
+#### Excluding results
+
+To exclude specific content from your search results, you can use the \`!\` exclamation point followed by the text, tag or folder you want to exclude. This will remove any items that match the exclusion term.
+
+Example:
+
+- \`@notes #work #pending !#urgent\`: This will list **all notes** tagged with \`#work\` and \`#pending\` except those tagged with \`#urgent\`.
+
+#### Combining exclusions with other filters
+
+You can combine exclusions with other filters, such as tags and date, to further refine your search:
+
+- \`@notes #meeting !#international @month\`: This will list all notes tagged with \`#meeting\` that were created or modified this month, **excluding** those tagged with \`#international\`.
+
+- To find all notes tagged \`#meeting\` created/modified in the current month: \`@notes #meeting @month\`.
+
+By effectively using exclusions, you can tailor your searches to your specific needs and quickly find the information you're looking for.
+
+#### Frontmatter metadata search
+    
+To search for specific frontmatter metadata, use the following syntax:
+
+**1. Search by property or value:**
+
+- Property match (all notes with this property): \`'name_of_the_property:'\`
+
+Example: \`'task:'\` or \`'created:'\`
+
+- Search for the value in one metadata property: \`'task:' value\` or \`'task:' 'This is a sentence to match'\`. The sentence to match can be in single or double quotes
+
+Example: \`'task:' 'create pdf'\`
+
+**2. Search by property and value:**
+
+- Exact match: \`'name_of_the_property: value'\`
+
+Example: \`'topic: javascript'\`
+
+**Tips:**
+
+- Use single quotes (\`'\`) to enclose when searching for specific metadata.
+
+- You can use the context menu (navigator view or dashboard view to open the **Frontmatter** or **File properties** modal). Click on the desired frontmatter metadata to quickly search for an exact match within your notes.
+
+#### Tag actions
+
+You can quickly filter your search results by interacting with **tags** directly within the **Navigator view**, **File Properties modal**, or **Tags modal**. These actions let you include or exclude tags from your current search query.
+
+**\`Shift + left-click\`: Toggle tag inclusion**
+
+1. A \`Shift + left-click\` on a tag toggles between these states:
+
+* **Add tag:** This adds the tag to your search query. You'll **only see results that have this tag.** (e.g., \`#tag\`)
+* **Remove tag:** This removes the tag from your search query. The tag will **no longer filter your results**.
+
+**\`Ctrl + left-click\`: Toggle tag exclusion command**
+
+2. A **Ctrl + left-click** on a tag toggles between these states, specifically managing an *exclusion command*:
+
+* **Add exclusion command:** This adds a command to your search query to **exclude** the tag. You'll **only see results that *do NOT* have this tag.** (e.g., \`!#tag\`)
+* **Remove exclusion command:** This removes the exclusion command for that tag from your search query. The tag will **no longer filter your results by exclusion**.
+
+### Sort files
+
+- You can sort the files by double clicking on the table header and also by using the dropdown select.
+
+### Display results
+
+You can select 4 types of layouts to display the search results:
+- Default
+- Row striped
+- Column striped
+- Bordered
+
+### Preview files (hover and context menu)
+
+- **Quick file inspection**: You can choose to preview files using either the **hover preview** or the dedicated context menu item (**Show preview**) in the Dashboard and/or Navigator views. 
+
+- By simply hovering over a file or note while holding down the \`Ctrl\` (Windows/Linux) or \`Command\` (macOS) key, you can instantly preview its content.
+
+- **Context menu**: \`Show preview\` option. This allows you to preview a file or note without the need for a modifier key.
+
+- The **preview window** displays the file's **name** and **path**. You will find three buttons on this window:
+
+1. **Open**: Directly opens the file.
+2. **Open in new tab**: Opens the file in a new tab.
+3. **Open in new window**: Opens the file in a completely new window.
+
+
+### Drag-and-drop preview window
+
+- **Drag-and-drop positioning**: You have the freedom to move the preview window to any desired location on the screen. The preview window's position is remembered for subsequent previews (till you close the Dashboard navigator window), ensuring consistency and reducing the need for constant readjustment.
+
+- **Default position**: If you close and reopen the Dashboard navigator window, the preview will automatically return to its default position.
+
+### Context menu
+
+- Right-click the mouse button on the desired file link or table result to open the context menu. You can open the note in various ways (same tab, new tab, new window and also show its properties and metadata). You can also open the note by **double clicking** on the desired result.
+
+### Navigator view: Hide columns
+
+The column-hiding feature gives you the flexibility to customize the **navigator view** to suit your specific preferences and workflow. By **hiding unnecessary columns** you can create a cleaner, more focused view that highlights the information most relevant to you.
+
+You can hide the following columns:
+- **Ext**: Shows the file extension.
+- **Path**: Shows the location of the file within your vault structure.
+- **Size**: Displays the file size.
+- **Date**: Indicates the modification date of the file.
+- **Tags**: Lists the tags associated with the note, making it easier to categorize and search for notes.
+- **Frontmatter**: Lists the frontmatter/metadata associated with the note.
+
+### Excluded file extensions
+
+- Open **plugin settings** and select the file extensions that you don't want to display (extensions separated by commas).
+
+- Enter file extensions: In the provided text field, list the file extensions you want to exclude, separated by commas. For example: \`txt, docx, js\`.
+
+### Excluded folders
+
+- Open **plugin settings** and select the file extensions that you don't want to display (folder paths separated by commas).
+
+- Enter folder paths: In the provided space, list the folder names or paths to the folders(subfolders) you want to exclude, separating them with commas. For example: \`folder1/subfolder, source_files, folder2\`.
+
+### Colored files
+
+- Select custom colors for files in the dashboard and navigator views. 
+- These colors will be reflected in the piechart graph, making it easier to identify and track different file types. To activate this feature, go to **plugin settings** and **toggle colored files**.
+
+### Colored tags support
+
+- If the theme being used supports colored tags or if you are using custom CSS snippet to color tags, the **tags** column and **file properties** window will show colored tags accordingly.
+
+`;
+    this._mdComponent = new import_obsidian7.Component();
+  }
+  onOpen() {
+    const { contentEl } = this;
+    const markdownContainer = contentEl.createEl("div", { cls: "dn-info-modal" });
+    import_obsidian7.MarkdownRenderer.render(
+      this.app,
+      this._markdownContent,
+      markdownContainer,
+      this.app.vault.configDir,
+      this._mdComponent
+    );
+  }
+  onClose() {
+    const { contentEl } = this;
+    contentEl.empty();
   }
 };
 
@@ -2042,12 +2595,16 @@ var DEFAULT_SETTINGS = {
   hide_date: false,
   hide_tags: false,
   hide_frontmatter: false,
-  hide_columns: []
+  hide_columns: [],
+  saved_searches: []
 };
-var DNPlugin = class extends import_obsidian4.Plugin {
+var DNPlugin = class extends import_obsidian8.Plugin {
   async onload() {
     await this.loadSettings();
-    this.DN_MODAL = new DNModal(this.app);
+    this.DN_MODAL = new DNModal(this.app, this);
+    this.DN_SAVE_SEARCH_MODAL = new DNSaveSearchModal(this.app, this);
+    this.DN_SAVED_SEARCHES_MODAL = new DNSavedSearchesModal(this.app, this);
+    this.DN_INFO_MODAL = new DNInfoModal(this.app);
     this.DN_MODAL.default_view = this.settings.default_view;
     this.DN_MODAL.date_format = this.settings.date_format;
     this.DN_MODAL.num_recent_files = this.settings.num_recent_files;
