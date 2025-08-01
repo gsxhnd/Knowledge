@@ -6,11 +6,11 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "SiCplusplus",
       "SiDuckdb",
       "RiEnglishInput",
       "LiLanguages",
-      "SiAmazons3",
-      "SiInfluxdb"
+      "SiAmazons3"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -68,5 +68,6 @@
   "Database/Minio": "SiAmazons3",
   "Language": "LiLanguages",
   "Language/English": "RiEnglishInput",
-  "Database/DuckDB": "SiDuckdb"
+  "Database/DuckDB": "SiDuckdb",
+  "DevLang/Cpp": "SiCplusplus"
 }
