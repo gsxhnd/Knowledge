@@ -1,6 +1,8 @@
 ---
 title: DuckDB
 created: 2025-07-18 15:17
+tags:
+  - Database
 ---
 
 

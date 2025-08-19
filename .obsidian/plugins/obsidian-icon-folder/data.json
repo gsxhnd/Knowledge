@@ -6,11 +6,11 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "SiPostgresql",
       "SiCplusplus",
       "SiDuckdb",
       "RiEnglishInput",
-      "LiLanguages",
-      "SiAmazons3"
+      "LiLanguages"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -69,5 +69,6 @@
   "Language": "LiLanguages",
   "Language/English": "RiEnglishInput",
   "Database/DuckDB": "SiDuckdb",
-  "DevLang/Cpp": "SiCplusplus"
+  "DevLang/Cpp": "SiCplusplus",
+  "Database/Postgre": "SiPostgresql"
 }
