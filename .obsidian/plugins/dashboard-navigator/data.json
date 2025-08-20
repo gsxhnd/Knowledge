@@ -5,6 +5,7 @@
   "date_format": "YYYY-MM-DD HH:mm",
   "files_per_page": 20,
   "num_recent_files": 5,
+  "num_bookmarked_files": 10,
   "excluded_ext": "",
   "excluded_path": "",
   "color_notes": "#bf48ff",
@@ -22,5 +23,8 @@
   "hide_tags": false,
   "hide_frontmatter": false,
   "hide_columns": [],
+  "show_dashboard_piechart": true,
+  "image_thumbnail": true,
+  "onclose_search": "",
   "saved_searches": []
 }

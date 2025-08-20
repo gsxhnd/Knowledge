@@ -37,3 +37,7 @@ tags:
 [Code Book](https://coberbooks.ru/)
 
 > “ <https://Lib.rs>是一个 rust 库搜索服务网站，下面整理了其首页的 70 个类库分类和精选 creates，并增加了一句话介绍。”
+
+## build u own x
+
+- [Building A Blockchain in Rust & Substrate](https://hackernoon.com/building-a-blockchain-in-rust-and-substrate-a-step-by-step-guide-for-developers-kc223ybp)

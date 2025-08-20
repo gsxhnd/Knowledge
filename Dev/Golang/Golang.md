@@ -1,0 +1,14 @@
+---
+title: golang
+created: 2025-08-20 09:20
+---
+
+
+<!-- markdownlint-disable MD025 -->
+
+# Golang
+
+## build u own x
+
+- [Building a BitTorrent client from the ground up in Go](https://blog.jse.li/posts/torrent/)
+- [Let's Create a Simple Load Balancer](https://kasvith.me/posts/lets-create-a-simple-lb-go/)
