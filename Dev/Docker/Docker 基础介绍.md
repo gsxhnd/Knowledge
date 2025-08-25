@@ -33,7 +33,7 @@ Docker 相比传统虚拟机有诸多优势。
 
 docker 引擎是一个 c/s 结构的应用，主要组件见下图：
 
-![1-1](https://pic-1257414393.cos.ap-hongkong.myqcloud.com/Knowledge/d878d0d46899accd112c9ce7fcc3e0a7.png)
+![d878d0d46899accd112c9ce7fcc3e0a7](https://pic-1257414393.cos.ap-hongkong.myqcloud.com/Knowledge/d878d0d46899accd112c9ce7fcc3e0a7.png)
 
 - Server 是一个常驻进程
 
@@ -45,7 +45,7 @@ docker 引擎是一个 c/s 结构的应用，主要组件见下图：
 
 Docker 使用 C/S 架构，Client 通过接口与 Server 进程通信实现容器的构建，运行和发布。client 和 server 可以运行在同一台集群，也可以通过跨主机实现远程通信。
 
-![1-2](https://pic-1257414393.cos.ap-hongkong.myqcloud.com/Knowledge/b595b80b1dc39db2af4ffd6f0e8e8f55.svg)
+![b595b80b1dc39db2af4ffd6f0e8e8f55](https://pic-1257414393.cos.ap-hongkong.myqcloud.com/Knowledge/b595b80b1dc39db2af4ffd6f0e8e8f55.svg)
 
 ## Docker 基本概念
 
@@ -102,7 +102,7 @@ ubuntu              22.10            10c2f4041af1   4 weeks ago   70.2MB
 
 我们也可以使用 docker search 命令来搜索镜像。比如我们需要一个 httpd 的镜像来作为我们的 web 服务。我们可以通过 docker search 命令搜索 httpd 来寻找适合我们的镜像。
 
-![1-3](https://pic-1257414393.cos.ap-hongkong.myqcloud.com/Knowledge/e3f4bd2dedeab567dbb6b705f4f85def.png)
+![e3f4bd2dedeab567dbb6b705f4f85def](https://pic-1257414393.cos.ap-hongkong.myqcloud.com/Knowledge/e3f4bd2dedeab567dbb6b705f4f85def.png)
 
 各个选项说明:
 
@@ -441,6 +441,6 @@ $ systemctl restart docker
 #### 5.3.4
 
 ```text
-$ curl -XGET http://registry:5000/v2/_catalog
-$ curl -XGET http://registry:5000/v2/image_name/tags/list
+curl -XGET http://registry:5000/v2/_catalog
+curl -XGET http://registry:5000/v2/image_name/tags/list
 ```
