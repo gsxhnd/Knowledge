@@ -1,0 +1,19 @@
+views:
+  - type: table
+    name: 表格
+    filters:
+      and:
+        - file.path.startsWith("Finance")
+    order:
+      - file.name
+      - file.basename
+      - file.folder
+      - file.tags
+      - file.embeds
+  - type: table
+    name: 视图
+  - type: cards
+    name: 视图 2
+    order:
+      - file.name
+    image: note.title

@@ -6,11 +6,11 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiBox",
+      "FarFolder",
+      "LiBook",
       "SiWebrtc",
-      "RiAppsFill",
-      "RiAppsLine",
-      "LiCode",
-      "SiUnrealengine"
+      "RiAppsFill"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -37,7 +37,7 @@
   "AI/lstm_network": "SiOpenai",
   "AI/learn-dl": "SiOpenai",
   "Develop/Javascript": "SiJavascript",
-  "Tool": "RiAppsFill",
+  "Tool": "LiBox",
   "Game": "SiSteam",
   "pdf": "FasFilePdf",
   "Math": "FasSquareRootVariable",
@@ -71,5 +71,6 @@
   "Dev/Test": "SiVitest",
   "Dev/Auth": "SiAuth0",
   "Dev/MQTT": "SiEclipsemosquitto",
-  "Dev/WebRTC": "SiWebrtc"
+  "Dev/WebRTC": "SiWebrtc",
+  "Dev/Cpp/Book_CPP": "LiBook"
 }
