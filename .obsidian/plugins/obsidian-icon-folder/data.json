@@ -67,10 +67,10 @@
   "Dev/Docker": "SiDocker",
   "Dev/Grafana": "SiGrafana",
   "Dev/Kubernetes": "SiKubernetes",
-  "Dev/Linux": "SiLinux",
   "Dev/Test": "SiVitest",
   "Dev/Auth": "SiAuth0",
   "Dev/MQTT": "SiEclipsemosquitto",
   "Dev/WebRTC": "SiWebrtc",
-  "Dev/Cpp/Book_CPP": "LiBook"
+  "Dev/Cpp/Book_CPP": "LiBook",
+  "Dev/System": "SiLinux"
 }
