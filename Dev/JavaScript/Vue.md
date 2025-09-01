@@ -9,10 +9,10 @@ tags:
 
 # Vue
 
+- [Vite](https://cn.vitejs.dev/)
 - [Vue](https://cn.vuejs.org/)
 - [Vue Router](https://router.vuejs.org/zh/)
 - [Pinia](https://pinia.vuejs.org/zh/)
-- [Vite](https://cn.vitejs.dev/)
 
 其他
 
