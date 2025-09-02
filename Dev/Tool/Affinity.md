@@ -1,6 +1,8 @@
 ---
 title: Affinity
 created: 2024-09-13 13:29
+tags:
+  - Software
 ---
 
 

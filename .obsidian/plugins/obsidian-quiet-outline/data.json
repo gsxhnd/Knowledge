@@ -13,9 +13,18 @@
   "markdown": true,
   "expand_level": "5",
   "hide_unsearched": true,
-  "auto_expand": false,
+  "auto_expand_ext": "only-expand",
   "regex_search": false,
   "ellipsis": false,
   "label_direction": "left",
-  "drag_modify": true
+  "drag_modify": true,
+  "locate_by_cursor": false,
+  "show_popover_key": "ctrlKey",
+  "remember_state": true,
+  "keep_search_input": false,
+  "export_format": "{title}",
+  "lang_direction_decide_by": "system",
+  "auto_scroll_into_view": true,
+  "vimlize_canvas": false,
+  "auto_expand": false
 }

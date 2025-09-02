@@ -9,5 +9,5 @@ tags:
 
 # numpy
 
-<https://www.numpy.org.cn/reference/arrays/ndarray.html>
-<https://numpy.org/doc/stable/reference/arrays.ndarray.html>
+- <https://numpy.org/doc/stable/reference/arrays.ndarray.html>
+- <https://www.numpy.org.cn/reference/arrays/ndarray.html>

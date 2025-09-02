@@ -1,8 +1,9 @@
 ---
 title: Neovim
 created: 2024-03-12 09:57
+tags:
+  - Software
 ---
-
 <!-- markdownlint-disable MD025 -->
 
 # NeoVim
