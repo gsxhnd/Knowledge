@@ -16,3 +16,4 @@ CMake 广泛用于 C 和 C++ 语言，但它也可用于构建其他语言的源
 
 - [CMake Official](https://cmake.org/)
 - [CMake Reference Document](https://cmake.org/cmake/help/latest/)
+- [Modern CMake 简体中文版](https://modern-cmake-cn.github.io/Modern-CMake-zh_CN/)
