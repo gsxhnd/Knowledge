@@ -10,17 +10,17 @@ tags:
 
 安全且高效地处理并发编程 是 `Rust` 的另一个主要目标。 **并发编程** （ *Concurrent programming* ），代表程序的不同部分相互独立地执行，而 **并行编程** （ *parallel programming* ）代表程序不同部分同时执行，这两个概念随着计算机越来越多的利用多处理器的优势而显得愈发重要。由于历史原因，在此类上下文中编程一直是困难且容易出错的：Rust 希望能改变这一点。
 
-起初，Rust 团队认为确保内存安全和防止并发问题是两个分别需要不同方法应对的挑战。随着时间的推移，团队发现 [所有权](./所有权.md) 和 `类型系统` 是一系列解决内存安全 **和** 并发问题的强有力的工具！通过利用所有权和类型检查，在 Rust 中很多并发错误都是 **编译时** 错误，而非运行时错误。因此，相比花费大量时间尝试重现运行时并发 bug 出现的特定情况，Rust 会拒绝编译不正确的代码并提供解释问题的错误信息。因此，你可以在开发时修复代码，而不是在部署到生产环境后修复代码。我们给 Rust 的这一部分起了一个绰号 **无畏并发** （ *fearless concurrency* ）。无畏并发令你的代码免于出现诡异的 bug 并可以轻松重构且无需担心会引入新的 bug。
+起初，Rust 团队认为确保内存安全和防止并发问题是两个分别需要不同方法应对的挑战。随着时间的推移，团队发现 [所有权](./所有权.md) 和 `类型系统` 是一系列解决内存安全和并发问题的强有力的工具！通过利用所有权和类型检查，在 Rust 中很多并发错误都是 **编译时** 错误，而非运行时错误。因此，相比花费大量时间尝试重现运行时并发 bug 出现的特定情况，Rust 会拒绝编译不正确的代码并提供解释问题的错误信息。因此，你可以在开发时修复代码，而不是在部署到生产环境后修复代码。我们给 Rust 的这一部分起了一个绰号 **无畏并发** （ *fearless concurrency* ）。无畏并发令你的代码免于出现诡异的 bug 并可以轻松重构且无需担心会引入新的 bug。
 
 1. **多线程基础**
 
-- 使用 `thread::spawn` 创建线程，通过 `JoinHandle` 的 `join` 方法确保线程同步，避免主线程提前退出。
-- **`move` 闭包** 强制转移变量所有权到子线程，避免悬垂引用，保障跨线程数据安全。
+   - 使用 `thread::spawn` 创建线程，通过 `JoinHandle` 的 `join` 方法确保线程同步，避免主线程提前退出。
+   - **`move` 闭包** 强制转移变量所有权到子线程，避免悬垂引用，保障跨线程数据安全。
 
 2. **消息传递机制**
 
-- 通过 `mpsc` 通道（多生产者单消费者模型）实现线程间通信，发送端（ `Sender` ）与接收端（ `Receiver` ）解耦。
-- 发送数据时自动转移所有权，防止发送后篡改，天然规避 `数据竞争` 问题。
+   - 通过 `mpsc` 通道（多生产者单消费者模型）实现线程间通信，发送端（ `Sender` ）与接收端（ `Receiver` ）解耦。
+   - 发送数据时自动转移所有权，防止发送后篡改，天然规避 `数据竞争` 问题。
 
 Rust 无畏并发的特点
 
@@ -42,6 +42,56 @@ Rust 无畏并发的特点
 Rust 尝试减轻使用线程的负面影响。不过在多线程上下文中编程仍需格外小心，同时其所要求的代码结构也不同于运行于单线程的程序。
 
 编程语言有一些不同的方法来实现线程，而且很多 **操作系统提供了创建新线程的 API。Rust 标准库使用 *1:1* 线程实现，这代表程序的每一个语言级线程使用一个系统线程。** 有一些 crate 实现了其他有着不同于 1:1 模型取舍的线程模型。
+
+### 使用spawn 创建新线程
+
+创建新线程可以使用 `thread::spawn` 函数并传递一个闭包。
+
+代码示例：
+
+```rust
+#[cfg(test)]
+mod tests {
+    use std::{thread, time::Duration};
+​
+    #[test]
+    fn test_thread() {
+        thread::spawn(|| {
+            for i in 1..10 {
+                println!("hi number {} from the spawn thread!", i);
+                thread::sleep(Duration::from_millis(1));
+            }
+        });
+​
+        for i in 1..5 {
+            println!("hi number {} from the main thread!", i);
+            thread::sleep(Duration::from_millis(1));
+        }
+    }
+}
+```
+
+**执行单元测试：**
+
+```bash
+successes:
+---- thread_code::tests::test_thread stdout ----
+hi number 1 from the main thread!
+hi number 1 from the spawn thread!
+hi number 2 from the main thread!
+hi number 2 from the spawn thread!
+hi number 3 from the main thread!
+hi number 3 from the spawn thread!
+hi number 4 from the main thread!
+hi number 4 from the spawn thread!
+​
+successes:
+    thread_code::tests::test_thread
+```
+
+主线程打印到4，子线程打印到了4，如果再多试几次，我们会发现子线程始终无法打印完for循环的从1到9。原因是当Rust程序主线程结束的时候，所有已经创建的其他线程都会关闭掉。
+
+如果希望所有子线程执行结束后，程序再关闭，该如何实现呢？就要使用下面介绍的方法了。
 
 ## Refer
 
