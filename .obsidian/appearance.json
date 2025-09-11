@@ -1,8 +1,8 @@
 {
-  "cssTheme": "Catppuccin",
+  "cssTheme": "Obsidianite",
   "baseFontSize": 18,
   "translucency": false,
-  "accentColor": "",
+  "accentColor": "#9478f2",
   "theme": "obsidian",
   "nativeMenus": true,
   "textFontFamily": ""
