@@ -68,10 +68,10 @@
   "Devops/Database/DuckDB": "SiDuckdb",
   "Devops/Database/Influx": "SiInfluxdb",
   "Devops/Database/Minio": "SiAmazons3",
-  "Devops/Database/Postgre": "SiPostgresql",
   "Devops/Docker": "SiDocker",
   "Devops/Git": "FabGitAlt",
   "Devops/Grafana": "SiGrafana",
   "Devops/Kubernetes": "SiKubernetes",
-  "Devops/System": "SiLinux"
+  "Devops/System": "SiLinux",
+  "Devops/Database/Postgres": "SiPostgresql"
 }
