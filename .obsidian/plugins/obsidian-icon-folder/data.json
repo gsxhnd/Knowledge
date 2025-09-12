@@ -72,5 +72,6 @@
   "Devops/Grafana": "SiGrafana",
   "Devops/Kubernetes": "SiKubernetes",
   "Devops/System": "SiLinux",
-  "Devops/Database/Postgres": "SiPostgresql"
+  "Devops/Database/Postgres": "SiPostgresql",
+  "Devops/Tool": "LiBox"
 }

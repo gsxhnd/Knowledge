@@ -4,10 +4,11 @@ created: 2024-08-10 11:34
 tags:
   - Kubernetes
 ---
-
 <!-- markdownlint-disable MD025 -->
 
 # Kind
+
+**Kind** 是一款利用 Docker 容器“节点”运行本地 [Kubernetes](../Kubernetes/Kubernetes%20备忘清单.md) 集群的工具。主要设计用于测试 Kubernetes 自身，但也可用于本地开发或持续集成。
 
 ## 安装
 
@@ -31,3 +32,7 @@ kind delete cluster -n [集群名字]
 # 删除全部集群
 kind delete clusters -A
 ```
+
+## Refer
+
+- [Kind 官方文档](https://kind.sigs.k8s.io/)
