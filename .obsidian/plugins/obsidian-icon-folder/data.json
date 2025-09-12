@@ -62,7 +62,6 @@
   "Dev/MQTT": "SiEclipsemosquitto",
   "Dev/WebRTC": "SiWebrtc",
   "Dev/Cpp/Book_CPP": "LiBook",
-  "Dev/Tool": "LiBox",
   "Devops": "RiInfinityLine",
   "Devops/Database": "LiDatabaseZap",
   "Devops/Database/DuckDB": "SiDuckdb",

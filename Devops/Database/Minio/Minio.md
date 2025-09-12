@@ -1,5 +1,5 @@
 ---
-title: minio
+title: Minio
 created: 2024-09-12 09:47
 tags:
   - Minio

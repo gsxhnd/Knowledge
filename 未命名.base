@@ -10,6 +10,8 @@ views:
       - file.folder
       - file.tags
       - file.embeds
+    columnSize:
+      file.name: 131
   - type: table
     name: 视图
   - type: cards
