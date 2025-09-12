@@ -2,11 +2,11 @@
 title: golang
 created: 2025-08-20 09:20
 ---
-
-
 <!-- markdownlint-disable MD025 -->
 
 # Golang
+
+[小知识](https://www.zhihu.com/question/67846139/answer/1949857011769512789)
 
 ## build u own x
 

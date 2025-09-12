@@ -4,7 +4,6 @@ created: 2024-04-08 17:21
 tags:
   - Golang
 ---
-
 <!-- markdownlint-disable MD025 -->
 
 # Go Gin 框架原理分析
@@ -185,7 +184,7 @@ func main() {
 路由树相关的内容见本文第 4 章；gin.Context 有关内容见本文第 5 章.
 
 ```go
-	func Default() *Engine {
+ func Default() *Engine {
     engine := New()
     // ...
     return engine

@@ -4,7 +4,6 @@ created: 2024-10-14 09:11
 tags:
   - Golang
 ---
-
 <!-- markdownlint-disable MD025 -->
 
 # Context

@@ -2,8 +2,6 @@
 title: Wire 依赖注入
 created: 2025-07-18 13:00
 ---
-
-
 <!-- markdownlint-disable MD025 -->
 
 # Wire 依赖注入
