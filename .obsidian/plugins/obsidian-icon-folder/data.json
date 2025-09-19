@@ -71,7 +71,5 @@
   "Devops/Git": "FabGitAlt",
   "Devops/Grafana": "SiGrafana",
   "Devops/Kubernetes": "SiKubernetes",
-  "Devops/System": "SiLinux",
-  "Devops/Database/Postgres": "SiPostgresql",
-  "Devops/Tool": "LiBox"
+  "Devops/System": "SiLinux"
 }
