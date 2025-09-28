@@ -6,11 +6,11 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
-      "RiInfinityLine",
-      "LiInfinity",
-      "RiOpenSourceFill",
-      "SiAzuredevops",
-      "LiBox"
+      "LiBox",
+      "SiMysql",
+      "SiPostgresql",
+      "SiMariadb",
+      "RiInfinityLine"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -71,5 +71,9 @@
   "Devops/Git": "FabGitAlt",
   "Devops/Grafana": "SiGrafana",
   "Devops/Kubernetes": "SiKubernetes",
-  "Devops/System": "SiLinux"
+  "Devops/System": "SiLinux",
+  "Devops/Database/MariaDB": "SiMariadb",
+  "Devops/Database/Postgres": "SiPostgresql",
+  "Devops/Database/MySQL": "SiMysql",
+  "Devops/Tool": "LiBox"
 }

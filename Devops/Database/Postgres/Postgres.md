@@ -1,5 +1,5 @@
 ---
-title: postgre
+title: Postgres
 created: 2025-08-19 10:29
 tags:
   - Database
@@ -9,6 +9,6 @@ tags:
 
 <!-- markdownlint-disable MD025 -->
 
-# postgre
+# Postgres
 
 - [中文文档](http://www.postgres.cn/docs)
