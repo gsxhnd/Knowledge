@@ -56,7 +56,6 @@
   "Dev/Python": "FabPython",
   "Dev/Rust": "SiRust",
   "Dev/wgpu": "SiNvidia",
-  "Dev/Webassembly": "SiWebassembly",
   "Dev/Test": "SiVitest",
   "Dev/Auth": "SiAuth0",
   "Dev/MQTT": "SiEclipsemosquitto",
@@ -75,5 +74,6 @@
   "Devops/Database/MariaDB": "SiMariadb",
   "Devops/Database/Postgres": "SiPostgresql",
   "Devops/Database/MySQL": "SiMysql",
-  "Devops/Tool": "LiBox"
+  "Devops/Tool": "LiBox",
+  "Dev/WebAssembly": "SiWebassembly"
 }
