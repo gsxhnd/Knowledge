@@ -41,3 +41,6 @@ tags:
 ## build u own x
 
 - [Building A Blockchain in Rust & Substrate](https://hackernoon.com/building-a-blockchain-in-rust-and-substrate-a-step-by-step-guide-for-developers-kc223ybp)
+- [Building a DNS server in Rust](https://github.com/EmilHernvall/dnsguide/blob/master/README.md)
+- [Add RISC-V Rust Operating System Tutorial](https://osblog.stephenmarz.com/)
+- [Writing an OS in Rust](https://os.phil-opp.com/)
