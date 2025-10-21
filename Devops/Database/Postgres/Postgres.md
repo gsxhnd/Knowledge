@@ -19,4 +19,7 @@ docker run --name pgdb \
   -d postgres:17
 ```
 
+## Refer
+
+- [官方文档](https://www.postgresql.org/docs/)
 - [中文文档](http://www.postgres.cn/docs)
