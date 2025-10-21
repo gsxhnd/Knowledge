@@ -77,8 +77,9 @@ WebAssembly 已经在许多高性能 Web 应用中证明了其价值：
 
 •   科学计算与机器学习：在浏览器中执行复杂的数学模拟、数据分析甚至机器学习模型的推理任务。
 
-- [RustWasm](https://rustwasm.github.io/)
-- [RustWasm Doc](https://rustwasm.github.io/book/introduction.html)
+- [Wasm Org Spec - Github](https://webassembly.github.io/spec/core/intro/index.html)
+- [Wasm Org Spec](https://webassembly.org/specs/)
 - [Wasm MDN](https://developer.mozilla.org/zh-CN/docs/WebAssembly/Rust_to_Wasm)
-- Wasm spec <https://webassembly.github.io/spec/core/intro/index.html>
-- Wasm org spec <https://webassembly.org/specs/>
+
+- [RustWasm Doc](https://rustwasm.github.io/book/introduction.html)
+- [RustWasm](https://rustwasm.github.io/)
