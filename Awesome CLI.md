@@ -7,10 +7,6 @@ created: 2024-03-11 15:49
 
 # Awesome CLI
 
-## Network
-
-- frp 网络穿透 <https://github.com/fatedier/frp>
-
 ## System
 
 - neofetch 查看系统信息的命令行工具 <https://github.com/dylanaraps/neofetch>
@@ -18,7 +14,7 @@ created: 2024-03-11 15:49
 - procs
 - htop
 - bat
-- exa
+- eza
 - bottom
 - sed
 - jq
@@ -35,9 +31,6 @@ created: 2024-03-11 15:49
 - k6
 - mdbook
 - pandoc
-
-### File show tool
-
 - ranger
 - fzf
 - joshuto
