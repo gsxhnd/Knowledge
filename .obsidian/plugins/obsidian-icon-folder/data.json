@@ -6,11 +6,11 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "LiDatabase",
       "SiAmazons3",
       "LiBox",
       "SiMysql",
-      "SiPostgresql",
-      "SiMariadb"
+      "SiPostgresql"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -76,5 +76,6 @@
   "Devops/Database/MySQL": "SiMysql",
   "Devops/Tool": "LiBox",
   "Dev/WebAssembly": "SiWebassembly",
-  "Devops/Database/Rustfs": "SiAmazons3"
+  "Devops/Database/Rustfs": "SiAmazons3",
+  "Devops/Database/Base": "LiDatabase"
 }
