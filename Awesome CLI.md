@@ -10,6 +10,7 @@ created: 2024-03-11 15:49
 ## System
 
 - neofetch 查看系统信息的命令行工具 <https://github.com/dylanaraps/neofetch>
+- fastfetch
 - tree
 - procs
 - htop
@@ -35,6 +36,8 @@ created: 2024-03-11 15:49
 - fzf
 - joshuto
 - superfile <https://github.com/yorukot/superfile>
+- rclone
+- starship
 
 ## Docker & K8s
 
@@ -52,4 +55,6 @@ created: 2024-03-11 15:49
 
 ## Dev
 
+- neovide
+- neovim
 - tree-sitter

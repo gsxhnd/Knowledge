@@ -57,7 +57,6 @@
   "Dev/Rust": "SiRust",
   "Dev/wgpu": "SiNvidia",
   "Dev/Test": "SiVitest",
-  "Dev/Auth": "SiAuth0",
   "Dev/MQTT": "SiEclipsemosquitto",
   "Dev/WebRTC": "SiWebrtc",
   "Dev/Cpp/Book_CPP": "LiBook",
@@ -77,5 +76,6 @@
   "Devops/Tool": "LiBox",
   "Dev/WebAssembly": "SiWebassembly",
   "Devops/Database/Rustfs": "SiAmazons3",
-  "Devops/Database/Base": "LiDatabase"
+  "Devops/Database/Base": "LiDatabase",
+  "Devops/Auth": "SiAuth0"
 }

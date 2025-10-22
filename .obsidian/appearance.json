@@ -1,9 +1,9 @@
 {
-  "cssTheme": "Obsidianite",
+  "cssTheme": "Ink",
   "baseFontSize": 18,
   "translucency": false,
   "accentColor": "#9478f2",
-  "theme": "obsidian",
+  "theme": "moonstone",
   "nativeMenus": true,
   "textFontFamily": ""
 }

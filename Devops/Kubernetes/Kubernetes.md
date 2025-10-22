@@ -1,6 +1,8 @@
 ---
 title: Kubernetes
 created: 2025-10-22 11:27
+tags:
+  - Kubernetes
 ---
 <!-- markdownlint-disable MD025 -->
 

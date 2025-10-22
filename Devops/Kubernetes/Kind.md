@@ -8,7 +8,7 @@ tags:
 
 # Kind
 
-**Kind** 是一款利用 Docker 容器“节点”运行本地 [Kubernetes](../Kubernetes/Kubernetes%20备忘清单.md) 集群的工具。主要设计用于测试 Kubernetes 自身，但也可用于本地开发或持续集成。
+**Kind** 是一款利用 Docker 容器“节点”运行本地 [Kubernetes](../Kubernetes/Kubernetes.md) 集群的工具。主要设计用于测试 Kubernetes 自身，但也可用于本地开发或持续集成。
 
 ## 安装
 
