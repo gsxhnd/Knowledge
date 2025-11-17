@@ -6,11 +6,11 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "SiProtools",
       "LiNetwork",
       "SiClickhouse",
       "LiDatabase",
-      "SiAmazons3",
-      "LiBox"
+      "SiAmazons3"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -79,5 +79,6 @@
   "Devops/Database/Base": "LiDatabase",
   "Devops/Auth": "SiAuth0",
   "Devops/Database/ClickHouse": "SiClickhouse",
-  "Devops/Network": "LiNetwork"
+  "Devops/Network": "LiNetwork",
+  "Dev/GRPC": "SiProtools"
 }
