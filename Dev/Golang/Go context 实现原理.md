@@ -12,8 +12,7 @@ tags:
 
 ## 核心结构数据
 
-![context.Context](https://pic-1257414393.cos.ap-hongkong.myqcloud.com/Knowledge/7e0c24ff343c53e5dcfe8d9c06974359.jpeg)
-
+![context.Context](assets/7e0c24ff343c53e5dcfe8d9c06974359.jpeg)
 在 Go 语言中，Context 被定义为一个接口类型，它包含了三个方法：
 
 ```go

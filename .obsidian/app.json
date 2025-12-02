@@ -13,7 +13,7 @@
   "defaultViewMode": "preview",
   "showUnsupportedFiles": true,
   "newLinkFormat": "relative",
-  "attachmentFolderPath": "/",
+  "attachmentFolderPath": "./assets",
   "spellcheckLanguages": null,
   "spellcheck": false,
   "pdfExportSettings": {
