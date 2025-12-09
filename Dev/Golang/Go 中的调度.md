@@ -167,9 +167,7 @@ func example(slice []string, str string, i int) {
 
 **图 2**
 
-![d2a39c1bdb5f369c7b0af8aa3d3fee21](https://pic-1257414393.cos.ap-hongkong.myqcloud.com/Knowledge/d2a39c1bdb5f369c7b0af8aa3d3fee21.png)
-
-image
+![d2a39c1bdb5f369c7b0af8aa3d3fee21](assets/d2a39c1bdb5f369c7b0af8aa3d3fee21.png)
 
 处理器和主存使用缓存行(cache lines)进行数据交换。一个缓存行是一个 64 byte 的内存块，它在内存和缓存系统之间进行交换。每个内核会分配它自己需要的 cache 副本，也就是意味着硬件使用的是值语义(区别于指针语义)。这也是为什么多线程中的内存突变会造成严重的性能问题。
 
@@ -177,8 +175,7 @@ image
 
 **图 3**
 
-![6c1147b201f9c685fe602cc4b3db27b9](https://pic-1257414393.cos.ap-hongkong.myqcloud.com/Knowledge/6c1147b201f9c685fe602cc4b3db27b9.png)
-image
+![image](assets/6c1147b201f9c685fe602cc4b3db27b9.png)
 
 如果给一个内核，他上面的线程修改它的 cache 行副本，然后会通过硬件的神奇操作，同一 cache 行的所有其他副本都会被标记为无效。当一个线程尝试读写无效 cache 行，主存需要去访问去获取新的 cache 行副本(大约要 100~300 个时钟周期)
 
@@ -200,8 +197,18 @@ image
 
 当你的 go 程序启动，主机上定义的每一个虚拟内核都会为它分配一个逻辑处理器(P)，如果你的处理器上每个物理内核有多个硬件线程（超线程），每个硬件线程对于你的 go 程序来说就是一个虚拟内核。为了理解这个事情，看一下我的 MacBook Pro 的系统配置。
 
-**图 1**
-![](https://image.cubox.pro/article/2021090111343084645/43999.jpg?imageMogr2/quality/90/ignore-error/1) image
+```plaintext
+Hardware Overview:
+Model Name: MacBook Pro
+Model Identifier: MacBookPro13,3
+Processor Name: Intel Core i7
+Processor Speed: 2.9 GHz
+Number of Processors: 1
+Total Number of Cores: 4
+L2 Cache (per Core): 256 KB
+L3 Cache: 8 MB
+Memory: 16 GB
+```
 
 你可以看到一个单独处理器有 4 个物理核心。配置表没有显示每个物理核心有多少个硬件线程。Intel Core i7 处理器有自己的超线程，也就是每个物理内核上有两个硬件线程。因此 Go 程序知道并行执行操作系统线程的时候，会有 8 个虚拟内核可以用
 
@@ -209,7 +216,7 @@ image
 
 **Listing 1**
 
-```go
+```golang
 package main
 
 import (
@@ -236,7 +243,7 @@ func main() {
 图 2 提供了所有这些组件的图像。
 
 **图 2**
-![](https://image.cubox.pro/article/2021090111343048334/21393.jpg?imageMogr2/quality/90/ignore-error/1) image
+![图 2](assets/1ec72a5c3f4bfbe809cd3c240597c873.jpg)
 
 ### 协作调度
 
