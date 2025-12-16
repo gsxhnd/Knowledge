@@ -4,7 +4,6 @@ created: 2024-09-13 13:05
 tags:
   - WebAssembly
 ---
-
 <!-- markdownlint-disable MD025 -->
 
 # WebAssembly
