@@ -64,7 +64,6 @@
   "Devops/Database": "LiDatabaseZap",
   "Devops/Database/DuckDB": "SiDuckdb",
   "Devops/Database/Influx": "SiInfluxdb",
-  "Devops/Database/Minio": "SiAmazons3",
   "Devops/Docker": "SiDocker",
   "Devops/Git": "FabGitAlt",
   "Devops/Grafana": "SiGrafana",
@@ -75,10 +74,11 @@
   "Devops/Database/MySQL": "SiMysql",
   "Devops/Tool": "LiBox",
   "Dev/WebAssembly": "SiWebassembly",
-  "Devops/Database/Rustfs": "SiAmazons3",
-  "Devops/Database/Base": "LiDatabase",
   "Devops/Auth": "SiAuth0",
   "Devops/Database/ClickHouse": "SiClickhouse",
   "Devops/Network": "LiNetwork",
-  "Dev/GRPC": "SiProtools"
+  "Dev/GRPC": "SiProtools",
+  "Devops/Storage": "SiAmazons3",
+  "Devops/Storage/Minio": "SiAmazons3",
+  "Devops/Storage/Rustfs": "SiAmazons3"
 }

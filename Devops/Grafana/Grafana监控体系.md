@@ -19,7 +19,7 @@ tags:
 - Grafana [Loki](Loki.md): 日志
 - Grafana Tempo^[https://grafana.com/oss/tempo/]: 链路追踪
 - [Prometheus](Prometheus.md): 指标、告警
-- [Minio](../../Devops/Database/Minio/minio.md): 数据持久化存储
+- [Minio](../Storage/Minio/Minio.md): 数据持久化存储
 - [Vector](Vector.md): 收集数据的 pipeline
 - [OpenTelemetry](https://opentelemetry.io)
 - [Fluent Bit](https://docs.fluentbit.io/manual)
