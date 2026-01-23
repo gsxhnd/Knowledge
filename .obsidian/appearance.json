@@ -1,9 +1,10 @@
 {
-  "cssTheme": "Ink",
-  "baseFontSize": 18,
+  "cssTheme": "Things",
+  "baseFontSize": 16,
   "translucency": false,
-  "accentColor": "#9478f2",
+  "accentColor": "",
   "theme": "moonstone",
   "nativeMenus": true,
-  "textFontFamily": ""
+  "textFontFamily": "",
+  "baseFontSizeAction": false
 }
