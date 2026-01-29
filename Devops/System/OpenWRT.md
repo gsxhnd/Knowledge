@@ -2,7 +2,6 @@
 title: OpenWRT
 created: 2023-03-23 20:48
 ---
-
 <!-- markdownlint-disable MD025 -->
 
 # OpenWRT
